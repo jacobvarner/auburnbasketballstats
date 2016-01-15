@@ -1,14 +1,35 @@
 <head>
-  <title>auburnbasketballstats</title>
+  <title>Auburn Basketball Stats</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Auburn Basketball Stats</h1>
 
-  {{> hello}}
+  {{> addGame}}
+
+  {{> dispalyGames}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="addGame">
+  <h3>Add a New Game</h3>
+  <form>
+  	Date: <input type="date" name="gameDate"><br/><br/>
+  	Location:
+  	<input type="radio" name="gameLocation" value="Home"> Home
+  	<input type="radio" name="gameLocation" value="Away"> Away
+  	<input type="radio" name="gameLocation" value="Neutral"> Neutral <br/><br/>
+  	Attendance: <input type="number" name="gameAttendance" min="0" size="50px"><br/><br/>
+	Opponent: <input type="text" name="gameOpponent"><br/><br/>
+	Auburn Score: <input type="number" name="gameAuburnScore" min="0" size="30px"> &nbsp; Opponent Score: <input type="number" name="gameOpponentScore" min="0" size="30px"><br/><br/>
+	Auburn POT: <input type="number" name="gameAuburnPOT" min="0" size="30px"> &nbsp; Opponent POT: <input type="number" name="gameOpponentPOT" min="0" size="30px"><br/><br/>
+	Auburn PIP: <input type="number" name="gameAuburnPIP" min="0" size="30px"> &nbsp; Opponent PIP: <input type="number" name="gameOpponentPIP" min="0" size="30px"><br/><br/>
+	Auburn 2CP: <input type="number" name="gameAuburn2CP" min="0" size="30px"> &nbsp; Opponent 2CP: <input type="number" name="gameOpponent2CP" min="0" size="30px"><br/><br/>
+	Auburn FBP: <input type="number" name="gameAuburnFBP" min="0" size="30px"> &nbsp; Opponent FBP: <input type="number" name="gameOpponentFBP" min="0" size="30px"><br/><br/>
+	Auburn BP: <input type="number" name="gameAuburnBP" min="0" size="30px"> &nbsp; Opponent BP: <input type="number" name="gameOpponentBP" min="0" size="30px"><br/><br/>
+	<input type="submit" value="Save Game Info">
+  </form>
+</template>
+
+<template name="displayGames">
+	
 </template>
