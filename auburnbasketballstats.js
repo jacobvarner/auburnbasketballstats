@@ -45,6 +45,20 @@ if (Meteor.isClient) {
       form.reset();
     }
   });
+
+  Template.displayGames.helpers({
+    'game': function(){
+      return GamesList.find({}, {sort: {date: -1} });
+    },
+    'win': function(){
+      if(this.auburnScore > this.opponentScore) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+  });
 }
 
 if (Meteor.isServer) {

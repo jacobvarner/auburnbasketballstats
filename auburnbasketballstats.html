@@ -7,7 +7,7 @@
 
   {{> addGame}}
 
-  {{> dispalyGames}}
+  {{> displayGames}}
 </body>
 
 <template name="addGame">
@@ -31,5 +31,53 @@
 </template>
 
 <template name="displayGames">
-	
+	<h3>Auburn Games</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Location</th>
+				<th>Opponent</th>
+				<th>Attendance</th>
+				<th>Result</th>
+				<th>POT</th>
+				<th>OPOT</th>
+				<th>PIP</th>
+				<th>OPIP</th>
+				<th>2CP</th>
+				<th>O2CP</th>
+				<th>FBP</th>
+				<th>OFBP</th>
+				<th>BP</th>
+				<th>OBP</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each game}}
+				<tr>
+					<td>{{date}}</td>
+					<td>{{location}}</td>
+					<td>{{opponent}}</td>
+					<td>{{attendance}}</td>
+					<td>
+						{{#if win}}
+							W | {{auburnScore}}-{{opponentScore}}
+						{{else}}
+							L | {{auburnScore}}-{{opponentScore}}
+						{{/if}}
+					</td>
+					<td>{{auburnPOT}}</td>
+					<td>{{opponentPOT}}</td>
+					<td>{{auburnPIP}}</td>
+					<td>{{opponentPIP}}</td>
+					<td>{{auburn2CP}}</td>
+					<td>{{opponent2CP}}</td>
+					<td>{{auburnFBP}}</td>
+					<td>{{opponentFBP}}</td>
+					<td>{{auburnBP}}</td>
+					<td>{{opponentBP}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
 </template>
