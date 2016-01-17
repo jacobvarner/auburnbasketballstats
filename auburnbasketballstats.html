@@ -55,27 +55,27 @@
 		<tbody>
 			{{#each game}}
 				<tr>
-					<td>{{date}}</td>
-					<td>{{location}}</td>
-					<td>{{opponent}}</td>
-					<td>{{attendance}}</td>
-					<td>
+					<td class="left">{{date}}</td>
+					<td class="left">{{location}}</td>
+					<td class="left">{{opponent}}</td>
+					<td class="right">{{attendance}}</td>
+					<td class="left">
 						{{#if win}}
 							W | {{auburnScore}}-{{opponentScore}}
 						{{else}}
 							L | {{auburnScore}}-{{opponentScore}}
 						{{/if}}
 					</td>
-					<td>{{auburnPOT}}</td>
-					<td>{{opponentPOT}}</td>
-					<td>{{auburnPIP}}</td>
-					<td>{{opponentPIP}}</td>
-					<td>{{auburn2CP}}</td>
-					<td>{{opponent2CP}}</td>
-					<td>{{auburnFBP}}</td>
-					<td>{{opponentFBP}}</td>
-					<td>{{auburnBP}}</td>
-					<td>{{opponentBP}}</td>
+					<td class="right">{{auburnPOT}}</td>
+					<td class="right">{{opponentPOT}}</td>
+					<td class="right">{{auburnPIP}}</td>
+					<td class="right">{{opponentPIP}}</td>
+					<td class="right">{{auburn2CP}}</td>
+					<td class="right">{{opponent2CP}}</td>
+					<td class="right">{{auburnFBP}}</td>
+					<td class="right">{{opponentFBP}}</td>
+					<td class="right">{{auburnBP}}</td>
+					<td class="right">{{opponentBP}}</td>
 				</tr>
 			{{/each}}
 		</tbody>

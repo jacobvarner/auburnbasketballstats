@@ -9,8 +9,10 @@ th {
 
 td.left {
 	text-align: left;
+	padding: 5px;
 }
 
 td.right {
 	text-align: right;
+	padding: 5px;
 }
