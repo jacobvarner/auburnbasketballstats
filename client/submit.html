@@ -1,0 +1,55 @@
+<template name="submit">
+  <h2>Submit Game</h2>
+  {{> teamInput}}
+  {{> playerInput}}
+</template>
+
+<template name="teamInput">
+  <h3>Teams</h3>
+  <form>
+    Opponent: <input type="text" name="gameOpponent">
+    Date: <input type="date" name="gameDate">
+    Location:
+    <select name="gameLocation">
+      <option value="home">Home</option>
+      <option value="away">Away</option>
+      <option value="neutral">Neutral</option>
+    </select>
+    Attendance: <input type="number" name="gameAttendance" min="0">
+    <br>
+    <h5>Auburn</h5>
+    Points: <input type="number" name="gameAuburnPoints" min="0" size="3">
+    POT: <input type="number" name="gameAuburnPOT" min="0" size="3">
+    FBP: <input type="number" name="gameAuburnFBP" min="0" size="3">
+    2CP: <input type="number" name="gameAuburn2CP" min="0" size="3">
+    BP: <input type="number" name="gameAuburnBP" min="0" size="3">
+    <h5>Opponent</h5>
+    Points: <input type="number" name="gameOpponentPoints" min="0" size="3">
+    POT: <input type="number" name="gameOpponentPOT" min="0" size="3">
+    FBP: <input type="number" name="gameOpponentFBP" min="0" size="3">
+    2CP: <input type="number" name="gameOpponent2CP" min="0" size="3">
+    BP: <input type="number" name="gameOpponentBP" min="0" size="3">
+  </form>
+</template>
+
+<template name="playerInput">
+  <h3>Players</h3>
+  Name: <input type="text" game="playerName1">
+  Starter:
+  <select name="playerStarter1">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  Points: <input type="number" name="playerPoints1" min="0" size="3">
+  ORB: <input type="number" name="playerORB1" min="0" size="3">
+  DRB: <input type="number" name="playerDRB1" min="0" size="3">
+  AST: <input type="number" name="playerAST1" min="0" size="3">
+  TO: <input type="number" name="playerTO1" min="0" size="3">
+  BLK: <input type="number" name="playerBLK1" min="0" size="3">
+  STL: <input type="number" name="playerSTL1" min="0" size="3">
+  PF: <input type="number" name="playerPF1" min="0" max="5" size="3">
+  MIN: <input type="number" name="playerMIN1" min="0" size="3">
+  FGM/A: <input type="number" name="playerFGM1" min="0" size="3">-<input type="nubmer" name="playerFGA1" min="0" size="3">
+  3PM/A: <input type="number" name="player3PM1" min="0" size="3">-<input type="nubmer" name="player3PA1" min="0" size="3">
+  FTM/A: <input type="number" name="playerFTM1" min="0" size="3">-<input type="nubmer" name="playerFTA1" min="0" size="3">
+</template>
