@@ -4,16 +4,16 @@
 </template>
 
 <template name="statsInput">
-  <form class="playerInput">
-    Opponent: <input type="text" name="opponent" /> &nbsp;
-    Date: <input type="date" name="date" /> &nbsp;
+  <form class="statsInput">
+    Opponent: <input type="text" class="game" name="opponent" /> &nbsp;
+    Date: <input type="date" class="game" name="date" /> &nbsp;
     Location:
-    <select name="location">
+    <select name="location" class="game">
       <option value="home">Home</option>
       <option value="away">Away</option>
       <option value="neutral">Neutral</option>
     </select> &nbsp;
-    Attendance: <input type="number" name="gameAttendance" min="0" max="99999"> <br/><br/>
+    Attendance: <input type="number" class="game" name="gameAttendance" min="0" max="99999"> <br/><br/>
     <table>
       <thead>
         <tr>
@@ -40,43 +40,43 @@
       <tbody>
         <tr>
           <td>Auburn</td>
-          <td><input type="number" name="auburnFGM" min="0" max="999"> / <input type="number" name="auburnFGA" min="0" max="999"></td>
-          <td><input type="number" name="auburn3PM" min="0" max="999"> / <input type="number" name="auburn3PA" min="0" max="999"></td>
-          <td><input type="number" name="auburnFTM" min="0" max="999"> / <input type="number" name="auburnFTA" min="0" max="999"></td>
-          <td><input type="number" name="auburnORB" min="0" max="999"></td>
-          <td><input type="number" name="auburnDRB" min="0" max="999"></td>
-          <td><input type="number" name="auburnPoints" min="0" max="999"></td>
-          <td><input type="number" name="auburnAST" min="0" max="999"></td>
-          <td><input type="number" name="auburnTO" min="0" max="999"></td>
-          <td><input type="number" name="auburnBLK" min="0" max="999"></td>
-          <td><input type="number" name="auburnSTL" min="0" max="999"></td>
-          <td><input type="number" name="auburnPF" min="0" max="99"></td>
-          <td><input type="number" name="auburnMIN" min="0" max="999"></td>
-          <td><input type="number" name="auburnPOT" min="0" max="999"></td>
-          <td><input type="number" name="auburnPIP" min="0" max="999"></td>
-          <td><input type="number" name="auburn2CP" min="0" max="999"></td>
-          <td><input type="number" name="auburnFBP" min="0" max="999"></td>
-          <td><input type="number" name="auburnBP" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnFGM" min="0" max="999"> / <input type="number" class="game" name="auburnFGA" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburn3PM" min="0" max="999"> / <input type="number" class="game" name="auburn3PA" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnFTM" min="0" max="999"> / <input type="number" class="game" name="auburnFTA" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnORB" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnDRB" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnPoints" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnAST" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnTO" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnBLK" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnSTL" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnPF" min="0" max="99"></td>
+          <td><input type="number" class="game" name="auburnMIN" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnPOT" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnPIP" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburn2CP" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnFBP" min="0" max="999"></td>
+          <td><input type="number" class="game" name="auburnBP" min="0" max="999"></td>
         </tr>
         <tr>
           <td>Opponent</td>
-          <td><input type="number" name="opponentFGM" min="0" max="999"> / <input type="number" name="opponentFGA" min="0" max="999"></td>
-          <td><input type="number" name="opponent3PM" min="0" max="999"> / <input type="number" name="opponent3PA" min="0" max="999"></td>
-          <td><input type="number" name="opponentFTM" min="0" max="999"> / <input type="number" name="opponentFTA" min="0" max="999"></td>
-          <td><input type="number" name="opponentORB" min="0" max="999"></td>
-          <td><input type="number" name="opponentDRB" min="0" max="999"></td>
-          <td><input type="number" name="opponentPoints" min="0" max="999"></td>
-          <td><input type="number" name="opponentAST" min="0" max="999"></td>
-          <td><input type="number" name="opponentTO" min="0" max="999"></td>
-          <td><input type="number" name="opponentBLK" min="0" max="999"></td>
-          <td><input type="number" name="opponentSTL" min="0" max="999"></td>
-          <td><input type="number" name="opponentPF" min="0" max="99"></td>
-          <td><input type="number" name="opponentMIN" min="0" max="999"></td>
-          <td><input type="number" name="opponentPOT" min="0" max="999"></td>
-          <td><input type="number" name="opponentPIP" min="0" max="999"></td>
-          <td><input type="number" name="opponent2CP" min="0" max="999"></td>
-          <td><input type="number" name="opponentFBP" min="0" max="999"></td>
-          <td><input type="number" name="opponentBP" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentFGM" min="0" max="999"> / <input type="number" class="game" name="opponentFGA" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponent3PM" min="0" max="999"> / <input type="number" class="game" name="opponent3PA" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentFTM" min="0" max="999"> / <input type="number" class="game" name="opponentFTA" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentORB" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentDRB" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentPoints" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentAST" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentTO" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentBLK" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentSTL" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentPF" min="0" max="99"></td>
+          <td><input type="number" class="game" name="opponentMIN" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentPOT" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentPIP" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponent2CP" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentFBP" min="0" max="999"></td>
+          <td><input type="number" class="game" name="opponentBP" min="0" max="999"></td>
         </tr>
       </tbody>
     </table> <br/>
