@@ -1,40 +1,85 @@
 <template name="submit">
   <h2>Submit Game</h2>
-  {{> teamInput}}
-  {{> playerInput}}
+  {{> statsInput}}
 </template>
 
-<template name="teamInput">
-  <h3>Teams</h3>
-  <form>
-    Opponent: <input type="text" name="gameOpponent">
-    Date: <input type="date" name="gameDate">
+<template name="statsInput">
+  <form class="playerInput">
+    Opponent: <input type="text" name="opponent" /> &nbsp;
+    Date: <input type="date" name="date" /> &nbsp;
     Location:
-    <select name="gameLocation">
+    <select name="location">
       <option value="home">Home</option>
       <option value="away">Away</option>
       <option value="neutral">Neutral</option>
-    </select>
-    Attendance: <input type="number" name="gameAttendance" min="0" max="99999">
-    <br>
-    <h5>Auburn</h5>
-    Points: <input type="number" name="gameAuburnPoints" min="0" max="999">
-    POT: <input type="number" name="gameAuburnPOT" min="0" max="99">
-    FBP: <input type="number" name="gameAuburnFBP" min="0" max="99">
-    2CP: <input type="number" name="gameAuburn2CP" min="0" max="99">
-    BP: <input type="number" name="gameAuburnBP" min="0" max="99">
-    <h5>Opponent</h5>
-    Points: <input type="number" name="gameOpponentPoints" min="0" max="999">
-    POT: <input type="number" name="gameOpponentPOT" min="0" max="99">
-    FBP: <input type="number" name="gameOpponentFBP" min="0" max="99">
-    2CP: <input type="number" name="gameOpponent2CP" min="0" max="99">
-    BP: <input type="number" name="gameOpponentBP" min="0" max="99">
-  </form>
-</template>
-
-<template name="playerInput">
-  <h3>Players</h3>
-  <form>
+    </select> &nbsp;
+    Attendance: <input type="number" name="gameAttendance" min="0" max="99999"> <br/><br/>
+    <table>
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>FGM/A</th>
+          <th>3PM/A</th>
+          <th>FTM/A</th>
+          <th>ORB</th>
+          <th>DRB</th>
+          <th>PF</th>
+          <th>TP</th>
+          <th>AST</th>
+          <th>TO</th>
+          <th>BLK</th>
+          <th>STL</th>
+          <th>MIN</th>
+          <th>POT</th>
+          <th>PIP</th>
+          <th>2CP</th>
+          <th>FBP</th>
+          <th>BP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Auburn</td>
+          <td><input type="number" name="auburnFGM" min="0" max="999"> / <input type="number" name="auburnFGA" min="0" max="999"></td>
+          <td><input type="number" name="auburn3PM" min="0" max="999"> / <input type="number" name="auburn3PA" min="0" max="999"></td>
+          <td><input type="number" name="auburnFTM" min="0" max="999"> / <input type="number" name="auburnFTA" min="0" max="999"></td>
+          <td><input type="number" name="auburnORB" min="0" max="999"></td>
+          <td><input type="number" name="auburnDRB" min="0" max="999"></td>
+          <td><input type="number" name="auburnPoits1" min="0" max="999"></td>
+          <td><input type="number" name="auburnAST" min="0" max="999"></td>
+          <td><input type="number" name="auburnTO" min="0" max="999"></td>
+          <td><input type="number" name="auburnBLK" min="0" max="999"></td>
+          <td><input type="number" name="auburnSTL" min="0" max="999"></td>
+          <td><input type="number" name="auburnPF" min="0" max="99"></td>
+          <td><input type="number" name="auburnMIN" min="0" max="999"></td>
+          <td><input type="number" name="auburnPOT" min="0" max="999"></td>
+          <td><input type="number" name="auburnPIP" min="0" max="999"></td>
+          <td><input type="number" name="auburn2CP" min="0" max="999"></td>
+          <td><input type="number" name="auburnFBP" min="0" max="999"></td>
+          <td><input type="number" name="auburnBP" min="0" max="999"></td>
+        </tr>
+        <tr>
+          <td>Opponent</td>
+          <td><input type="number" name="opponentFGM" min="0" max="999"> / <input type="number" name="opponentFGA" min="0" max="999"></td>
+          <td><input type="number" name="opponent3PM" min="0" max="999"> / <input type="number" name="opponent3PA" min="0" max="999"></td>
+          <td><input type="number" name="opponentFTM" min="0" max="999"> / <input type="number" name="opponentFTA" min="0" max="999"></td>
+          <td><input type="number" name="opponentORB" min="0" max="999"></td>
+          <td><input type="number" name="opponentDRB" min="0" max="999"></td>
+          <td><input type="number" name="opponentPoits1" min="0" max="999"></td>
+          <td><input type="number" name="opponentAST" min="0" max="999"></td>
+          <td><input type="number" name="opponentTO" min="0" max="999"></td>
+          <td><input type="number" name="opponentBLK" min="0" max="999"></td>
+          <td><input type="number" name="opponentSTL" min="0" max="999"></td>
+          <td><input type="number" name="opponentPF" min="0" max="99"></td>
+          <td><input type="number" name="opponentMIN" min="0" max="999"></td>
+          <td><input type="number" name="opponentPOT" min="0" max="999"></td>
+          <td><input type="number" name="opponentPIP" min="0" max="999"></td>
+          <td><input type="number" name="opponent2CP" min="0" max="999"></td>
+          <td><input type="number" name="opponentFBP" min="0" max="999"></td>
+          <td><input type="number" name="opponentBP" min="0" max="999"></td>
+        </tr>
+      </tbody>
+    </table> <br/><br/>
     <table>
       <thead>
         <tr>
@@ -309,6 +354,7 @@
         </tr>
       </tbody>
     </table>
+    <input type="submit" value="Submit Players" />
   </form>
 
 </template>
