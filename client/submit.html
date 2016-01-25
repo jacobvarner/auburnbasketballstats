@@ -15,41 +15,300 @@
       <option value="away">Away</option>
       <option value="neutral">Neutral</option>
     </select>
-    Attendance: <input type="number" name="gameAttendance" min="0">
+    Attendance: <input type="number" name="gameAttendance" min="0" max="99999">
     <br>
     <h5>Auburn</h5>
-    Points: <input type="number" name="gameAuburnPoints" min="0" size="3">
-    POT: <input type="number" name="gameAuburnPOT" min="0" size="3">
-    FBP: <input type="number" name="gameAuburnFBP" min="0" size="3">
-    2CP: <input type="number" name="gameAuburn2CP" min="0" size="3">
-    BP: <input type="number" name="gameAuburnBP" min="0" size="3">
+    Points: <input type="number" name="gameAuburnPoints" min="0" max="999">
+    POT: <input type="number" name="gameAuburnPOT" min="0" max="99">
+    FBP: <input type="number" name="gameAuburnFBP" min="0" max="99">
+    2CP: <input type="number" name="gameAuburn2CP" min="0" max="99">
+    BP: <input type="number" name="gameAuburnBP" min="0" max="99">
     <h5>Opponent</h5>
-    Points: <input type="number" name="gameOpponentPoints" min="0" size="3">
-    POT: <input type="number" name="gameOpponentPOT" min="0" size="3">
-    FBP: <input type="number" name="gameOpponentFBP" min="0" size="3">
-    2CP: <input type="number" name="gameOpponent2CP" min="0" size="3">
-    BP: <input type="number" name="gameOpponentBP" min="0" size="3">
+    Points: <input type="number" name="gameOpponentPoints" min="0" max="999">
+    POT: <input type="number" name="gameOpponentPOT" min="0" max="99">
+    FBP: <input type="number" name="gameOpponentFBP" min="0" max="99">
+    2CP: <input type="number" name="gameOpponent2CP" min="0" max="99">
+    BP: <input type="number" name="gameOpponentBP" min="0" max="99">
   </form>
 </template>
 
 <template name="playerInput">
   <h3>Players</h3>
-  Name: <input type="text" game="playerName1">
-  Starter:
-  <select name="playerStarter1">
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-  </select>
-  Points: <input type="number" name="playerPoints1" min="0" size="3">
-  ORB: <input type="number" name="playerORB1" min="0" size="3">
-  DRB: <input type="number" name="playerDRB1" min="0" size="3">
-  AST: <input type="number" name="playerAST1" min="0" size="3">
-  TO: <input type="number" name="playerTO1" min="0" size="3">
-  BLK: <input type="number" name="playerBLK1" min="0" size="3">
-  STL: <input type="number" name="playerSTL1" min="0" size="3">
-  PF: <input type="number" name="playerPF1" min="0" max="5" size="3">
-  MIN: <input type="number" name="playerMIN1" min="0" size="3">
-  FGM/A: <input type="number" name="playerFGM1" min="0" size="3">-<input type="nubmer" name="playerFGA1" min="0" size="3">
-  3PM/A: <input type="number" name="player3PM1" min="0" size="3">-<input type="nubmer" name="player3PA1" min="0" size="3">
-  FTM/A: <input type="number" name="playerFTM1" min="0" size="3">-<input type="nubmer" name="playerFTA1" min="0" size="3">
+  <form>
+    <table>
+      <thead>
+        <tr>
+          <th>Player Name</th>
+          <th>Starter?</th>
+          <th>FGM/A</th>
+          <th>3PM/A</th>
+          <th>FTM/A</th>
+          <th>ORB</th>
+          <th>DRB</th>
+          <th>PF</th>
+          <th>TP</th>
+          <th>AST</th>
+          <th>TO</th>
+          <th>BLK</th>
+          <th>STL</th>
+          <th>MIN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" game="playerName1" size="30"></td>
+          <td>
+            <select name="playerStarter1">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM1" min="0" max="99"> / <input type="number" name="playerFGA1" min="0" max="99"></td>
+          <td><input type="number" name="player3PM1" min="0" max="99"> / <input type="number" name="player3PA1" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM1" min="0" max="99"> / <input type="number" name="playerFTA1" min="0" max="99"></td>
+          <td><input type="number" name="playerORB1" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB1" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints1" min="0" max="99"></td>
+          <td><input type="number" name="playerAST1" min="0" max="99"></td>
+          <td><input type="number" name="playerTO1" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK1" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL1" min="0" max="99"></td>
+          <td><input type="number" name="playerPF1" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN1" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName2" size="30"></td>
+          <td>
+            <select name="playerStarter2">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM2" min="0" max="99"> / <input type="number" name="playerFGA2" min="0" max="99"></td>
+          <td><input type="number" name="player3PM2" min="0" max="99"> / <input type="number" name="player3PA2" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM2" min="0" max="99"> / <input type="number" name="playerFTA2" min="0" max="99"></td>
+          <td><input type="number" name="playerORB2" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB2" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints2" min="0" max="99"></td>
+          <td><input type="number" name="playerAST2" min="0" max="99"></td>
+          <td><input type="number" name="playerTO2" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK2" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL2" min="0" max="99"></td>
+          <td><input type="number" name="playerPF2" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN2" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName3" size="30"></td>
+          <td>
+            <select name="playerStarter3">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM3" min="0" max="99"> / <input type="number" name="playerFGA3" min="0" max="99"></td>
+          <td><input type="number" name="player3PM3" min="0" max="99"> / <input type="number" name="player3PA3" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM3" min="0" max="99"> / <input type="number" name="playerFTA3" min="0" max="99"></td>
+          <td><input type="number" name="playerORB3" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB3" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints3" min="0" max="99"></td>
+          <td><input type="number" name="playerAST3" min="0" max="99"></td>
+          <td><input type="number" name="playerTO3" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK3" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL3" min="0" max="99"></td>
+          <td><input type="number" name="playerPF3" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN3" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName4" size="30"></td>
+          <td>
+            <select name="playerStarter4">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM4" min="0" max="99"> / <input type="number" name="playerFGA4" min="0" max="99"></td>
+          <td><input type="number" name="player3PM4" min="0" max="99"> / <input type="number" name="player3PA4" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM4" min="0" max="99"> / <input type="number" name="playerFTA4" min="0" max="99"></td>
+          <td><input type="number" name="playerORB4" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB4" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints4" min="0" max="99"></td>
+          <td><input type="number" name="playerAST4" min="0" max="99"></td>
+          <td><input type="number" name="playerTO4" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK4" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL4" min="0" max="99"></td>
+          <td><input type="number" name="playerPF4" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN4" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName5" size="30"></td>
+          <td>
+            <select name="playerStarter5">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM5" min="0" max="99"> / <input type="number" name="playerFGA5" min="0" max="99"></td>
+          <td><input type="number" name="player3PM5" min="0" max="99"> / <input type="number" name="player3PA5" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM5" min="0" max="99"> / <input type="number" name="playerFTA5" min="0" max="99"></td>
+          <td><input type="number" name="playerORB5" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB5" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints5" min="0" max="99"></td>
+          <td><input type="number" name="playerAST5" min="0" max="99"></td>
+          <td><input type="number" name="playerTO5" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK5" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL5" min="0" max="99"></td>
+          <td><input type="number" name="playerPF5" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN5" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName6" size="30"></td>
+          <td>
+            <select name="playerStarter6">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM6" min="0" max="99"> / <input type="number" name="playerFGA6" min="0" max="99"></td>
+          <td><input type="number" name="player3PM6" min="0" max="99"> / <input type="number" name="player3PA6" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM6" min="0" max="99"> / <input type="number" name="playerFTA6" min="0" max="99"></td>
+          <td><input type="number" name="playerORB6" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB6" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints6" min="0" max="99"></td>
+          <td><input type="number" name="playerAST6" min="0" max="99"></td>
+          <td><input type="number" name="playerTO6" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK6" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL6" min="0" max="99"></td>
+          <td><input type="number" name="playerPF6" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN6" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName7" size="30"></td>
+          <td>
+            <select name="playerStarter7">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM7" min="0" max="99"> / <input type="number" name="playerFGA7" min="0" max="99"></td>
+          <td><input type="number" name="player3PM7" min="0" max="99"> / <input type="number" name="player3PA7" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM7" min="0" max="99"> / <input type="number" name="playerFTA7" min="0" max="99"></td>
+          <td><input type="number" name="playerORB7" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB7" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints7" min="0" max="99"></td>
+          <td><input type="number" name="playerAST7" min="0" max="99"></td>
+          <td><input type="number" name="playerTO7" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK7" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL7" min="0" max="99"></td>
+          <td><input type="number" name="playerPF7" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN7" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName8" size="30"></td>
+          <td>
+            <select name="playerStarter8">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM8" min="0" max="99"> / <input type="number" name="playerFGA8" min="0" max="99"></td>
+          <td><input type="number" name="player3PM8" min="0" max="99"> / <input type="number" name="player3PA8" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM8" min="0" max="99"> / <input type="number" name="playerFTA8" min="0" max="99"></td>
+          <td><input type="number" name="playerORB8" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB8" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints8" min="0" max="99"></td>
+          <td><input type="number" name="playerAST8" min="0" max="99"></td>
+          <td><input type="number" name="playerTO8" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK8" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL8" min="0" max="99"></td>
+          <td><input type="number" name="playerPF8" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN8" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName9" size="30"></td>
+          <td>
+            <select name="playerStarter9">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM9" min="0" max="99"> / <input type="number" name="playerFGA9" min="0" max="99"></td>
+          <td><input type="number" name="player3PM9" min="0" max="99"> / <input type="number" name="player3PA9" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM9" min="0" max="99"> / <input type="number" name="playerFTA9" min="0" max="99"></td>
+          <td><input type="number" name="playerORB9" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB9" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints9" min="0" max="99"></td>
+          <td><input type="number" name="playerAST9" min="0" max="99"></td>
+          <td><input type="number" name="playerTO9" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK9" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL9" min="0" max="99"></td>
+          <td><input type="number" name="playerPF9" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN9" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName10" size="30"></td>
+          <td>
+            <select name="playerStarter10">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM10" min="0" max="99"> / <input type="number" name="playerFGA10" min="0" max="99"></td>
+          <td><input type="number" name="player3PM10" min="0" max="99"> / <input type="number" name="player3PA10" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM10" min="0" max="99"> / <input type="number" name="playerFTA10" min="0" max="99"></td>
+          <td><input type="number" name="playerORB10" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB10" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints10" min="0" max="99"></td>
+          <td><input type="number" name="playerAST10" min="0" max="99"></td>
+          <td><input type="number" name="playerTO10" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK10" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL10" min="0" max="99"></td>
+          <td><input type="number" name="playerPF10" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN10" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName11" size="30"></td>
+          <td>
+            <select name="playerStarter11">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM11" min="0" max="99"> / <input type="number" name="playerFGA11" min="0" max="99"></td>
+          <td><input type="number" name="player3PM11" min="0" max="99"> / <input type="number" name="player3PA11" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM11" min="0" max="99"> / <input type="number" name="playerFTA11" min="0" max="99"></td>
+          <td><input type="number" name="playerORB11" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB11" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints11" min="0" max="99"></td>
+          <td><input type="number" name="playerAST11" min="0" max="99"></td>
+          <td><input type="number" name="playerTO11" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK11" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL11" min="0" max="99"></td>
+          <td><input type="number" name="playerPF11" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN11" min="0" max="99"></td>
+        </tr>
+        <tr>
+          <td><input type="text" game="playerName12" size="30"></td>
+          <td>
+            <select name="playerStarter12">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </td>
+          <td><input type="number" name="playerFGM12" min="0" max="99"> / <input type="number" name="playerFGA12" min="0" max="99"></td>
+          <td><input type="number" name="player3PM12" min="0" max="99"> / <input type="number" name="player3PA12" min="0" max="99"></td>
+          <td><input type="number" name="playerFTM12" min="0" max="99"> / <input type="number" name="playerFTA12" min="0" max="99"></td>
+          <td><input type="number" name="playerORB12" min="0" max="99"></td>
+          <td><input type="number" name="playerDRB12" min="0" max="99"></td>
+          <td><input type="number" name="playerPoints12" min="0" max="99"></td>
+          <td><input type="number" name="playerAST12" min="0" max="99"></td>
+          <td><input type="number" name="playerTO12" min="0" max="99"></td>
+          <td><input type="number" name="playerBLK12" min="0" max="99"></td>
+          <td><input type="number" name="playerSTL12" min="0" max="99"></td>
+          <td><input type="number" name="playerPF12" min="0" max="5"></td>
+          <td><input type="number" name="playerMIN12" min="0" max="99"></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
 </template>
