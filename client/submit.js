@@ -7,55 +7,55 @@ Template.statsInput.events({
     var opponent = $('[name=opponent]').val();
     var date = $('[name=date]').val();
     var location = $('[name=location]').val();
-    var attendance = $('[name=attendance]').val();
+    var attendance = parseInt($('[name=attendance]').val());
 
-    var auburnFGM = $('[name=auburnFGM]').val();
-    var auburnFGA = $('[name=auburnFGA]').val();
-    var auburn3PM = $('[name=auburn3PM]').val();
-    var auburn3PA = $('[name=auburn3PA]').val();
+    var auburnFGM = parseInt($('[name=auburnFGM]').val());
+    var auburnFGA = parseInt($('[name=auburnFGA]').val());
+    var auburn3PM = parseInt($('[name=auburn3PM]').val());
+    var auburn3PA = parseInt($('[name=auburn3PA]').val());
     var auburn2PM = auburnFGM - auburn3PM;
     var auburn2PA = auburnFGA - auburn3PA;
-    var auburnFTM = $('[name=auburnFTM]').val();
-    var auburnFTA = $('[name=auburnFTA]').val();
-    var auburnORB = $('[name=auburnORB]').val();
-    var auburnDRB = $('[name=auburnDRB]').val();
+    var auburnFTM = parseInt($('[name=auburnFTM]').val());
+    var auburnFTA = parseInt($('[name=auburnFTA]').val());
+    var auburnORB = parseInt($('[name=auburnORB]').val());
+    var auburnDRB = parseInt($('[name=auburnDRB]').val());
     var auburnREB = auburnORB + auburnDRB;
-    var auburnPoints = $('[name=auburnPoints]').val();
-    var auburnAST = $('[name=auburnAST]').val();
-    var auburnTO = $('[name=auburnTO]').val();
-    var auburnBLK = $('[name=auburnBLK]').val();
-    var auburnSTL = $('[name=auburnSTL]').val();
-    var auburnPF = $('[name=auburnPF]').val();
-    var auburnMIN = $('[name=auburnMIN]').val();
-    var auburnPOT = $('[name=auburnPOT]').val();
-    var auburnPIP = $('[name=auburnPIP]').val();
-    var auburn2CP = $('[name=auburn2CP]').val();
-    var auburnFBP = $('[name=auburnFBP]').val();
-    var auburnBP = $('[name=auburnBP]').val();
+    var auburnPoints = parseInt($('[name=auburnPoints]').val());
+    var auburnAST = parseInt($('[name=auburnAST]').val());
+    var auburnTO = parseInt($('[name=auburnTO]').val());
+    var auburnBLK = parseInt($('[name=auburnBLK]').val());
+    var auburnSTL = parseInt($('[name=auburnSTL]').val());
+    var auburnPF = parseInt($('[name=auburnPF]').val());
+    var auburnMIN = parseInt($('[name=auburnMIN]').val());
+    var auburnPOT = parseInt($('[name=auburnPOT]').val());
+    var auburnPIP = parseInt($('[name=auburnPIP]').val());
+    var auburn2CP = parseInt($('[name=auburn2CP]').val());
+    var auburnFBP = parseInt($('[name=auburnFBP]').val());
+    var auburnBP = parseInt($('[name=auburnBP]').val());
 
-    var opponentFGM = $('[name=opponentFGM]').val();
-    var opponentFGA = $('[name=opponentFGA]').val();
-    var opponent3PM = $('[name=opponent3PM]').val();
-    var opponent3PA = $('[name=opponent3PA]').val();
+    var opponentFGM = parseInt($('[name=opponentFGM]').val());
+    var opponentFGA = parseInt($('[name=opponentFGA]').val());
+    var opponent3PM = parseInt($('[name=opponent3PM]').val());
+    var opponent3PA = parseInt($('[name=opponent3PA]').val());
     var opponent2PM = opponentFGM - opponent3PM;
     var opponent2PA = opponentFGA - opponent3PA;
-    var opponentFTM = $('[name=opponentFTM]').val();
-    var opponentFTA = $('[name=opponentFTA]').val();
-    var opponentORB = $('[name=opponentORB]').val();
-    var opponentDRB = $('[name=opponentDRB]').val();
+    var opponentFTM = parseInt($('[name=opponentFTM]').val());
+    var opponentFTA = parseInt($('[name=opponentFTA]').val());
+    var opponentORB = parseInt($('[name=opponentORB]').val());
+    var opponentDRB = parseInt($('[name=opponentDRB]').val());
     var opponentREB = opponentORB + opponentDRB;
-    var opponentPoints = $('[name=opponentPoints]').val();
-    var opponentAST = $('[name=opponentAST]').val();
-    var opponentTO = $('[name=opponentTO]').val();
-    var opponentBLK = $('[name=opponentBLK]').val();
-    var opponentSTL = $('[name=opponentSTL]').val();
-    var opponentPF = $('[name=opponentPF]').val();
-    var opponentMIN = $('[name=opponentMIN]').val();
-    var opponentPOT = $('[name=opponentPOT]').val();
-    var opponentPIP = $('[name=opponentPIP]').val();
-    var opponent2CP = $('[name=opponent2CP]').val();
-    var opponentFBP = $('[name=opponentFBP]').val();
-    var opponentBP = $('[name=opponentBP]').val();
+    var opponentPoints = parseInt($('[name=opponentPoints]').val());
+    var opponentAST = parseInt($('[name=opponentAST]').val());
+    var opponentTO = parseInt($('[name=opponentTO]').val());
+    var opponentBLK = parseInt($('[name=opponentBLK]').val());
+    var opponentSTL = parseInt($('[name=opponentSTL]').val());
+    var opponentPF = parseInt($('[name=opponentPF]').val());
+    var opponentMIN = parseInt($('[name=opponentMIN]').val());
+    var opponentPOT = parseInt($('[name=opponentPOT]').val());
+    var opponentPIP = parseInt($('[name=opponentPIP]').val());
+    var opponent2CP = parseInt($('[name=opponent2CP]').val());
+    var opponentFBP = parseInt($('[name=opponentFBP]').val());
+    var opponentBP = parseInt($('[name=opponentBP]').val());
 
     if($('.game').val() === null || $('.game').val() === '') {
       alert("Please fill in all game stats!");
@@ -169,24 +169,24 @@ Template.statsInput.events({
     } else {
       var playerStarter1 = false;
     }
-    var playerFGM1 = $('[name=playerFGM1]').val();
-    var playerFGA1 = $('[name=playerFGA1]').val();
-    var player3PM1 = $('[name=player3PM1]').val();
-    var player3PA1 = $('[name=player3PA1]').val();
+    var playerFGM1 = parseInt($('[name=playerFGM1]').val());
+    var playerFGA1 = parseInt($('[name=playerFGA1]').val());
+    var player3PM1 = parseInt($('[name=player3PM1]').val());
+    var player3PA1 = parseInt($('[name=player3PA1]').val());
     var player2PM1 = playerFGM1 - player3PM1;
     var player2PA1 = playerFGA1 - player3PA1;
-    var playerFTM1 = $('[name=playerFTM1]').val();
-    var playerFTA1 = $('[name=playerFTA1]').val();
-    var playerORB1 = $('[name=playerORB1]').val();
-    var playerDRB1 = $('[name=playerDRB1]').val();
+    var playerFTM1 = parseInt($('[name=playerFTM1]').val());
+    var playerFTA1 = parseInt($('[name=playerFTA1]').val());
+    var playerORB1 = parseInt($('[name=playerORB1]').val());
+    var playerDRB1 = parseInt($('[name=playerDRB1]').val());
     var playerREB1 = playerORB1 + playerDRB1;
-    var playerPoints1 = $('[name=playerPoints1]').val();
-    var playerAST1 = $('[name=playerAST1]').val();
-    var playerTO1 = $('[name=playerTO]1').val();
-    var playerBLK1 = $('[name=playerBLK1]').val();
-    var playerSTL1 = $('[name=playerSTL1]').val();
-    var playerPF1 = $('[name=playerPF]1').val();
-    var playerMIN1 = $('[name=playerMIN1]').val();
+    var playerPoints1 = parseInt($('[name=playerPoints1]').val());
+    var playerAST1 = parseInt($('[name=playerAST1]').val());
+    var playerTO1 = parseInt($('[name=playerTO]1').val());
+    var playerBLK1 = parseInt($('[name=playerBLK1]').val());
+    var playerSTL1 = parseInt($('[name=playerSTL1]').val());
+    var playerPF1 = parseInt($('[name=playerPF]1').val());
+    var playerMIN1 = parseInt($('[name=playerMIN1]').val());
 
     if($('.player1').val() != null && $('.player1').val() != ''){
       PlayerStats.insert({
@@ -215,6 +215,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player1').val('');
+
     var playerName2 = $('[name=playerName2]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -223,24 +225,24 @@ Template.statsInput.events({
     } else {
       var playerStarter2 = false;
     }
-    var playerFGM2 = $('[name=playerFGM2]').val();
-    var playerFGA2 = $('[name=playerFGA2]').val();
-    var player3PM2 = $('[name=player3PM2]').val();
-    var player3PA2 = $('[name=player3PA2]').val();
+    var playerFGM2 = parseInt($('[name=playerFGM2]').val());
+    var playerFGA2 = parseInt($('[name=playerFGA2]').val());
+    var player3PM2 = parseInt($('[name=player3PM2]').val());
+    var player3PA2 = parseInt($('[name=player3PA2]').val());
     var player2PM2 = playerFGM2 - player3PM2;
     var player2PA2 = playerFGA2 - player3PA2;
-    var playerFTM2 = $('[name=playerFTM2]').val();
-    var playerFTA2 = $('[name=playerFTA2]').val();
-    var playerORB2 = $('[name=playerORB2]').val();
-    var playerDRB2 = $('[name=playerDRB2]').val();
+    var playerFTM2 = parseInt($('[name=playerFTM2]').val());
+    var playerFTA2 = parseInt($('[name=playerFTA2]').val());
+    var playerORB2 = parseInt($('[name=playerORB2]').val());
+    var playerDRB2 = parseInt($('[name=playerDRB2]').val());
     var playerREB2 = playerORB2 + playerDRB2;
-    var playerPoints2 = $('[name=playerPoints2]').val();
-    var playerAST2 = $('[name=playerAST2]').val();
-    var playerTO2 = $('[name=playerTO]2').val();
-    var playerBLK2 = $('[name=playerBLK2]').val();
-    var playerSTL2 = $('[name=playerSTL2]').val();
-    var playerPF2 = $('[name=playerPF]2').val();
-    var playerMIN2 = $('[name=playerMIN2]').val();
+    var playerPoints2 = parseInt($('[name=playerPoints2]').val());
+    var playerAST2 = parseInt($('[name=playerAST2]').val());
+    var playerTO2 = parseInt($('[name=playerTO]2').val());
+    var playerBLK2 = parseInt($('[name=playerBLK2]').val());
+    var playerSTL2 = parseInt($('[name=playerSTL2]').val());
+    var playerPF2 = parseInt($('[name=playerPF]2').val());
+    var playerMIN2 = parseInt($('[name=playerMIN2]').val());
 
     if($('.player2').val() != null && $('.player2').val() != ''){
       PlayerStats.insert({
@@ -269,6 +271,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player2').val('');
+
     var playerName3 = $('[name=playerName3]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -277,24 +281,24 @@ Template.statsInput.events({
     } else {
       var playerStarter3 = false;
     }
-    var playerFGM3 = $('[name=playerFGM3]').val();
-    var playerFGA3 = $('[name=playerFGA3]').val();
-    var player3PM3 = $('[name=player3PM3]').val();
-    var player3PA3 = $('[name=player3PA3]').val();
+    var playerFGM3 = parseInt($('[name=playerFGM3]').val());
+    var playerFGA3 = parseInt($('[name=playerFGA3]').val());
+    var player3PM3 = parseInt($('[name=player3PM3]').val());
+    var player3PA3 = parseInt($('[name=player3PA3]').val());
     var player2PM3 = playerFGM3 - player3PM3;
     var player2PA3 = playerFGA3 - player3PA3;
-    var playerFTM3 = $('[name=playerFTM3]').val();
-    var playerFTA3 = $('[name=playerFTA3]').val();
-    var playerORB3 = $('[name=playerORB3]').val();
-    var playerDRB3 = $('[name=playerDRB3]').val();
+    var playerFTM3 = parseInt($('[name=playerFTM3]').val());
+    var playerFTA3 = parseInt($('[name=playerFTA3]').val());
+    var playerORB3 = parseInt($('[name=playerORB3]').val());
+    var playerDRB3 = parseInt($('[name=playerDRB3]').val());
     var playerREB3 = playerORB3 + playerDRB3;
-    var playerPoints3 = $('[name=playerPoints3]').val();
-    var playerAST3 = $('[name=playerAST3]').val();
-    var playerTO3 = $('[name=playerTO]3').val();
-    var playerBLK3 = $('[name=playerBLK3]').val();
-    var playerSTL3 = $('[name=playerSTL3]').val();
-    var playerPF3 = $('[name=playerPF]3').val();
-    var playerMIN3 = $('[name=playerMIN3]').val();
+    var playerPoints3 = parseInt($('[name=playerPoints3]').val());
+    var playerAST3 = parseInt($('[name=playerAST3]').val());
+    var playerTO3 = parseInt($('[name=playerTO]3').val());
+    var playerBLK3 = parseInt($('[name=playerBLK3]').val());
+    var playerSTL3 = parseInt($('[name=playerSTL3]').val());
+    var playerPF3 = parseInt($('[name=playerPF]3').val());
+    var playerMIN3 = parseInt($('[name=playerMIN3]').val());
 
     if($('.player3').val() != null && $('.player3').val() != ''){
       PlayerStats.insert({
@@ -323,6 +327,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player3').val('');
+
     var playerName4 = $('[name=playerName4]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -331,24 +337,24 @@ Template.statsInput.events({
     } else {
       var playerStarter4 = false;
     }
-    var playerFGM4 = $('[name=playerFGM4]').val();
-    var playerFGA4 = $('[name=playerFGA4]').val();
-    var player3PM4 = $('[name=player3PM4]').val();
-    var player3PA4 = $('[name=player3PA4]').val();
+    var playerFGM4 = parseInt($('[name=playerFGM4]').val());
+    var playerFGA4 = parseInt($('[name=playerFGA4]').val());
+    var player3PM4 = parseInt($('[name=player3PM4]').val());
+    var player3PA4 = parseInt($('[name=player3PA4]').val());
     var player2PM4 = playerFGM4 - player3PM4;
     var player2PA4 = playerFGA4 - player3PA4;
-    var playerFTM4 = $('[name=playerFTM4]').val();
-    var playerFTA4 = $('[name=playerFTA4]').val();
-    var playerORB4 = $('[name=playerORB4]').val();
-    var playerDRB4 = $('[name=playerDRB4]').val();
+    var playerFTM4 = parseInt($('[name=playerFTM4]').val());
+    var playerFTA4 = parseInt($('[name=playerFTA4]').val());
+    var playerORB4 = parseInt($('[name=playerORB4]').val());
+    var playerDRB4 = parseInt($('[name=playerDRB4]').val());
     var playerREB4 = playerORB4 + playerDRB4;
-    var playerPoints4 = $('[name=playerPoints4]').val();
-    var playerAST4 = $('[name=playerAST4]').val();
-    var playerTO4 = $('[name=playerTO]4').val();
-    var playerBLK4 = $('[name=playerBLK4]').val();
-    var playerSTL4 = $('[name=playerSTL4]').val();
-    var playerPF4 = $('[name=playerPF]4').val();
-    var playerMIN4 = $('[name=playerMIN4]').val();
+    var playerPoints4 = parseInt($('[name=playerPoints4]').val());
+    var playerAST4 = parseInt($('[name=playerAST4]').val());
+    var playerTO4 = parseInt($('[name=playerTO]4').val());
+    var playerBLK4 = parseInt($('[name=playerBLK4]').val());
+    var playerSTL4 = parseInt($('[name=playerSTL4]').val());
+    var playerPF4 = parseInt($('[name=playerPF]4').val());
+    var playerMIN4 = parseInt($('[name=playerMIN4]').val());
 
     if($('.player4').val() != null && $('.player4').val() != ''){
       PlayerStats.insert({
@@ -377,6 +383,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player4').val('');
+
     var playerName5 = $('[name=playerName5]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -385,24 +393,24 @@ Template.statsInput.events({
     } else {
       var playerStarter5 = false;
     }
-    var playerFGM5 = $('[name=playerFGM5]').val();
-    var playerFGA5 = $('[name=playerFGA5]').val();
-    var player3PM5 = $('[name=player3PM5]').val();
-    var player3PA5 = $('[name=player3PA5]').val();
+    var playerFGM5 = parseInt($('[name=playerFGM5]').val());
+    var playerFGA5 = parseInt($('[name=playerFGA5]').val());
+    var player3PM5 = parseInt($('[name=player3PM5]').val());
+    var player3PA5 = parseInt($('[name=player3PA5]').val());
     var player2PM5 = playerFGM5 - player3PM5;
     var player2PA5 = playerFGA5 - player3PA5;
-    var playerFTM5 = $('[name=playerFTM5]').val();
-    var playerFTA5 = $('[name=playerFTA5]').val();
-    var playerORB5 = $('[name=playerORB5]').val();
-    var playerDRB5 = $('[name=playerDRB5]').val();
+    var playerFTM5 = parseInt($('[name=playerFTM5]').val());
+    var playerFTA5 = parseInt($('[name=playerFTA5]').val());
+    var playerORB5 = parseInt($('[name=playerORB5]').val());
+    var playerDRB5 = parseInt($('[name=playerDRB5]').val());
     var playerREB5 = playerORB5 + playerDRB5;
-    var playerPoints5 = $('[name=playerPoints5]').val();
-    var playerAST5 = $('[name=playerAST5]').val();
-    var playerTO5 = $('[name=playerTO]5').val();
-    var playerBLK5 = $('[name=playerBLK5]').val();
-    var playerSTL5 = $('[name=playerSTL5]').val();
-    var playerPF5 = $('[name=playerPF]5').val();
-    var playerMIN5 = $('[name=playerMIN5]').val();
+    var playerPoints5 = parseInt($('[name=playerPoints5]').val());
+    var playerAST5 = parseInt($('[name=playerAST5]').val());
+    var playerTO5 = parseInt($('[name=playerTO]5').val());
+    var playerBLK5 = parseInt($('[name=playerBLK5]').val());
+    var playerSTL5 = parseInt($('[name=playerSTL5]').val());
+    var playerPF5 = parseInt($('[name=playerPF]5').val());
+    var playerMIN5 = parseInt($('[name=playerMIN5]').val());
 
     if($('.player5').val() != null && $('.player5').val() != ''){
       PlayerStats.insert({
@@ -431,6 +439,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player5').val('');
+
     var playerName6 = $('[name=playerName6]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -439,24 +449,24 @@ Template.statsInput.events({
     } else {
       var playerStarter6 = false;
     }
-    var playerFGM6 = $('[name=playerFGM6]').val();
-    var playerFGA6 = $('[name=playerFGA6]').val();
-    var player3PM6 = $('[name=player3PM6]').val();
-    var player3PA6 = $('[name=player3PA6]').val();
+    var playerFGM6 = parseInt($('[name=playerFGM6]').val());
+    var playerFGA6 = parseInt($('[name=playerFGA6]').val());
+    var player3PM6 = parseInt($('[name=player3PM6]').val());
+    var player3PA6 = parseInt($('[name=player3PA6]').val());
     var player2PM6 = playerFGM6 - player3PM6;
     var player2PA6 = playerFGA6 - player3PA6;
-    var playerFTM6 = $('[name=playerFTM6]').val();
-    var playerFTA6 = $('[name=playerFTA6]').val();
-    var playerORB6 = $('[name=playerORB6]').val();
-    var playerDRB6 = $('[name=playerDRB6]').val();
+    var playerFTM6 = parseInt($('[name=playerFTM6]').val());
+    var playerFTA6 = parseInt($('[name=playerFTA6]').val());
+    var playerORB6 = parseInt($('[name=playerORB6]').val());
+    var playerDRB6 = parseInt($('[name=playerDRB6]').val());
     var playerREB6 = playerORB6 + playerDRB6;
-    var playerPoints6 = $('[name=playerPoints6]').val();
-    var playerAST6 = $('[name=playerAST6]').val();
-    var playerTO6 = $('[name=playerTO]6').val();
-    var playerBLK6 = $('[name=playerBLK6]').val();
-    var playerSTL6 = $('[name=playerSTL6]').val();
-    var playerPF6 = $('[name=playerPF]6').val();
-    var playerMIN6 = $('[name=playerMIN6]').val();
+    var playerPoints6 = parseInt($('[name=playerPoints6]').val());
+    var playerAST6 = parseInt($('[name=playerAST6]').val());
+    var playerTO6 = parseInt($('[name=playerTO]6').val());
+    var playerBLK6 = parseInt($('[name=playerBLK6]').val());
+    var playerSTL6 = parseInt($('[name=playerSTL6]').val());
+    var playerPF6 = parseInt($('[name=playerPF]6').val());
+    var playerMIN6 = parseInt($('[name=playerMIN6]').val());
 
     if($('.player6').val() != null && $('.player6').val() != ''){
       PlayerStats.insert({
@@ -485,6 +495,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player6').val('');
+
     var playerName7 = $('[name=playerName7]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -493,24 +505,24 @@ Template.statsInput.events({
     } else {
       var playerStarter7 = false;
     }
-    var playerFGM7 = $('[name=playerFGM7]').val();
-    var playerFGA7 = $('[name=playerFGA7]').val();
-    var player3PM7 = $('[name=player3PM7]').val();
-    var player3PA7 = $('[name=player3PA7]').val();
+    var playerFGM7 = parseInt($('[name=playerFGM7]').val());
+    var playerFGA7 = parseInt($('[name=playerFGA7]').val());
+    var player3PM7 = parseInt($('[name=player3PM7]').val());
+    var player3PA7 = parseInt($('[name=player3PA7]').val());
     var player2PM7 = playerFGM7 - player3PM7;
     var player2PA7 = playerFGA7 - player3PA7;
-    var playerFTM7 = $('[name=playerFTM7]').val();
-    var playerFTA7 = $('[name=playerFTA7]').val();
-    var playerORB7 = $('[name=playerORB7]').val();
-    var playerDRB7 = $('[name=playerDRB7]').val();
+    var playerFTM7 = parseInt($('[name=playerFTM7]').val());
+    var playerFTA7 = parseInt($('[name=playerFTA7]').val());
+    var playerORB7 = parseInt($('[name=playerORB7]').val());
+    var playerDRB7 = parseInt($('[name=playerDRB7]').val());
     var playerREB7 = playerORB7 + playerDRB7;
-    var playerPoints7 = $('[name=playerPoints7]').val();
-    var playerAST7 = $('[name=playerAST7]').val();
-    var playerTO7 = $('[name=playerTO]7').val();
-    var playerBLK7 = $('[name=playerBLK7]').val();
-    var playerSTL7 = $('[name=playerSTL7]').val();
-    var playerPF7 = $('[name=playerPF]7').val();
-    var playerMIN7 = $('[name=playerMIN7]').val();
+    var playerPoints7 = parseInt($('[name=playerPoints7]').val());
+    var playerAST7 = parseInt($('[name=playerAST7]').val());
+    var playerTO7 = parseInt($('[name=playerTO]7').val());
+    var playerBLK7 = parseInt($('[name=playerBLK7]').val());
+    var playerSTL7 = parseInt($('[name=playerSTL7]').val());
+    var playerPF7 = parseInt($('[name=playerPF]7').val());
+    var playerMIN7 = parseInt($('[name=playerMIN7]').val());
 
     if($('.player7').val() != null && $('.player7').val() != ''){
       PlayerStats.insert({
@@ -539,6 +551,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player7').val('');
+
     var playerName8 = $('[name=playerName8]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -547,24 +561,24 @@ Template.statsInput.events({
     } else {
       var playerStarter8 = false;
     }
-    var playerFGM8 = $('[name=playerFGM8]').val();
-    var playerFGA8 = $('[name=playerFGA8]').val();
-    var player3PM8 = $('[name=player3PM8]').val();
-    var player3PA8 = $('[name=player3PA8]').val();
+    var playerFGM8 = parseInt($('[name=playerFGM8]').val());
+    var playerFGA8 = parseInt($('[name=playerFGA8]').val());
+    var player3PM8 = parseInt($('[name=player3PM8]').val());
+    var player3PA8 = parseInt($('[name=player3PA8]').val());
     var player2PM8 = playerFGM8 - player3PM8;
     var player2PA8 = playerFGA8 - player3PA8;
-    var playerFTM8 = $('[name=playerFTM8]').val();
-    var playerFTA8 = $('[name=playerFTA8]').val();
-    var playerORB8 = $('[name=playerORB8]').val();
-    var playerDRB8 = $('[name=playerDRB8]').val();
+    var playerFTM8 = parseInt($('[name=playerFTM8]').val());
+    var playerFTA8 = parseInt($('[name=playerFTA8]').val());
+    var playerORB8 = parseInt($('[name=playerORB8]').val());
+    var playerDRB8 = parseInt($('[name=playerDRB8]').val());
     var playerREB8 = playerORB8 + playerDRB8;
-    var playerPoints8 = $('[name=playerPoints8]').val();
-    var playerAST8 = $('[name=playerAST8]').val();
-    var playerTO8 = $('[name=playerTO]8').val();
-    var playerBLK8 = $('[name=playerBLK8]').val();
-    var playerSTL8 = $('[name=playerSTL8]').val();
-    var playerPF8 = $('[name=playerPF]8').val();
-    var playerMIN8 = $('[name=playerMIN8]').val();
+    var playerPoints8 = parseInt($('[name=playerPoints8]').val());
+    var playerAST8 = parseInt($('[name=playerAST8]').val());
+    var playerTO8 = parseInt($('[name=playerTO]8').val());
+    var playerBLK8 = parseInt($('[name=playerBLK8]').val());
+    var playerSTL8 = parseInt($('[name=playerSTL8]').val());
+    var playerPF8 = parseInt($('[name=playerPF]8').val());
+    var playerMIN8 = parseInt($('[name=playerMIN8]').val());
 
     if($('.player8').val() != null && $('.player8').val() != ''){
       PlayerStats.insert({
@@ -593,6 +607,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player8').val('');
+
     var playerName9 = $('[name=playerName9]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -601,24 +617,24 @@ Template.statsInput.events({
     } else {
       var playerStarter9 = false;
     }
-    var playerFGM9 = $('[name=playerFGM9]').val();
-    var playerFGA9 = $('[name=playerFGA9]').val();
-    var player3PM9 = $('[name=player3PM9]').val();
-    var player3PA9 = $('[name=player3PA9]').val();
+    var playerFGM9 = parseInt($('[name=playerFGM9]').val());
+    var playerFGA9 = parseInt($('[name=playerFGA9]').val());
+    var player3PM9 = parseInt($('[name=player3PM9]').val());
+    var player3PA9 = parseInt($('[name=player3PA9]').val());
     var player2PM9 = playerFGM9 - player3PM9;
     var player2PA9 = playerFGA9 - player3PA9;
-    var playerFTM9 = $('[name=playerFTM9]').val();
-    var playerFTA9 = $('[name=playerFTA9]').val();
-    var playerORB9 = $('[name=playerORB9]').val();
-    var playerDRB9 = $('[name=playerDRB9]').val();
+    var playerFTM9 = parseInt($('[name=playerFTM9]').val());
+    var playerFTA9 = parseInt($('[name=playerFTA9]').val());
+    var playerORB9 = parseInt($('[name=playerORB9]').val());
+    var playerDRB9 = parseInt($('[name=playerDRB9]').val());
     var playerREB9 = playerORB9 + playerDRB9;
-    var playerPoints9 = $('[name=playerPoints9]').val();
-    var playerAST9 = $('[name=playerAST9]').val();
-    var playerTO9 = $('[name=playerTO]9').val();
-    var playerBLK9 = $('[name=playerBLK9]').val();
-    var playerSTL9 = $('[name=playerSTL9]').val();
-    var playerPF9 = $('[name=playerPF]9').val();
-    var playerMIN9 = $('[name=playerMIN9]').val();
+    var playerPoints9 = parseInt($('[name=playerPoints9]').val());
+    var playerAST9 = parseInt($('[name=playerAST9]').val());
+    var playerTO9 = parseInt($('[name=playerTO]9').val());
+    var playerBLK9 = parseInt($('[name=playerBLK9]').val());
+    var playerSTL9 = parseInt($('[name=playerSTL9]').val());
+    var playerPF9 = parseInt($('[name=playerPF]9').val());
+    var playerMIN9 = parseInt($('[name=playerMIN9]').val());
 
     if($('.player9').val() != null && $('.player9').val() != ''){
       PlayerStats.insert({
@@ -647,6 +663,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player9').val('');
+
     var playerName10 = $('[name=playerName10]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -655,24 +673,24 @@ Template.statsInput.events({
     } else {
       var playerStarter10 = false;
     }
-    var playerFGM10 = $('[name=playerFGM10]').val();
-    var playerFGA10 = $('[name=playerFGA10]').val();
-    var player3PM10 = $('[name=player3PM10]').val();
-    var player3PA10 = $('[name=player3PA10]').val();
+    var playerFGM10 = parseInt($('[name=playerFGM10]').val());
+    var playerFGA10 = parseInt($('[name=playerFGA10]').val());
+    var player3PM10 = parseInt($('[name=player3PM10]').val());
+    var player3PA10 = parseInt($('[name=player3PA10]').val());
     var player2PM10 = playerFGM10 - player3PM10;
     var player2PA10 = playerFGA10 - player3PA10;
-    var playerFTM10 = $('[name=playerFTM10]').val();
-    var playerFTA10 = $('[name=playerFTA10]').val();
-    var playerORB10 = $('[name=playerORB10]').val();
-    var playerDRB10 = $('[name=playerDRB10]').val();
+    var playerFTM10 = parseInt($('[name=playerFTM10]').val());
+    var playerFTA10 = parseInt($('[name=playerFTA10]').val());
+    var playerORB10 = parseInt($('[name=playerORB10]').val());
+    var playerDRB10 = parseInt($('[name=playerDRB10]').val());
     var playerREB10 = playerORB10 + playerDRB10;
-    var playerPoints10 = $('[name=playerPoints10]').val();
-    var playerAST10 = $('[name=playerAST10]').val();
-    var playerTO10 = $('[name=playerTO]10').val();
-    var playerBLK10 = $('[name=playerBLK10]').val();
-    var playerSTL10 = $('[name=playerSTL10]').val();
-    var playerPF10 = $('[name=playerPF]10').val();
-    var playerMIN10 = $('[name=playerMIN10]').val();
+    var playerPoints10 = parseInt($('[name=playerPoints10]').val());
+    var playerAST10 = parseInt($('[name=playerAST10]').val());
+    var playerTO10 = parseInt($('[name=playerTO]10').val());
+    var playerBLK10 = parseInt($('[name=playerBLK10]').val());
+    var playerSTL10 = parseInt($('[name=playerSTL10]').val());
+    var playerPF10 = parseInt($('[name=playerPF]10').val());
+    var playerMIN10 = parseInt($('[name=playerMIN10]').val());
 
     if($('.player10').val() != null && $('.player10').val() != ''){
       PlayerStats.insert({
@@ -701,6 +719,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player10').val('');
+
     var playerName11 = $('[name=playerName11]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -709,24 +729,24 @@ Template.statsInput.events({
     } else {
       var playerStarter11 = false;
     }
-    var playerFGM11 = $('[name=playerFGM11]').val();
-    var playerFGA11 = $('[name=playerFGA11]').val();
-    var player3PM11 = $('[name=player3PM11]').val();
-    var player3PA11 = $('[name=player3PA11]').val();
+    var playerFGM11 = parseInt($('[name=playerFGM11]').val());
+    var playerFGA11 = parseInt($('[name=playerFGA11]').val());
+    var player3PM11 = parseInt($('[name=player3PM11]').val());
+    var player3PA11 = parseInt($('[name=player3PA11]').val());
     var player2PM11 = playerFGM11 - player3PM11;
     var player2PA11 = playerFGA11 - player3PA11;
-    var playerFTM11 = $('[name=playerFTM11]').val();
-    var playerFTA11 = $('[name=playerFTA11]').val();
-    var playerORB11 = $('[name=playerORB11]').val();
-    var playerDRB11 = $('[name=playerDRB11]').val();
+    var playerFTM11 = parseInt($('[name=playerFTM11]').val());
+    var playerFTA11 = parseInt($('[name=playerFTA11]').val());
+    var playerORB11 = parseInt($('[name=playerORB11]').val());
+    var playerDRB11 = parseInt($('[name=playerDRB11]').val());
     var playerREB11 = playerORB11 + playerDRB11;
-    var playerPoints11 = $('[name=playerPoints11]').val();
-    var playerAST11 = $('[name=playerAST11]').val();
-    var playerTO11 = $('[name=playerTO]11').val();
-    var playerBLK11 = $('[name=playerBLK11]').val();
-    var playerSTL11 = $('[name=playerSTL11]').val();
-    var playerPF11 = $('[name=playerPF]11').val();
-    var playerMIN11 = $('[name=playerMIN11]').val();
+    var playerPoints11 = parseInt($('[name=playerPoints11]').val());
+    var playerAST11 = parseInt($('[name=playerAST11]').val());
+    var playerTO11 = parseInt($('[name=playerTO]11').val());
+    var playerBLK11 = parseInt($('[name=playerBLK11]').val());
+    var playerSTL11 = parseInt($('[name=playerSTL11]').val());
+    var playerPF11 = parseInt($('[name=playerPF]11').val());
+    var playerMIN11 = parseInt($('[name=playerMIN11]').val());
 
     if($('.player11').val() != null && $('.player11').val() != ''){
       PlayerStats.insert({
@@ -755,6 +775,8 @@ Template.statsInput.events({
       });
     }
 
+    $('.player11').val('');
+
     var playerName12 = $('[name=playerName12]').val();
     var playerDate = date;
     var playerOpponent = opponent;
@@ -763,24 +785,24 @@ Template.statsInput.events({
     } else {
       var playerStarter12 = false;
     }
-    var playerFGM12 = $('[name=playerFGM12]').val();
-    var playerFGA12 = $('[name=playerFGA12]').val();
-    var player3PM12 = $('[name=player3PM12]').val();
-    var player3PA12 = $('[name=player3PA12]').val();
+    var playerFGM12 = parseInt($('[name=playerFGM12]').val());
+    var playerFGA12 = parseInt($('[name=playerFGA12]').val());
+    var player3PM12 = parseInt($('[name=player3PM12]').val());
+    var player3PA12 = parseInt($('[name=player3PA12]').val());
     var player2PM12 = playerFGM12 - player3PM12;
     var player2PA12 = playerFGA12 - player3PA12;
-    var playerFTM12 = $('[name=playerFTM12]').val();
-    var playerFTA12 = $('[name=playerFTA12]').val();
-    var playerORB12 = $('[name=playerORB12]').val();
-    var playerDRB12 = $('[name=playerDRB12]').val();
+    var playerFTM12 = parseInt($('[name=playerFTM12]').val());
+    var playerFTA12 = parseInt($('[name=playerFTA12]').val());
+    var playerORB12 = parseInt($('[name=playerORB12]').val());
+    var playerDRB12 = parseInt($('[name=playerDRB12]').val());
     var playerREB12 = playerORB12 + playerDRB12;
-    var playerPoints12 = $('[name=playerPoints12]').val();
-    var playerAST12 = $('[name=playerAST12]').val();
-    var playerTO12 = $('[name=playerTO]12').val();
-    var playerBLK12 = $('[name=playerBLK12]').val();
-    var playerSTL12 = $('[name=playerSTL12]').val();
-    var playerPF12 = $('[name=playerPF]12').val();
-    var playerMIN12 = $('[name=playerMIN12]').val();
+    var playerPoints12 = parseInt($('[name=playerPoints12]').val());
+    var playerAST12 = parseInt($('[name=playerAST12]').val());
+    var playerTO12 = parseInt($('[name=playerTO]12').val());
+    var playerBLK12 = parseInt($('[name=playerBLK12]').val());
+    var playerSTL12 = parseInt($('[name=playerSTL12]').val());
+    var playerPF12 = parseInt($('[name=playerPF]12').val());
+    var playerMIN12 = parseInt($('[name=playerMIN12]').val());
 
     if($('.player12').val() != null && $('.player12').val() != ''){
       PlayerStats.insert({
@@ -808,5 +830,7 @@ Template.statsInput.events({
         playerMIN: playerMIN12
       });
     }
+
+    $('.player12').val('');
   }
 });
