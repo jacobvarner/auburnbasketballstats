@@ -2,7 +2,12 @@
   <h2>Players</h2>
   <ul>
     {{#each playerList}}
-      <li>{{this}}</li>
+      <li><a href="{{pathFor route='playerPage'}}">{{this.name}}</a></li>
     {{/each}}
   </ul>
+</template>
+
+<template name="playerPage">
+  <h3>{{getName}}'s Stats</h3>
+  <p>{{ppg}} Points Per Game</p>
 </template>
