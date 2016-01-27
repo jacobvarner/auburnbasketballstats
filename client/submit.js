@@ -5,7 +5,7 @@ Template.statsInput.events({
     event.preventDefault();
 
     var opponent = $('[name=opponent]').val();
-    var date = $('[name=date]').val();
+    var date = new Date($('[name=date]').val());
     var location = $('[name=location]').val();
     var attendance = parseInt($('[name=attendance]').val());
 
