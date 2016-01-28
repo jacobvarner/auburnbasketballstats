@@ -8,6 +8,23 @@
 </template>
 
 <template name="playerPage">
-  <h3>{{getName}}'s Stats</h3>
-  <p>{{ppg}} Points Per Game</p>
+  <h3>{{name}}'s Stats</h3>
+  <select name="span">
+    <option value="0">Entire Season</option>
+    <option value="3">Past 3 Games</option>
+    <option value="5">Past 5 Games</option>
+    <option value="10">Past 10 Games</option>
+  </select>
+  <div>
+    <p class="main">{{ppg}} PPG</p>
+    <p>{{points}} Points</p>
+  </div>
+  <div>
+    <p class="main">{{rpg}} RPG</p>
+    <p>{{rebounds}} Rebounds</p>
+  </div>
+  <div>
+    <p class="main">{{apg}} APG</p>
+    <p>{{assists}} Assists</p>
+  </div>
 </template>

@@ -27,8 +27,15 @@ Template.player.helpers({
 });
 
 Template.playerPage.helpers({
-  'getName': function() {
+  'name': function() {
     return this[0].playerName;
+  },
+  'points': function() {
+    var total = 0;
+    for (i = 0; i < this.length; i++) {
+      total += this[i].playerPoints;
+    };
+    return total;
   },
   'ppg': function() {
     var total = 0;
@@ -38,6 +45,38 @@ Template.playerPage.helpers({
     var ppg = total / (this.length);
     var output = (Math.round(ppg * 10) / 10).toFixed(1);
     return output;
-
+  },
+  'rebounds': function() {
+    var total = 0;
+    for (i = 0; i < this.length; i++) {
+      total += this[i].playerREB;
+    }
+    return total;
+  },
+  'rpg': function() {
+    var total = 0;
+    for (i = 0; i < this.length; i++) {
+      total += this[i].playerREB;
+    }
+    var rpg = total / this.length;
+    var output = (Math.round(rpg * 10) / 10).toFixed(1);
+    return output;
+  },
+  'assists': function() {
+    var total = 0;
+    for (i = 0; i < this.length; i++) {
+      total += this[i].playerAST;
+    }
+    return total;
+  },
+  'apg': function() {
+    var total = 0;
+    for (i = 0; i < this.length; i++) {
+      total += this[i].playerAST;
+    }
+    var apg = total / this.length;
+    var output = (Math.round(apg * 10) / 10).toFixed(1);
+    return output;
   }
+
 });
