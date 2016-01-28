@@ -9,11 +9,17 @@
 
 <template name="playerPage">
   <h3>{{name}}'s Stats</h3>
-  <select name="span">
+  <select class="span">
     <option value="0">Entire Season</option>
-    <option value="3">Past 3 Games</option>
-    <option value="5">Past 5 Games</option>
-    <option value="10">Past 10 Games</option>
+    {{#if season3}}
+      <option value="3">Past 3 Games</option>
+    {{/if}}
+    {{#if season5}}
+      <option value="5">Past 5 Games</option>
+    {{/if}}
+    {{#if season10}}
+      <option value="10">Past 10 Games</option>
+    {{/if}}
   </select>
   <div>
     <p class="main">{{ppg}} PPG</p>
