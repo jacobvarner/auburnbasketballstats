@@ -22,16 +22,76 @@
     {{/if}}
   </select>
   <div>
-    <p class="main">{{ppg}} PPG</p>
-    <p>{{points}} Points</p>
+    <p class="main">{{ppg}}</p>
+    <p class="label">PPG</p>
+    <p class="secondary">{{points}}</p>
+    <p class="secondaryLabel">PTS</p>
   </div>
   <div>
-    <p class="main">{{rpg}} RPG</p>
-    <p>{{rebounds}} Rebounds</p>
+    <p class="main">{{rpg}}</p>
+    <p class="label">RPG</p>
+    <p class="secondary">{{rebounds}}</p>
+    <p class="secondaryLabel">REB</p>
   </div>
   <div>
-    <p class="main">{{apg}} APG</p>
-    <p>{{assists}} Assists</p>
+    <p class="main">{{apg}}</p>
+    <p class="label">APG</p>
+    <p class="secondary">{{assists}}</p>
+    <p class="secondaryLabel">AST</p>
+  </div>
+  <div>
+    <p class="main">{{fgp}}%</p>
+    <p class="label">FG%</p>
+    <p class="secondary">{{fgm}}-{{fga}}</p>
+    <p class="secondaryLabel">FGM/A</p>
+  </div>
+  <div>
+    <p class="main">{{threepp}}%</p>
+    <p class="label">3P%</p>
+    <p class="secondary">{{threepm}}-{{threepa}}</p>
+    <p class="secondaryLabel">3PM/A</p>
+  </div>
+  <div>
+    <p class="main">{{twopp}}%</p>
+    <p class="label">2P%</p>
+    <p class="secondary">{{twopm}}-{{twopa}}</p>
+    <p class="secondaryLabel">2PM/A</p>
+  </div>
+  <div>
+    <p class="main">{{ftp}}</p>
+    <p class="label">FT%</p>
+    <p class="secondary">{{ftm}}-{{fta}}</p>
+    <p class="secondaryLabel">FTM/A</p>
+  </div>
+  <div>
+    <p class="main">{{bpg}}</p>
+    <p class="label">BPG</p>
+    <p class="secondary">{{blocks}}</p>
+    <p class="secondaryLabel">BLK</p>
+  </div>
+  <div>
+    <p class="main">{{spg}}</p>
+    <p class="label">SPG</p>
+    <p class="secondary">{{steals}}</p>
+    <p class="secondaryLabel">STL</p>
+  </div>
+  <div>
+    <p class="main">{{topg}}</p>
+    <p class="label">TOPG</p>
+    <p class="secondary">{{turnovers}}</p>
+    <p class="secondaryLabel">TO</p>
+  </div>
+  <div>
+    <p class="main">{{pfpg}}</p>
+    <p class="label">PFPG</p>
+    <p class="secondary">{{fouls}}</p>
+    <p class="secondaryLabel">PF</p>
+  </div>
+  <div>
+    <p class="main">{{mpg}}</p>
+    <p class="label">MPG</p>
+    <p class="secondary">{{minutes}}</p>
+    <p class="secondaryLabel">MIN</p>
   </div>
   <hr />
   {{> games}}

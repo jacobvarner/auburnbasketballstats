@@ -154,6 +154,360 @@ Template.playerPage.helpers({
     var apg = total / this.length;
     var output = (Math.round(apg * 10) / 10).toFixed(1);
     return output;
+  },
+  'fgp': function() {
+    var total1 = 0;
+    var total2 = 0
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total1 += this[i].playerFGM;
+        total2 += this[i].playerFGA;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total1 += this[i].playerFGM;
+        total1 += this[i].playerFGA;
+      }
+    }
+    var percent = ((total1 / total2) * 100).toFixed(1);
+    return percent;
+  },
+  'fgm': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerFGM;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerFGM;
+      }
+    }
+    return total;
+  },
+  'fga': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerFGA;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerFGA;
+      }
+    }
+    return total;
+  },
+  'threepp': function() {
+    var total1 = 0;
+    var total2 = 0
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total1 += this[i].player3PM;
+        total2 += this[i].player3PA;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total1 += this[i].player3PM;
+        total1 += this[i].player3PA;
+      }
+    }
+    var percent = ((total1 / total2) * 100).toFixed(1);
+    return percent;
+  },
+  'threepm': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].player3PM;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].player3PM;
+      }
+    }
+    return total;
+  },
+  'threepa': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].player3PA;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].player3PA;
+      }
+    }
+    return total;
+  },
+  'twopp': function() {
+    var total1 = 0;
+    var total2 = 0
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total1 += this[i].player2PM;
+        total2 += this[i].player2PA;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total1 += this[i].player2PM;
+        total1 += this[i].player2PA;
+      }
+    }
+    var percent = ((total1 / total2) * 100).toFixed(1);
+    return percent;
+  },
+  'twopm': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].player2PM;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].player2PM;
+      }
+    }
+    return total;
+  },
+  'twopa': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].player2PA;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].player2PA;
+      }
+    }
+    return total;
+  },
+  'ftp': function() {
+    var total1 = 0;
+    var total2 = 0
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total1 += this[i].playerFTM;
+        total2 += this[i].playerFTA;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total1 += this[i].playerFTM;
+        total1 += this[i].playerFTA;
+      }
+    }
+    var percent = ((total1 / total2) * 100).toFixed(1);
+    return percent;
+  },
+  'ftm': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerFTM;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerFTM;
+      }
+    }
+    return total;
+  },
+  'fta': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerFTA;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerFTA;
+      }
+    }
+    return total;
+  },
+  'blocks': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerBLK;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerBLK;
+      }
+    }
+    return total;
+  },
+  'bpg': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerBLK;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerBLK;
+      }
+    }
+    if (total === 0) {
+      var output = 0.0;
+      return output;
+    }
+    var rate = total / (this.length);
+    var output = (Math.round(rate * 10) / 10).toFixed(1);
+    return output;
+  },
+  'steals': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerSTL;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerSTL;
+      }
+    }
+    return total;
+  },
+  'spg': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerSTL;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerSTL;
+      }
+    }
+    if (total === 0) {
+      var output = 0.0;
+      return output;
+    }
+    var rate = total / (this.length);
+    var output = (Math.round(rate * 10) / 10).toFixed(1);
+    return output;
+  },
+  'turnovers': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerTO;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerTO;
+      }
+    }
+    return total;
+  },
+  'topg': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerTO;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerTO;
+      }
+    }
+    if (total === 0) {
+      var output = 0.0;
+      return output;
+    }
+    var rate = total / (this.length);
+    var output = (Math.round(rate * 10) / 10).toFixed(1);
+    return output;
+  },
+  'fouls': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerPF;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerPF;
+      }
+    }
+    return total;
+  },
+  'pfpg': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerPF;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerPF;
+      }
+    }
+    if (total === 0) {
+      var output = 0.0;
+      return output;
+    }
+    var rate = total / (this.length);
+    var output = (Math.round(rate * 10) / 10).toFixed(1);
+    return output;
+  },
+  'minutes': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerMIN;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerMIN;
+      }
+    }
+    return total;
+  },
+  'mpg': function() {
+    var total = 0;
+    var span = Session.get('span');
+    if (span === 0) {
+      for (i = 0; i < this.length; i++) {
+        total += this[i].playerMIN;
+      }
+    } else {
+      for (i = (this.length - span); i < this.length; i++) {
+        total += this[i].playerMIN;
+      }
+    }
+    if (total === 0) {
+      var output = 0.0;
+      return output;
+    }
+    var rate = total / (this.length);
+    var output = (Math.round(rate * 10) / 10).toFixed(1);
+    return output;
   }
 
 });
@@ -168,7 +522,7 @@ Template.games.helpers({
     var d = this.playerDate;
     var month = d.getUTCMonth() + 1;
     var day = d.getUTCDate();
-    var year = d.getFullYear();
+    var year = d.getUTCFullYear();
     var output = month + "/" + day + "/" + year;
     return output;
   }
