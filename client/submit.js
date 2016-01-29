@@ -1,5 +1,43 @@
 Router.route('/submit');
 
+Router.route('/submit/team', {
+  name: 'teamInput',
+  template: 'teamInput'
+});
+Router.route('/submit/game', {
+  name: 'statsInput',
+  template: 'statsInput'
+});
+
+Template.teamInput.events({
+  'submit form': function(event){
+    event.preventDefault();
+
+    PlayerInfo.insert({
+      season: $('[name=season]').val(),
+      name: $('[name=name]').val(),
+      number: parseInt($('[name=number]').val()),
+      position: $('[name=position]').val(),
+      height: $('[name=height]').val(),
+      weight: $('[name=weight]').val(),
+      class: $('[name=class]').val(),
+      transfer: $('[name=transfer]').val(),
+      hometown: $('[name=hometown]').val(),
+      lastSchool: $('[name=lastSchool]').val()
+    });
+
+    $('.addPlayer').val('');
+  }
+});
+
+Template.teamInput.helpers({
+  'currentTeam': function(){
+    var season = "2015-2016";
+    var output = PlayerInfo.find({ season: season}, {sort: { number: 1 }}).fetch();
+    return output;
+  }
+});
+
 Template.statsInput.events({
   'submit form': function(event){
     event.preventDefault();

@@ -1,9 +1,64 @@
 <template name="submit">
-  <h2>Submit Game</h2>
-  {{> statsInput}}
+  <a href="{{pathFor route='statsInput'}}">Submit Game</a><br/>
+  <a href="{{pathFor route='teamInput'}}">Submit Team</a>
+</template>
+
+<template name="teamInput">
+  <h2>Team Info</h2>
+  <p>Add Player</p>
+  <form class="addPlayer">
+    Season: <input type="text" name="season" placeholder="2015-2016" size="9" />&nbsp;
+    Player Name:&nbsp;<input type="text" name="name" size="30" /> &nbsp;
+    Number:&nbsp;<input type="text" name="number" size="2" /> &nbsp;
+    Position:&nbsp;<input type="text" name="position" placeholder="PG" size="4"/> &nbsp;
+    Height:&nbsp;<input type="text" name="height" placeholder="6&#39;2&#34;" size="5"/> &nbsp;
+    Weight:&nbsp;<input type="text" name="weight" size="3"/> &nbsp;
+    Class:&nbsp;
+    <select name="class">
+      <option value="Freshman">Freshman</option>
+      <option value="Sophomore">Sophomore</option>
+      <option value="Junior">Junior</option>
+      <option value="Senior">Senior</option>
+      <option value="Graduate">Graduate</option>
+    </select>
+    Transfer:&nbsp;<input type="checkbox" name="transfer" /> &nbsp;
+    Hometown:&nbsp;<input type="text" name="hometown" size="20"/> &nbsp;
+    Last School:&nbsp;<input type="text" name="lastSchool" size="30"/>
+    <input type="submit" value="Submit" />
+  </form>
+  <hr />
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Pos.</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Hometown</th>
+        <th>Last School</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each currentTeam}}
+        <tr>
+          <td>{{this.number}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.class}}</td>
+          <td>{{this.position}}</td>
+          <td>{{this.height}}</td>
+          <td>{{this.weight}}</td>
+          <td>{{this.hometown}}</td>
+          <td>{{this.lastSchool}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </template>
 
 <template name="statsInput">
+  <h2>Submit Game</h2>
   <form class="statsInput">
     Opponent: <input type="text" class="game" name="opponent" /> &nbsp;
     Date: <input type="date" class="game" name="date" /> &nbsp;

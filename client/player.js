@@ -16,14 +16,10 @@ Router.route('/player/:link', {
 
 Template.player.helpers({
   'playerList': function(){
-    var startDate = new Date(2015, 9, 1);
-    var endDate = new Date(2016, 9, 1);
-    var players = PlayerStats.find({playerDate: {$gte: startDate, $lt: endDate}}, {fields: { playerName: 1 }}).fetch();
-    var uniquePlayers = _.uniq(players, false, function(d){return d.playerName});
-    var playerStrings = _.pluck(uniquePlayers, 'playerName');
+    var playerStrings = PlayerInfo.find({ season: "2015-2016" }, {fields: {name: 1}}).fetch();
     var playersList = [];
     for(i = 0; i < playerStrings.length; i++) {
-      playersList.push({name: playerStrings[i], link: playerStrings[i].replace(" ", "+")});
+      playersList.push({name: playerStrings[i].name, link: playerStrings[i].name.replace(" ", "+")});
     }
     return playersList;
   }
@@ -83,6 +79,10 @@ Template.playerPage.helpers({
         total += this[i].playerPoints;
       }
     }
+    if (total === 0) {
+      var output = 0.0;
+      return output;
+    }
     var ppg = total / (this.length);
     var output = (Math.round(ppg * 10) / 10).toFixed(1);
     return output;
@@ -112,6 +112,10 @@ Template.playerPage.helpers({
       for (i = (this.length - span); i < this.length; i++) {
         total += this[i].playerREB;
       }
+    }
+    if (total === 0) {
+      var output = 0.0;
+      return output;
     }
     var rpg = total / this.length;
     var output = (Math.round(rpg * 10) / 10).toFixed(1);
@@ -143,6 +147,10 @@ Template.playerPage.helpers({
         total += this[i].playerAST;
       }
     }
+    if (total === 0) {
+      var output = 0.0;
+      return output;
+    }
     var apg = total / this.length;
     var output = (Math.round(apg * 10) / 10).toFixed(1);
     return output;
@@ -160,7 +168,7 @@ Template.games.helpers({
     var d = this.playerDate;
     var month = d.getUTCMonth() + 1;
     var day = d.getUTCDate();
-    var year = d.getUTCFullYear();
+    var year = d.getFullYear();
     var output = month + "/" + day + "/" + year;
     return output;
   }
