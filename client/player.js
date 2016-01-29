@@ -8,6 +8,7 @@ Router.route('/player/:link', {
   data: function(){
     var linkName = this.params.link;
     var stringName = linkName.replace("+", " ");
+    Session.set('currentPlayer', stringName);
     var playerStats = PlayerStats.find({playerName: stringName}).fetch();
     return playerStats;
   }
@@ -147,6 +148,22 @@ Template.playerPage.helpers({
     return output;
   }
 
+});
+
+Template.games.helpers({
+  'playerGames': function() {
+    var currentPlayer = Session.get('currentPlayer');
+    var games = PlayerStats.find({ playerName: currentPlayer }, {sort: { playerDate: -1 }});
+    return games;
+  },
+  'getDate': function(){
+    var d = this.playerDate;
+    var month = d.getUTCMonth() + 1;
+    var day = d.getUTCDate();
+    var year = d.getUTCFullYear();
+    var output = month + "/" + day + "/" + year;
+    return output;
+  }
 });
 
 Template.playerPage.events({

@@ -182,10 +182,10 @@ Template.statsInput.events({
     var playerREB1 = playerORB1 + playerDRB1;
     var playerPoints1 = parseInt($('[name=playerPoints1]').val());
     var playerAST1 = parseInt($('[name=playerAST1]').val());
-    var playerTO1 = parseInt($('[name=playerTO]1').val());
+    var playerTO1 = parseInt($('[name=playerTO1]').val());
     var playerBLK1 = parseInt($('[name=playerBLK1]').val());
     var playerSTL1 = parseInt($('[name=playerSTL1]').val());
-    var playerPF1 = parseInt($('[name=playerPF]1').val());
+    var playerPF1 = parseInt($('[name=playerPF1]').val());
     var playerMIN1 = parseInt($('[name=playerMIN1]').val());
 
     if($('.player1').val() != null && $('.player1').val() != ''){
@@ -238,10 +238,10 @@ Template.statsInput.events({
     var playerREB2 = playerORB2 + playerDRB2;
     var playerPoints2 = parseInt($('[name=playerPoints2]').val());
     var playerAST2 = parseInt($('[name=playerAST2]').val());
-    var playerTO2 = parseInt($('[name=playerTO]2').val());
+    var playerTO2 = parseInt($('[name=playerTO2]').val());
     var playerBLK2 = parseInt($('[name=playerBLK2]').val());
     var playerSTL2 = parseInt($('[name=playerSTL2]').val());
-    var playerPF2 = parseInt($('[name=playerPF]2').val());
+    var playerPF2 = parseInt($('[name=playerPF2]').val());
     var playerMIN2 = parseInt($('[name=playerMIN2]').val());
 
     if($('.player2').val() != null && $('.player2').val() != ''){
@@ -294,10 +294,10 @@ Template.statsInput.events({
     var playerREB3 = playerORB3 + playerDRB3;
     var playerPoints3 = parseInt($('[name=playerPoints3]').val());
     var playerAST3 = parseInt($('[name=playerAST3]').val());
-    var playerTO3 = parseInt($('[name=playerTO]3').val());
+    var playerTO3 = parseInt($('[name=playerTO3]').val());
     var playerBLK3 = parseInt($('[name=playerBLK3]').val());
     var playerSTL3 = parseInt($('[name=playerSTL3]').val());
-    var playerPF3 = parseInt($('[name=playerPF]3').val());
+    var playerPF3 = parseInt($('[name=playerPF3]').val());
     var playerMIN3 = parseInt($('[name=playerMIN3]').val());
 
     if($('.player3').val() != null && $('.player3').val() != ''){
@@ -350,10 +350,10 @@ Template.statsInput.events({
     var playerREB4 = playerORB4 + playerDRB4;
     var playerPoints4 = parseInt($('[name=playerPoints4]').val());
     var playerAST4 = parseInt($('[name=playerAST4]').val());
-    var playerTO4 = parseInt($('[name=playerTO]4').val());
+    var playerTO4 = parseInt($('[name=playerTO4]').val());
     var playerBLK4 = parseInt($('[name=playerBLK4]').val());
     var playerSTL4 = parseInt($('[name=playerSTL4]').val());
-    var playerPF4 = parseInt($('[name=playerPF]4').val());
+    var playerPF4 = parseInt($('[name=playerPF4]').val());
     var playerMIN4 = parseInt($('[name=playerMIN4]').val());
 
     if($('.player4').val() != null && $('.player4').val() != ''){
@@ -406,10 +406,10 @@ Template.statsInput.events({
     var playerREB5 = playerORB5 + playerDRB5;
     var playerPoints5 = parseInt($('[name=playerPoints5]').val());
     var playerAST5 = parseInt($('[name=playerAST5]').val());
-    var playerTO5 = parseInt($('[name=playerTO]5').val());
+    var playerTO5 = parseInt($('[name=playerTO5]').val());
     var playerBLK5 = parseInt($('[name=playerBLK5]').val());
     var playerSTL5 = parseInt($('[name=playerSTL5]').val());
-    var playerPF5 = parseInt($('[name=playerPF]5').val());
+    var playerPF5 = parseInt($('[name=playerPF5]').val());
     var playerMIN5 = parseInt($('[name=playerMIN5]').val());
 
     if($('.player5').val() != null && $('.player5').val() != ''){
@@ -462,10 +462,10 @@ Template.statsInput.events({
     var playerREB6 = playerORB6 + playerDRB6;
     var playerPoints6 = parseInt($('[name=playerPoints6]').val());
     var playerAST6 = parseInt($('[name=playerAST6]').val());
-    var playerTO6 = parseInt($('[name=playerTO]6').val());
+    var playerTO6 = parseInt($('[name=playerTO6]').val());
     var playerBLK6 = parseInt($('[name=playerBLK6]').val());
     var playerSTL6 = parseInt($('[name=playerSTL6]').val());
-    var playerPF6 = parseInt($('[name=playerPF]6').val());
+    var playerPF6 = parseInt($('[name=playerPF6]').val());
     var playerMIN6 = parseInt($('[name=playerMIN6]').val());
 
     if($('.player6').val() != null && $('.player6').val() != ''){
@@ -518,10 +518,10 @@ Template.statsInput.events({
     var playerREB7 = playerORB7 + playerDRB7;
     var playerPoints7 = parseInt($('[name=playerPoints7]').val());
     var playerAST7 = parseInt($('[name=playerAST7]').val());
-    var playerTO7 = parseInt($('[name=playerTO]7').val());
+    var playerTO7 = parseInt($('[name=playerTO7]').val());
     var playerBLK7 = parseInt($('[name=playerBLK7]').val());
     var playerSTL7 = parseInt($('[name=playerSTL7]').val());
-    var playerPF7 = parseInt($('[name=playerPF]7').val());
+    var playerPF7 = parseInt($('[name=playerPF7]').val());
     var playerMIN7 = parseInt($('[name=playerMIN7]').val());
 
     if($('.player7').val() != null && $('.player7').val() != ''){
@@ -574,10 +574,10 @@ Template.statsInput.events({
     var playerREB8 = playerORB8 + playerDRB8;
     var playerPoints8 = parseInt($('[name=playerPoints8]').val());
     var playerAST8 = parseInt($('[name=playerAST8]').val());
-    var playerTO8 = parseInt($('[name=playerTO]8').val());
+    var playerTO8 = parseInt($('[name=playerTO8]').val());
     var playerBLK8 = parseInt($('[name=playerBLK8]').val());
     var playerSTL8 = parseInt($('[name=playerSTL8]').val());
-    var playerPF8 = parseInt($('[name=playerPF]8').val());
+    var playerPF8 = parseInt($('[name=playerPF8]').val());
     var playerMIN8 = parseInt($('[name=playerMIN8]').val());
 
     if($('.player8').val() != null && $('.player8').val() != ''){
@@ -630,10 +630,10 @@ Template.statsInput.events({
     var playerREB9 = playerORB9 + playerDRB9;
     var playerPoints9 = parseInt($('[name=playerPoints9]').val());
     var playerAST9 = parseInt($('[name=playerAST9]').val());
-    var playerTO9 = parseInt($('[name=playerTO]9').val());
+    var playerTO9 = parseInt($('[name=playerTO9]').val());
     var playerBLK9 = parseInt($('[name=playerBLK9]').val());
     var playerSTL9 = parseInt($('[name=playerSTL9]').val());
-    var playerPF9 = parseInt($('[name=playerPF]9').val());
+    var playerPF9 = parseInt($('[name=playerPF9]').val());
     var playerMIN9 = parseInt($('[name=playerMIN9]').val());
 
     if($('.player9').val() != null && $('.player9').val() != ''){
@@ -686,10 +686,10 @@ Template.statsInput.events({
     var playerREB10 = playerORB10 + playerDRB10;
     var playerPoints10 = parseInt($('[name=playerPoints10]').val());
     var playerAST10 = parseInt($('[name=playerAST10]').val());
-    var playerTO10 = parseInt($('[name=playerTO]10').val());
+    var playerTO10 = parseInt($('[name=playerTO10]').val());
     var playerBLK10 = parseInt($('[name=playerBLK10]').val());
     var playerSTL10 = parseInt($('[name=playerSTL10]').val());
-    var playerPF10 = parseInt($('[name=playerPF]10').val());
+    var playerPF10 = parseInt($('[name=playerPF10]').val());
     var playerMIN10 = parseInt($('[name=playerMIN10]').val());
 
     if($('.player10').val() != null && $('.player10').val() != ''){
@@ -742,10 +742,10 @@ Template.statsInput.events({
     var playerREB11 = playerORB11 + playerDRB11;
     var playerPoints11 = parseInt($('[name=playerPoints11]').val());
     var playerAST11 = parseInt($('[name=playerAST11]').val());
-    var playerTO11 = parseInt($('[name=playerTO]11').val());
+    var playerTO11 = parseInt($('[name=playerTO11]').val());
     var playerBLK11 = parseInt($('[name=playerBLK11]').val());
     var playerSTL11 = parseInt($('[name=playerSTL11]').val());
-    var playerPF11 = parseInt($('[name=playerPF]11').val());
+    var playerPF11 = parseInt($('[name=playerPF11]').val());
     var playerMIN11 = parseInt($('[name=playerMIN11]').val());
 
     if($('.player11').val() != null && $('.player11').val() != ''){
@@ -798,10 +798,10 @@ Template.statsInput.events({
     var playerREB12 = playerORB12 + playerDRB12;
     var playerPoints12 = parseInt($('[name=playerPoints12]').val());
     var playerAST12 = parseInt($('[name=playerAST12]').val());
-    var playerTO12 = parseInt($('[name=playerTO]12').val());
+    var playerTO12 = parseInt($('[name=playerTO12]').val());
     var playerBLK12 = parseInt($('[name=playerBLK12]').val());
     var playerSTL12 = parseInt($('[name=playerSTL12]').val());
-    var playerPF12 = parseInt($('[name=playerPF]12').val());
+    var playerPF12 = parseInt($('[name=playerPF12]').val());
     var playerMIN12 = parseInt($('[name=playerMIN12]').val());
 
     if($('.player12').val() != null && $('.player12').val() != ''){
