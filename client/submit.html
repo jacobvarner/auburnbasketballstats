@@ -1,6 +1,7 @@
 <template name="submit">
   <a href="{{pathFor route='statsInput'}}">Submit Game</a><br/>
-  <a href="{{pathFor route='teamInput'}}">Submit Team</a>
+  <a href="{{pathFor route='teamInput'}}">Submit Team</a><br/>
+  <a href="{{pathFor route='recordInput'}}">Submit Records</a>
 </template>
 
 <template name="teamInput">
@@ -51,6 +52,53 @@
           <td>{{this.weight}}</td>
           <td>{{this.hometown}}</td>
           <td>{{this.lastSchool}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="recordInput">
+  <h2>Submit Records</h2>
+  <form class="recordInput">
+    <select class="category" name="category">
+      <option value="Points">Points</option>
+      <option value="Scoring Average">Scoring Average</option>
+      <option value="Rebounds">Rebounds</option>
+      <option value="Rebound Average">Rebound Average</option>
+      <option value="Field Goals Made">Field Goals Made</option>
+      <option value="Field Goals Attempted">Field Goals Attempted</option>
+      <option value="Field Goal Percentage">Field Goal Percentage</option>
+      <option value="3pt Field Goals Made">3pt Field Goals Made</option>
+      <option value="3pt Field Goals Attempted">3pt Field Goals Attempted</option>
+      <option value="3pt Field Goal Percentage">3pt Field Goal Percentage</option>
+      <option value="Free Throws Made">Free Throws Made</option>
+      <option value="Free Throws Attempted">Free Throws Attempted</option>
+      <option value="Free Throw Percentage">Free Throw Percentage</option>
+      <option value="Assists">Assists</option>
+      <option value="Blocks">Blocks</option>
+      <option value="Steals">Steals</option>
+    </select>
+    <select class="duration" name="duration">
+      <option value="Career">Career</option>
+      <option value="Season">Season</option>
+    </select><br/><br/>
+    Rank: <input type="number" name="rank" min="0" max="99" />
+    Player: <input type="text" name="player" size="30" />
+    Season: <input type="text" name="season" size="10" />
+    Value: <input type="text" name="value" size="6" />
+    <input type="submit" value="Add" />
+  </form>
+  <hr />
+  <h3>{{recordTitle}}</h3>
+  <table>
+    <tbody>
+      {{#each recordTable}}
+        <tr>
+          <td>{{this.rank}}</td>
+          <td>{{this.player}}</td>
+          <td>{{this.season}}</td>
+          <td>{{this.value}}</td>
         </tr>
       {{/each}}
     </tbody>

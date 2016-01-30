@@ -1,3 +1,6 @@
+Session.set('category', "Points");
+Session.set('duration', "Career");
+
 Router.route('/submit');
 
 Router.route('/submit/team', {
@@ -7,6 +10,10 @@ Router.route('/submit/team', {
 Router.route('/submit/game', {
   name: 'statsInput',
   template: 'statsInput'
+});
+Router.route('/submit/records', {
+  name: 'recordInput',
+  template: 'recordInput'
 });
 
 Template.teamInput.events({
@@ -34,6 +41,48 @@ Template.teamInput.helpers({
   'currentTeam': function(){
     var season = "2015-2016";
     var output = PlayerInfo.find({ season: season}, {sort: { number: 1 }}).fetch();
+    return output;
+  }
+});
+
+Template.recordInput.events({
+  'change .category': function() {
+    var category = $('.category').val();
+    Session.set('category', category);
+  },
+  'change .duration': function() {
+    var duration = $('.duration').val();
+    Session.set('duration', duration);
+  },
+  'submit form': function(event) {
+    event.preventDefault();
+    RecordInfo.insert({
+      category: $('.category').val(),
+      duration: $('.duration').val(),
+      rank: parseInt($('[name=rank]').val()),
+      player: $('[name=player]').val(),
+      season: $('[name=season]').val(),
+      value: $('[name=value]').val()
+    });
+
+    $('[name=rank]').val('');
+    $('[name=player]').val('');
+    $('[name=season]').val('');
+    $('[name=value]').val('');
+  }
+});
+
+Template.recordInput.helpers({
+  'recordTitle': function() {
+    var category = Session.get('category');
+    var duration = Session.get('duration');
+    var output = duration + " " + category;
+    return output;
+  },
+  'recordTable': function() {
+    var category = Session.get('category');
+    var duration = Session.get('duration');
+    var output = RecordInfo.find({ category: category, duration: duration}, {sort: {rank: 1 }}).fetch();
     return output;
   }
 });
