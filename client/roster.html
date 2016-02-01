@@ -1,0 +1,10 @@
+<template name="roster">
+  <h2>Roster</h2>
+  <p>Auburn Basketball roster for the&nbsp;
+  <select>
+    {{#each seasonList}}
+      <option value="{{this}}">{{this}}</option>
+    {{/each}}
+  </select>
+  &nbsp;season</p>
+</template>
