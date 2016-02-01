@@ -15,6 +15,10 @@ Router.route('/submit/records', {
   name: 'recordInput',
   template: 'recordInput'
 });
+Router.route('/submit/season', {
+  name: 'seasonInput',
+  template: 'seasonInput'
+});
 
 Template.teamInput.events({
   'submit form': function(event){
@@ -84,6 +88,160 @@ Template.recordInput.helpers({
     var duration = Session.get('duration');
     var output = RecordInfo.find({ category: category, duration: duration}, {sort: {rank: 1 }}).fetch();
     return output;
+  }
+});
+
+Template.seasonInput.events({
+  'submit form': function(event) {
+    event.preventDefault();
+
+    var season = $('[name=season]').val();
+    Session.set('season', season);
+
+    var date = new Date($('[name=date]').val());
+    var opponent = $('[name=opponent]').val();
+    var oppRank = parseInt($('[name=oppRank]').val());
+    var auRank = parseInt($('[name=auRank]').val());
+    var location = $('[name=location]').val();
+    var auScore = parseInt($('[name=auScore]').val());
+    var oppScore = parseInt($('[name=oppScore]').val());
+    if (auScore > oppScore) {
+      var result = "W";
+    } else if (auScore < oppScore) {
+      var result = "L";
+    } else {
+      var result = "T";
+    }
+    var ot = $('[name=ot]').val();
+    var conference = $('[name=conference]').val();
+    var confTourney = $('[name=confTourney]').val();
+    var nit = $('[name=nit]').val();
+    var ncaa = $('[name=ncaa]').val();
+
+    SeasonInfo.insert({
+      season: season,
+      date: date,
+      opponent: opponent,
+      oppRank: oppRank,
+      auRank: auRank,
+      location: location,
+      auScore: auScore,
+      oppScore: oppScore,
+      result: result,
+      ot: ot,
+      conference: conference,
+      confTourney: confTourney,
+      nit: nit,
+      ncaa: ncaa
+    });
+
+    $('[name=date]').val('');
+    $('[name=opponent]').val('');
+    $('[name=oppRank]').val('');
+    $('[name=auRank]').val('');
+    $('[name=location]').val('');
+    $('[name=auScore]').val('');
+    $('[name=oppScore]').val('');
+    $('[name=ot]').val('');
+    $('[name=conference]').val('');
+    $('[name=confTourney]').val('');
+    $('[name=nit]').val('');
+    $('[name=ncaa]').val('');
+  }
+});
+
+Template.seasonInput.helpers({
+  'display': function(){
+    var season = Session.get('season');
+    var output = SeasonInfo.find({ season: season }, {sort: {date: 1}}).fetch();
+    return output;
+  },
+  'year': function() {
+    return Session.get('season');
+  },
+  'getDate': function() {
+    var d = this.date;
+    var month = d.getUTCMonth() + 1;
+    var day = d.getUTCDate();
+    var year = d.getUTCFullYear();
+    var output = month + "/" + day + "/" + year;
+    return output;
+  },
+  'home': function() {
+    if (this.location === "Away") {
+      var team = this.opponent;
+      if (this.oppRank > 0) {
+        var rank = "(" + this.oppRank + ")"
+      } else {
+        var rank = "";
+      }
+      var output = team + " " + rank;
+    } else {
+      var team = "Auburn";
+      if (this.auRank > 0) {
+        var rank = "(" + this.auRank + ")";
+      } else {
+        var rank = "";
+      }
+      var output = team + " " + rank;
+    }
+    return output;
+  },
+  'away': function() {
+    if (this.location === "Away") {
+      var team = "Auburn";
+      if (this.auRank > 0) {
+        var rank = "(" + this.auRank + ")"
+      } else {
+        var rank = "";
+      }
+      var output = team + " " + rank;
+    } else {
+      var team = this.opponent;
+      if (this.oppRank > 0) {
+        var rank = "(" + this.oppRank + ")";
+      } else {
+        var rank = "";
+      }
+      var output = team + " " + rank;
+    }
+    return output;
+  },
+  'overtime': function() {
+    if (this.ot > 0) {
+      var output = "(" + this.ot + "OT)";
+    } else {
+      var output = "";
+    }
+    return output;
+  },
+  'conference': function() {
+    if (this.conference === true) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  'confTourney': function() {
+    if (this.confTourney === true) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  'nit': function() {
+    if (this.nit === true) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  'ncaa': function() {
+    if (this.ncaa === true) {
+      return true;
+    } else {
+      return false;
+    }
   }
 });
 
