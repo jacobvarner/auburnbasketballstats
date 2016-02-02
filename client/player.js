@@ -16,7 +16,7 @@ Router.route('/player/:link', {
 
 Template.player.helpers({
   'playerList': function(){
-    var playerStrings = PlayerInfo.find({ season: "2015-2016" }, {fields: {name: 1}}).fetch();
+    var playerStrings = PlayerInfo.find({ season: "2015-2016" }, {fields: {name: 1}}).fetch(); //UPDATE AFTER EACH SEASON
     var playersList = [];
     for(i = 0; i < playerStrings.length; i++) {
       playersList.push({name: playerStrings[i].name, link: playerStrings[i].name.replace(" ", "+")});
