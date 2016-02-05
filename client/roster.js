@@ -19,6 +19,15 @@ Template.roster.helpers({
     var nameLink = nameString.replace(" ", "+");
     var output = "/player/" + nameLink;
     return output;
+  },
+  'hasStats': function() {
+    var name = this.name;
+    var value = PlayerStats.find({playerName: name}).count();
+    if (value > 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
 });
 

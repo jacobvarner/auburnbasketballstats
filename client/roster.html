@@ -24,7 +24,13 @@
       {{#each getRoster}}
         <tr>
           <td>{{this.number}}</td>
-          <td><a href="{{link}}">{{this.name}}</a></td>
+          <td>
+            {{#if hasStats}}
+              <a href="{{link}}">{{this.name}}</a>
+            {{else}}
+              {{this.name}}
+            {{/if}}
+          </td>
           <td>{{this.class}}</td>
           <td>{{this.position}}</td>
           <td>{{this.height}}</td>
