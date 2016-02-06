@@ -1,0 +1,73 @@
+<template name="results">
+  <p>
+    Auburn results from the&nbsp;
+    <select id="season-select">
+      {{#each seasonList}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+    &nbsp;season.
+  </p>
+  <hr />
+  <div class="resultsSummary">
+    <p>Record: {{getRecord}}</p>
+    <p>Home: {{getHomeRecord}}</p>
+    <p>Away: {{getAwayRecord}}</p>
+    <p>Neutral: {{getNeutralRecord}}</p>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Home (Rank)</th>
+        <th>Away (Rank)</th>
+        <th>Result</th>
+        <th>AU</th>
+        <th>Opp</th>
+        <th>C</th>
+        <th>CT</th>
+        <th>NIT</th>
+        <th>NCAA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each display}}
+        <tr>
+          <td>{{getDate}}</td>
+          <td>{{home}}</td>
+          <td>{{away}}</td>
+          <td>{{this.result}} {{overtime}}</td>
+          <td>{{this.auScore}}</td>
+          <td>{{this.oppScore}}</td>
+          <td>
+            {{#if conference}}
+              &#9632;
+            {{/if}}
+          </td>
+          <td>
+            {{#if confTourney}}
+              &#9632;
+            {{/if}}
+          </td>
+          <td>
+            {{#if nit}}
+              &#9632;
+            {{/if}}
+          </td>
+          <td>
+            {{#if ncaa}}
+              &#9632;
+            {{/if}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <hr/>
+  <div class="allTimeResults">
+    <p>Record: {{getRecordAllTime}}</p>
+    <p>Home: {{getHomeRecordAllTime}}</p>
+    <p>Away: {{getAwayRecordAllTime}}</p>
+    <p>Neutral: {{getNeutralRecordAllTime}}</p>
+  </div>
+</template>

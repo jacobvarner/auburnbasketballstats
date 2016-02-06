@@ -1,6 +1,6 @@
 Router.route('/roster');
 
-Session.set('season', "2015-2016") //UPDATE AFTER EACH SEASON
+Session.set('rosterSeason', "2015-2016") //UPDATE AFTER EACH SEASON
 
 Template.roster.helpers({
   'seasonList': function() {
@@ -10,7 +10,7 @@ Template.roster.helpers({
     return uniqueSeasons;
   },
   'getRoster': function() {
-    var season = Session.get('season');
+    var season = Session.get('rosterSeason');
     var roster = PlayerInfo.find({season: season}, {sort: {number: 1}}).fetch();
     return roster;
   },
@@ -33,6 +33,6 @@ Template.roster.helpers({
 
 Template.roster.events({
   "change #season-select": function() {
-    Session.set('season', $('#season-select').val());
+    Session.set('rosterSeason', $('#season-select').val());
   }
 });
