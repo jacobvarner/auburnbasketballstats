@@ -1,5 +1,26 @@
 Router.route('/results');
 
+Router.route('/results/:date/:opponent', {
+  name: "resultsGame",
+  template: "resultsGame",
+  data: function() {
+    var dateString = this.params.date;
+    var dateArray = dateString.split("-");
+    var month = dateArray[0];
+    if (month.length === 1) {
+      month = "0" + month;
+    }
+    var day = dateArray[1];
+    var year = dateArray[2];
+    var date = new Date(year + "-" + month + "-" + day); 
+    var opponent = this.params.opponent.replace("+", " ");
+    Session.set('opponent', opponent);
+    Session.set('date', date);
+    var gameResults = GameStats.find({date: date, opponent: opponent}).fetch();
+    return gameResults;
+  }
+});
+
 Router.route('/results/:team', {
   name: "resultsTeam",
   template: "resultsTeam",
@@ -376,5 +397,19 @@ Template.resultsTeam.events({
     var team = $('#team-select').val();
     var link = team.replace(" ", "+");
     Router.go('/results/' + link);
+  }
+});
+
+Template.resultsGame.helpers({
+  'opponent': function() {
+    return this[0].opponent;
+  },
+  'date': function() {
+    var d = this[0].date;
+    var month = d.getUTCMonth() + 1;
+    var day = d.getUTCDate();
+    var year = d.getUTCFullYear();
+    var output = month + "/" + day + "/" + year;
+    return output;
   }
 });
