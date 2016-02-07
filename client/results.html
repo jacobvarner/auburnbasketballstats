@@ -44,7 +44,13 @@
           <td>{{getDate}}</td>
           <td>{{home}}</td>
           <td>{{away}}</td>
-          <td>{{this.result}} {{overtime}}</td>
+          <td>
+            {{#if hasGameStats}}
+              <a href="/results/{{link}}">{{this.result}} {{overtime}}</a>
+            {{else}}
+              {{this.result}} {{overtime}}
+            {{/if}}
+          </td>
           <td>{{this.auScore}}</td>
           <td>{{this.oppScore}}</td>
           <td>

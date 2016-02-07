@@ -12,7 +12,7 @@ Router.route('/results/:date/:opponent', {
     }
     var day = dateArray[1];
     var year = dateArray[2];
-    var date = new Date(year + "-" + month + "-" + day); 
+    var date = new Date(year + "-" + month + "-" + day);
     var opponent = this.params.opponent.replace("+", " ");
     Session.set('opponent', opponent);
     Session.set('date', date);
@@ -33,7 +33,7 @@ Router.route('/results/:team', {
   }
 });
 
-Session.set('resultsSeason', "1906-1907"); //UPDATE AFTER EACH SEASON
+Session.set('resultsSeason', "2015-2016"); //UPDATE AFTER EACH SEASON
 
 Template.results.events({
   'change #season-select': function() {
@@ -147,6 +147,32 @@ Template.results.helpers({
     } else {
       return false;
     }
+  },
+  'hasGameStats': function() {
+    var d = this.date;
+    var month = (d.getUTCMonth() + 1).toString();
+    var day = d.getUTCDate().toString();
+    var year = d.getUTCFullYear().toString();
+    if (month.length === 1) {
+      month = "0" + month;
+    }
+    var date = new Date(year + "-" + month + "-" + day);
+    var opponent = this.opponent;
+    if (GameStats.find({date: date, opponent: opponent}).count() === 1) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  'link': function() {
+    var d = this.date;
+    var month = parseInt(d.getUTCMonth() + 1);
+    var day = parseInt(d.getUTCDate());
+    var year = parseInt(d.getUTCFullYear());
+    var date = new Date(year + "-" + month + "-" + day);
+    var opponent = this.opponent;
+    var link = month + "-" + day + "-" + year + "/" + opponent.replace(" ", "+");
+    return link;
   },
   'getRecord': function() {
     var season = Session.get('resultsSeason');

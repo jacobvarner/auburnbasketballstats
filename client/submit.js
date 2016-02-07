@@ -113,10 +113,10 @@ Template.seasonInput.events({
       var result = "T";
     }
     var ot = $('[name=ot]').val();
-    var conference = $('[name=conference]').val();
-    var confTourney = $('[name=confTourney]').val();
-    var nit = $('[name=nit]').val();
-    var ncaa = $('[name=ncaa]').val();
+    var conference = $('[name=conference]').is(':checked');
+    var confTourney = $('[name=confTourney]').is(':checked');
+    var nit = $('[name=nit]').is(':checked');
+    var ncaa = $('[name=ncaa]').is(':checked');
 
     SeasonInfo.insert({
       season: season,
