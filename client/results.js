@@ -427,15 +427,25 @@ Template.resultsTeam.events({
 });
 
 Template.resultsGame.helpers({
-  'opponent': function() {
-    return this[0].opponent;
-  },
-  'date': function() {
+  'heading': function() {
+    var opponent = this[0].opponent;
     var d = this[0].date;
     var month = d.getUTCMonth() + 1;
     var day = d.getUTCDate();
     var year = d.getUTCFullYear();
-    var output = month + "/" + day + "/" + year;
-    return output;
+    var date = month + "/" + day + "/" + year;
+    var location = this[0].location;
+    if (location === "away") {
+      var locationString = "at";
+    } else {
+      var locationString = "vs";
+    }
+    return "Auburn " + locationString + " " + opponent + " (" + date + ")";
+  },
+  'attendance': function() {
+    return this[0].attendance;
+  },
+  'opponent': function() {
+    return this[0].opponent;
   }
 });

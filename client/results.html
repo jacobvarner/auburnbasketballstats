@@ -155,6 +155,175 @@
 </template>
 
 <template name="resultsGame">
-  <h2>{{opponent}}</h2>
-  <h2>{{date}}</h2>
+  <h2>{{heading}}</h2>
+  <p>{{attendance}} in attendance</p>
+  <hr />
+  <table>
+    <thead>
+      <tr>
+        <th>Stat</th>
+        <th>Auburn</th>
+        <th>{{opponent}}</th>
+        <th>Margin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Points</td>
+        <td>{{auburnPoints}}</td>
+        <td>{{opponentPoints}}</td>
+        <td>{{pointsDiff}}</td>
+      </tr>
+      <tr>
+        <td>Field Goals Made</td>
+        <td>{{auburnFGM}}</td>
+        <td>{{opponentFGM}}</td>
+        <td>{{fgmDiff}}</td>
+      </tr>
+      <tr>
+        <td>Field Goals Attempted</td>
+        <td>{{auburnFGA}}</td>
+        <td>{{opponentFGA}}</td>
+        <td>{{fgaDiff}}</td>
+      </tr>
+      <tr>
+        <td>Field Goal %</td>
+        <td>{{auburnFGP}}</td>
+        <td>{{opponentFGP}}</td>
+        <td>{{fgpDiff}}</td>
+      </tr>
+      <tr>
+        <td>3-Pointers Made</td>
+        <td>{{auburn3PM}}</td>
+        <td>{{opponent3PM}}</td>
+        <td>{{threepmDiff}}</td>
+      </tr>
+      <tr>
+        <td>3-Pointers Attempted</td>
+        <td>{{auburn3PA}}</td>
+        <td>{{opponent3PA}}</td>
+        <td>{{threepaDiff}}</td>
+      </tr>
+      <tr>
+        <td>3-Point %</td>
+        <td>{{auburn3PP}}</td>
+        <td>{{opponent3PP}}</td>
+        <td>{{threeppDiff}}</td>
+      </tr>
+      <tr>
+        <td>2-Pointers Made</td>
+        <td>{{auburn2PM}}</td>
+        <td>{{opponent2PM}}</td>
+        <td>{{twopmDiff}}</td>
+      </tr>
+      <tr>
+        <td>2-Pointers Attempted</td>
+        <td>{{auburn2PA}}</td>
+        <td>{{opponent2PA}}</td>
+        <td>{{twopaDiff}}</td>
+      </tr>
+      <tr>
+        <td>2-Point %</td>
+        <td>{{auburn2PP}}</td>
+        <td>{{opponent2PP}}</td>
+        <td>{{twoppDiff}}</td>
+      </tr>
+      <tr>
+        <td>Free Throws Made</td>
+        <td>{{auburnFTM}}</td>
+        <td>{{opponentFTM}}</td>
+        <td>{{ftmDiff}}</td>
+      </tr>
+      <tr>
+        <td>Free Throws Attempted</td>
+        <td>{{auburnFTA}}</td>
+        <td>{{opponentFTA}}</td>
+        <td>{{ftaDiff}}</td>
+      </tr>
+      <tr>
+        <td>Free Throw %</td>
+        <td>{{auburnFTP}}</td>
+        <td>{{opponentFTP}}</td>
+        <td>{{ftpDiff}}</td>
+      </tr>
+      <tr>
+        <td>Offensive Rebounds</td>
+        <td>{{auburnORB}}</td>
+        <td>{{opponentORB}}</td>
+        <td>{{orbDiff}}</td>
+      </tr>
+      <tr>
+        <td>Defensive Rebounds</td>
+        <td>{{auburnDRB}}</td>
+        <td>{{opponentDRB}}</td>
+        <td>{{drbDiff}}</td>
+      </tr>
+      <tr>
+        <td>Total Rebounds</td>
+        <td>{{auburnREB}}</td>
+        <td>{{opponentREB}}</td>
+        <td>{{rebDiff}}</td>
+      </tr>
+      <tr>
+        <td>Assists</td>
+        <td>{{auburnAST}}</td>
+        <td>{{opponentAST}}</td>
+        <td>{{astDiff}}</td>
+      </tr>
+      <tr>
+        <td>Turnovers</td>
+        <td>{{auburnTO}}</td>
+        <td>{{opponentTO}}</td>
+        <td>{{toDiff}}</td>
+      </tr>
+      <tr>
+        <td>Blocks</td>
+        <td>{{auburnBLK}}</td>
+        <td>{{opponentBLK}}</td>
+        <td>{{blkDiff}}</td>
+      </tr>
+      <tr>
+        <td>Steals</td>
+        <td>{{auburnSTL}}</td>
+        <td>{{opponentSTL}}</td>
+        <td>{{stlDiff}}</td>
+      </tr>
+      <tr>
+        <td>Personal Fouls</td>
+        <td>{{auburnPF}}</td>
+        <td>{{opponentPF}}</td>
+        <td>{{pfDiff}}</td>
+      </tr>
+      <tr>
+        <td>Points Off Turnovers</td>
+        <td>{{auburnPOT}}</td>
+        <td>{{opponentPOT}}</td>
+        <td>{{potDiff}}</td>
+      </tr>
+      <tr>
+        <td>Points in the Paint</td>
+        <td>{{auburnPIP}}</td>
+        <td>{{opponentPIP}}</td>
+        <td>{{pipDiff}}</td>
+      </tr>
+      <tr>
+        <td>2nd Chance Points</td>
+        <td>{{auburn2CP}}</td>
+        <td>{{opponent2CP}}</td>
+        <td>{{scpDiff}}</td>
+      </tr>
+      <tr>
+        <td>Fast Break Points</td>
+        <td>{{auburnFBP}}</td>
+        <td>{{opponentFBP}}</td>
+        <td>{{fpbDiff}}</td>
+      </tr>
+      <tr>
+        <td>Bench Points</td>
+        <td>{{auburnBP}}</td>
+        <td>{{opponentBP}}</td>
+        <td>{{bpDiff}}</td>
+      </tr>
+    </tbody>
+  </table>
 </template>
