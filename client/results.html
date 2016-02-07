@@ -1,5 +1,13 @@
 <template name="results">
   <p>
+    View results against
+    <select id="team-select">
+      {{#each teamList}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+  </p>
+  <p>
     Auburn results from the&nbsp;
     <select id="season-select">
       {{#each seasonList}}
@@ -70,4 +78,72 @@
     <p>Away: {{getAwayRecordAllTime}}</p>
     <p>Neutral: {{getNeutralRecordAllTime}}</p>
   </div>
+</template>
+
+<template name="resultsTeam">
+  <p>
+    View results against
+    <select id="team-select">
+      {{#each teamList}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+  </p>
+  <h3>Auburn vs {{teamName}}</h3>
+  <p>Current Streak: {{currentStreak}}</p>
+  <p>All-Time Record: {{allTimeRecord}}</p>
+  <p>Last Matchup: {{lastMatchup}}</p>
+  <p></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Home (Rank)</th>
+        <th>Away (Rank)</th>
+        <th>Result</th>
+        <th>AU</th>
+        <th>Opp</th>
+        {{#if conferenceTeam}}
+          <th>C</th>
+          <th>CT</th>
+        {{/if}}
+        <th>NIT</th>
+        <th>NCAA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each display}}
+        <tr>
+          <td>{{getDate}}</td>
+          <td>{{home}}</td>
+          <td>{{away}}</td>
+          <td>{{this.result}} {{overtime}}</td>
+          <td>{{this.auScore}}</td>
+          <td>{{this.oppScore}}</td>
+          {{#if conferenceTeam}}
+            <td>
+              {{#if conference}}
+                &#9632;
+              {{/if}}
+            </td>
+            <td>
+              {{#if confTourney}}
+                &#9632;
+              {{/if}}
+            </td>
+          {{/if}}
+          <td>
+            {{#if nit}}
+              &#9632;
+            {{/if}}
+          </td>
+          <td>
+            {{#if ncaa}}
+              &#9632;
+            {{/if}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </template>
