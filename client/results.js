@@ -447,5 +447,22 @@ Template.resultsGame.helpers({
   },
   'opponent': function() {
     return this[0].opponent;
+  },
+  'auburnPoints': function() {
+    return this[0].auburnPoints;
+  },
+  'opponentPoints': function() {
+    return this[0].opponentPoints;
+  },
+  'pointsDiff': function() {
+    var diff = this[0].auburnPoints - this[0].opponentPoints;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
   }
 });
