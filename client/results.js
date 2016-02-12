@@ -464,5 +464,458 @@ Template.resultsGame.helpers({
       var sign = "";
     }
     return sign + Math.abs(diff);
+  },
+  'auburnFGM': function() {
+    return this[0].auburnFGM;
+  },
+  'opponentFGM': function() {
+    return this[0].opponentFGM;
+  },
+  'fgmDiff': function() {
+    var diff = this[0].auburnFGM - this[0].opponentFGM;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnFGA': function() {
+    return this[0].auburnFGA;
+  },
+  'opponentFGA': function() {
+    return this[0].opponentFGA;
+  },
+  'fgaDiff': function() {
+    var diff = this[0].auburnFGA - this[0].opponentFGA;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnFGP': function() {
+    return ((this[0].auburnFGM / this[0].auburnFGA) * 100).toFixed(1) + "%";
+  },
+  'opponentFGP': function() {
+    return ((this[0].opponentFGM / this[0].opponentFGA) * 100).toFixed(1) + "%";
+  },
+  'fgpDiff': function() {
+    var diff = ((this[0].auburnFGM / this[0].auburnFGA) * 100) - ((this[0].opponentFGM / this[0].opponentFGA) * 100);
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff).toFixed(1) + "%";
+  },
+  'auburn3PM': function() {
+    return this[0].auburn3PM;
+  },
+  'opponent3PM': function() {
+    return this[0].opponent3PM;
+  },
+  'threepmDiff': function() {
+    var diff = this[0].auburn3PM - this[0].opponent3PM;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburn3PA': function() {
+    return this[0].auburn3PA;
+  },
+  'opponent3PA': function() {
+    return this[0].opponent3PA;
+  },
+  'threepaDiff': function() {
+    var diff = this[0].auburn3PA - this[0].opponent3PA;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburn3PP': function() {
+    return ((this[0].auburn3PM / this[0].auburn3PA) * 100).toFixed(1) + "%";
+  },
+  'opponent3PP': function() {
+    return ((this[0].opponent3PM / this[0].opponent3PA) * 100).toFixed(1) + "%";
+  },
+  'threeppDiff': function() {
+    var diff = ((this[0].auburn3PM / this[0].auburn3PA) * 100) - ((this[0].opponent3PM / this[0].opponent3PA) * 100);
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff).toFixed(1) + "%";
+  },
+  'auburn2PM': function() {
+    return this[0].auburn2PM;
+  },
+  'opponent2PM': function() {
+    return this[0].opponent2PM;
+  },
+  'twopmDiff': function() {
+    var diff = this[0].auburn2PM - this[0].opponent2PM;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburn2PA': function() {
+    return this[0].auburn2PA;
+  },
+  'opponent2PA': function() {
+    return this[0].opponent2PA;
+  },
+  'twopaDiff': function() {
+    var diff = this[0].auburn2PA - this[0].opponent2PA;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburn2PP': function() {
+    return ((this[0].auburn2PM / this[0].auburn2PA) * 100).toFixed(1) + "%";
+  },
+  'opponent2PP': function() {
+    return ((this[0].opponent2PM / this[0].opponent2PA) * 100).toFixed(1) + "%";
+  },
+  'twoppDiff': function() {
+    var diff = ((this[0].auburn2PM / this[0].auburn2PA) * 100) - ((this[0].opponent2PM / this[0].opponent2PA) * 100);
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff).toFixed(1) + "%";
+  },
+  'auburnFTM': function() {
+    return this[0].auburnFTM;
+  },
+  'opponentFTM': function() {
+    return this[0].opponentFTM;
+  },
+  'ftmDiff': function() {
+    var diff = this[0].auburnFTM - this[0].opponentFTM;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnFTA': function() {
+    return this[0].auburnFTA;
+  },
+  'opponentFTA': function() {
+    return this[0].opponentFTA;
+  },
+  'ftaDiff': function() {
+    var diff = this[0].auburnFTA - this[0].opponentFTA;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnFTP': function() {
+    return ((this[0].auburnFTM / this[0].auburnFTA) * 100).toFixed(1) + "%";
+  },
+  'opponentFTP': function() {
+    return ((this[0].opponentFTM / this[0].opponentFTA) * 100).toFixed(1) + "%";
+  },
+  'ftpDiff': function() {
+    var diff = ((this[0].auburnFTM / this[0].auburnFTA) * 100) - ((this[0].opponentFTM / this[0].opponentFTA) * 100);
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff).toFixed(1) + "%";
+  },
+  'auburnORB': function() {
+    return this[0].auburnORB;
+  },
+  'opponentORB': function() {
+    return this[0].opponentORB;
+  },
+  'orbDiff': function() {
+    var diff = this[0].auburnORB - this[0].opponentORB;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnDRB': function() {
+    return this[0].auburnDRB;
+  },
+  'opponentDRB': function() {
+    return this[0].opponentDRB;
+  },
+  'drbDiff': function() {
+    var diff = this[0].auburnDRB - this[0].opponentDRB;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnREB': function() {
+    return this[0].auburnREB;
+  },
+  'opponentREB': function() {
+    return this[0].opponentREB;
+  },
+  'rebDiff': function() {
+    var diff = this[0].auburnREB - this[0].opponentREB;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnAST': function() {
+    return this[0].auburnAST;
+  },
+  'opponentAST': function() {
+    return this[0].opponentAST;
+  },
+  'astDiff': function() {
+    var diff = this[0].auburnAST - this[0].opponentAST;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnTO': function() {
+    return this[0].auburnTO;
+  },
+  'opponentTO': function() {
+    return this[0].opponentTO;
+  },
+  'toDiff': function() {
+    var diff = this[0].auburnTO - this[0].opponentTO;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnBLK': function() {
+    return this[0].auburnBLK;
+  },
+  'opponentBLK': function() {
+    return this[0].opponentBLK;
+  },
+  'blkDiff': function() {
+    var diff = this[0].auburnBLK - this[0].opponentBLK;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnSTL': function() {
+    return this[0].auburnSTL;
+  },
+  'opponentSTL': function() {
+    return this[0].opponentSTL;
+  },
+  'stlDiff': function() {
+    var diff = this[0].auburnSTL - this[0].opponentSTL;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnPF': function() {
+    return this[0].auburnPF;
+  },
+  'opponentPF': function() {
+    return this[0].opponentPF;
+  },
+  'pfDiff': function() {
+    var diff = this[0].auburnPF - this[0].opponentPF;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnPOT': function() {
+    return this[0].auburnPOT;
+  },
+  'opponentPOT': function() {
+    return this[0].opponentPOT;
+  },
+  'potDiff': function() {
+    var diff = this[0].auburnPOT - this[0].opponentPOT;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnPIP': function() {
+    return this[0].auburnPIP;
+  },
+  'opponentPIP': function() {
+    return this[0].opponentPIP;
+  },
+  'pipDiff': function() {
+    var diff = this[0].auburnPIP - this[0].opponentPIP;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburn2CP': function() {
+    return this[0].auburn2CP;
+  },
+  'opponent2CP': function() {
+    return this[0].opponent2CP;
+  },
+  'scpDiff': function() {
+    var diff = this[0].auburn2CP - this[0].opponent2CP;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnFBP': function() {
+    return this[0].auburnFBP;
+  },
+  'opponentFBP': function() {
+    return this[0].opponentFBP;
+  },
+  'fbpDiff': function() {
+    var diff = this[0].auburnFBP - this[0].opponentFBP;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'auburnBP': function() {
+    return this[0].auburnBP;
+  },
+  'opponentBP': function() {
+    return this[0].opponentBP;
+  },
+  'bpDiff': function() {
+    var diff = this[0].auburnBP - this[0].opponentBP;
+    if (diff > 0) {
+      var sign = "+";
+    } else if (diff < 0) {
+      var sign = "-";
+    } else {
+      var sign = "";
+    }
+    return sign + Math.abs(diff);
+  },
+  'playerData': function() {
+    var date = this[0].date
+    var output = PlayerStats.find({playerDate: date}, {sort: {playerMIN: 1}}).fetch();
+    return output;
+  },
+  'starter': function() {
+    if (this.playerStarter === true) {
+      return "[S]";
+    } else {
+      return "";
+    }
+  },
+  'fgp': function() {
+    var output = ((this.playerFGM / this.playerFGA) * 100 ).toFixed(1) + "%";
+    return output;
+  },
+  'threepp': function() {
+    var output = ((this.player3PM / this.player3PA) * 100 ).toFixed(1) + "%";
+    return output;
+  },
+  'twopp': function() {
+    var output = ((this.player2PM / this.player2PM) * 100 ).toFixed(1) + "%";
+    return output;
+  },
+  'ftp': function() {
+    var output = ((this.playerFTM / this.playerFTA) * 100 ).toFixed(1) + "%";
+    return output;
   }
 });

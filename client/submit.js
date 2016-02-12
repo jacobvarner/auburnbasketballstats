@@ -252,7 +252,7 @@ Template.statsInput.events({
     var opponent = $('[name=opponent]').val();
     var date = new Date($('[name=date]').val());
     var location = $('[name=location]').val();
-    var attendance = parseInt($('[name=attendance]').val());
+    var attendance = parseInt($('[name=gameAttendance]').val());
 
     var auburnFGM = parseInt($('[name=auburnFGM]').val());
     var auburnFGA = parseInt($('[name=auburnFGA]').val());

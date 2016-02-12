@@ -316,7 +316,7 @@
         <td>Fast Break Points</td>
         <td>{{auburnFBP}}</td>
         <td>{{opponentFBP}}</td>
-        <td>{{fpbDiff}}</td>
+        <td>{{fbpDiff}}</td>
       </tr>
       <tr>
         <td>Bench Points</td>
@@ -324,6 +324,49 @@
         <td>{{opponentBP}}</td>
         <td>{{bpDiff}}</td>
       </tr>
+    </tbody>
+  </table>
+  <hr />
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>MIN</th>
+        <th>PTS</th>
+        <th>ORB</th>
+        <th>DRB</th>
+        <th>REB</th>
+        <th>AST</th>
+        <th>TO</th>
+        <th>STL</th>
+        <th>BLK</th>
+        <th>FGM-A (%)</th>
+        <th>3PM-A (%)</th>
+        <th>2PM-A (%)</th>
+        <th>FTM-A (%)</th>
+        <th>PF</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each playerData}}
+        <tr>
+          <td>{{this.playerName}} {{starter}}</td>
+          <td>{{this.playerMIN}}</td>
+          <td>{{this.playerPoints}}</td>
+          <td>{{this.playerORB}}</td>
+          <td>{{this.playerDRB}}</td>
+          <td>{{this.playerREB}}</td>
+          <td>{{this.playerAST}}</td>
+          <td>{{this.playerTO}}</td>
+          <td>{{this.playerSTL}}</td>
+          <td>{{this.playerBLK}}</td>
+          <td>{{this.playerFGM}}-{{this.playerFGA}} ({{fgp}})</td>
+          <td>{{this.player3PM}}-{{this.player3PM}} ({{threepp}})</td>
+          <td>{{this.player2PM}}-{{this.player2PM}} ({{twopp}})</td>
+          <td>{{this.playerFTM}}-{{this.playerFTM}} ({{ftp}})</td>
+          <td>{{this.playerPF}}</td>
+        </tr>
+      {{/each}}
     </tbody>
   </table>
 </template>
