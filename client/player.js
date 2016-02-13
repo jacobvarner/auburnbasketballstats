@@ -1,27 +1,45 @@
 Session.set('span', 0);
+Session.set('playersSeason', "2015-2016"); //UPDATE AFTER EACH SEASON
 
 Router.route('/player');
 
-Router.route('/player/:link', {
+Router.route('/player/:season/:player', {
   name: 'playerPage',
   template: 'playerPage',
   data: function(){
-    var linkName = this.params.link;
+    var playerName = this.params.player;
+    var season = this.params.season;
     var stringName = linkName.replace("+", " ");
     Session.set('currentPlayer', stringName);
-    var playerStats = PlayerStats.find({playerName: stringName}).fetch();
+    Session.set('currentSeason', season);
+    var playerStats = PlayerStats.find({playerName: stringName, season: season}).fetch();
     return playerStats;
+  }
+});
+
+Template.player.events({
+  'change #season-select': function() {
+    Session.set('playersSeason', $('#season-select').val());
   }
 });
 
 Template.player.helpers({
   'playerList': function(){
-    var playerStrings = PlayerInfo.find({ season: "2015-2016" }, {fields: {name: 1}}).fetch(); //UPDATE AFTER EACH SEASON
+    var season = Session.get('playersSeason');
+    var playerStrings = PlayerStats.find({ playerSeason: season }, {sort: {playerName: 1}, fields: {playerName: 1}}).fetch();
+    playerStrings = _.pluck(playerStrings, 'playerName');
+    playerStrings = _.uniq(playerStrings, true);
     var playersList = [];
     for(i = 0; i < playerStrings.length; i++) {
-      playersList.push({name: playerStrings[i].name, link: playerStrings[i].name.replace(" ", "+")});
+      playersList.push({name: playerStrings[i].playerName, season: season, player: playerStrings[i].playerName.replace(" ", "+")});
     }
     return playersList;
+  },
+  'seasonList': function() {
+    var seasons = PlayerStats.find({}, {sort: {playerSeason: -1}, fields: {playerSeason: 1}}).fetch();
+    seasons = _.pluck(seasons, 'playerSeason');
+    var uniqueSeasons = _.uniq(seasons, true);
+    return uniqueSeasons;
   }
 });
 

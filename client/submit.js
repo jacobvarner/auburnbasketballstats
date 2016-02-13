@@ -249,6 +249,7 @@ Template.statsInput.events({
   'submit form': function(event){
     event.preventDefault();
 
+    var season = $('[name=season]').val();
     var opponent = $('[name=opponent]').val();
     var date = new Date($('[name=date]').val());
     var location = $('[name=location]').val();
@@ -306,6 +307,7 @@ Template.statsInput.events({
       alert("Please fill in all game stats!");
     } else {
       GameStats.insert({
+        season: season,
         opponent: opponent,
         date: date,
         location: location,
@@ -408,6 +410,7 @@ Template.statsInput.events({
 
     var playerName1 = $('[name=playerName1]').val();
     var playerDate = date;
+    var playerSeason = season;
     var playerOpponent = opponent;
     if($('[name=playerStarter1]').val() === "yes") {
       var playerStarter1 = true;
@@ -437,6 +440,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName1,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter1,
         playerFGM: playerFGM1,
@@ -493,6 +497,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName2,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter2,
         playerFGM: playerFGM2,
@@ -549,6 +554,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName3,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter3,
         playerFGM: playerFGM3,
@@ -605,6 +611,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName4,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter4,
         playerFGM: playerFGM4,
@@ -661,6 +668,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName5,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter5,
         playerFGM: playerFGM5,
@@ -717,6 +725,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName6,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter6,
         playerFGM: playerFGM6,
@@ -773,6 +782,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName7,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter7,
         playerFGM: playerFGM7,
@@ -829,6 +839,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName8,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter8,
         playerFGM: playerFGM8,
@@ -885,6 +896,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName9,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter9,
         playerFGM: playerFGM9,
@@ -941,6 +953,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName10,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter10,
         playerFGM: playerFGM10,
@@ -997,6 +1010,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName11,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter11,
         playerFGM: playerFGM11,
@@ -1053,6 +1067,7 @@ Template.statsInput.events({
       PlayerStats.insert({
         playerName: playerName12,
         playerDate: date,
+        playerSeason: season,
         playerOpponent: opponent,
         playerStarter: playerStarter12,
         playerFGM: playerFGM12,

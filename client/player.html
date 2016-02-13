@@ -1,5 +1,10 @@
 <template name="player">
   <h2>Players</h2>
+  <select id="season-select">
+    {{#each seasonList}}
+      <option value="{{this}}">{{this}}</option>
+    {{/each}}
+  </select>
   <ul>
     {{#each playerList}}
       <li><a href="{{pathFor route='playerPage'}}">{{this.name}}</a></li>
