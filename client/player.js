@@ -1,6 +1,6 @@
 Session.set('span', 0);
 
-Router.route('/player', {
+Router.route('/players', {
   name: 'player',
   template: 'player',
   data: function() {
@@ -11,7 +11,7 @@ Router.route('/player', {
   }
 });
 
-Router.route('/player/:season/:player', {
+Router.route('/players/:season/:player', {
   name: 'playerPage',
   template: 'playerPage',
   data: function() {

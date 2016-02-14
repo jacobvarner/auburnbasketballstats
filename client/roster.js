@@ -1,4 +1,4 @@
-Router.route('/roster', {
+Router.route('/rosters', {
   name: 'roster',
   template: 'roster',
   data: function() {
@@ -23,13 +23,15 @@ Template.roster.helpers({
   },
   'link': function() {
     var nameString = this.name;
-    var nameLink = nameString.replace(" ", "+");
+    var season = Session.get('rosterSeason');
+    var nameLink = season + "/" + nameString.replace(" ", "+");
     var output = "/player/" + nameLink;
     return output;
   },
   'hasStats': function() {
     var name = this.name;
-    var value = PlayerStats.find({playerName: name}).count();
+    var season = Session.get('rosterSeason');
+    var value = PlayerStats.find({playerName: name, playerSeason: season}).count();
     if (value > 0) {
       return true;
     } else {
