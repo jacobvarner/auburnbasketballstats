@@ -1,18 +1,25 @@
 Session.set('span', 0);
-Session.set('playersSeason', "2015-2016"); //UPDATE AFTER EACH SEASON
 
-Router.route('/player');
+Router.route('/player', {
+  name: 'player',
+  template: 'player',
+  data: function() {
+    var season = PlayerStats.find({}, {field: {playerSeason: 1}, sort: {playerSeason: -1}}).fetch();
+    season = _.pluck(season, 'playerSeason');
+    season = season[0];
+    Session.set('playersSeason', season);
+  }
+});
 
 Router.route('/player/:season/:player', {
   name: 'playerPage',
   template: 'playerPage',
-  data: function(){
-    var playerName = this.params.player;
-    var season = this.params.season;
-    var stringName = linkName.replace("+", " ");
-    Session.set('currentPlayer', stringName);
-    Session.set('currentSeason', season);
-    var playerStats = PlayerStats.find({playerName: stringName, season: season}).fetch();
+  data: function() {
+    var playerName = this.params.player.replace("+", " ");
+    var playerSeason = this.params.season;
+    Session.set('currentSeason', playerSeason);
+    Session.set('currentPlayer', playerName);
+    var playerStats = PlayerStats.find({playerSeason: playerSeason, playerName: playerName}).fetch();
     return playerStats;
   }
 });
@@ -26,14 +33,14 @@ Template.player.events({
 Template.player.helpers({
   'playerList': function(){
     var season = Session.get('playersSeason');
-    var playerStrings = PlayerStats.find({ playerSeason: season }, {sort: {playerName: 1}, fields: {playerName: 1}}).fetch();
-    playerStrings = _.pluck(playerStrings, 'playerName');
-    playerStrings = _.uniq(playerStrings, true);
-    var playersList = [];
-    for(i = 0; i < playerStrings.length; i++) {
-      playersList.push({name: playerStrings[i].playerName, season: season, player: playerStrings[i].playerName.replace(" ", "+")});
+    var playerList = PlayerStats.find({playerSeason: season}, {fields: {playerName: 1}, sort: {playerName: 1}}).fetch();
+    playerList = _.pluck(playerList, 'playerName');
+    var uniquePlayers = _.uniq(playerList, true);
+    var output = [];
+    for (i = 0; i < uniquePlayers.length; i++) {
+      output.push({name: uniquePlayers[i], season: season, player: uniquePlayers[i].replace(" ", "+")});
     }
-    return playersList;
+    return output;
   },
   'seasonList': function() {
     var seasons = PlayerStats.find({}, {sort: {playerSeason: -1}, fields: {playerSeason: 1}}).fetch();
@@ -47,9 +54,12 @@ Template.playerPage.helpers({
   'name': function() {
     return this[0].playerName;
   },
+  'season': function() {
+    return this[0].playerSeason;
+  },
   'season3': function() {
     var output = false;
-    var games = PlayerStats.find({ playerName: this[0].playerName }).count();
+    var games = PlayerStats.find({ playerName: this[0].playerName, playerSeason: Session.get('currentSeason')}).count();
     if (games > 3) {
       output = true;
     }
@@ -57,7 +67,7 @@ Template.playerPage.helpers({
   },
   'season5': function() {
     var output = false;
-    var games = PlayerStats.find({ playerName: this[0].playerName }).count();
+    var games = PlayerStats.find({ playerName: this[0].playerName, playerSeason: Session.get('currentSeason') }).count();
     if (games > 5) {
       output = true;
     }
@@ -65,7 +75,7 @@ Template.playerPage.helpers({
   },
   'season10': function() {
     var output = false;
-    var games = PlayerStats.find({ playerName: this[0].playerName }).count();
+    var games = PlayerStats.find({ playerName: this[0].playerName, playerSeason: Session.get('currentSeason') }).count();
     if (games > 10) {
       output = true;
     }
@@ -533,7 +543,8 @@ Template.playerPage.helpers({
 Template.games.helpers({
   'playerGames': function() {
     var currentPlayer = Session.get('currentPlayer');
-    var games = PlayerStats.find({ playerName: currentPlayer }, {sort: { playerDate: -1 }});
+    var currentSeason = Session.get('currentSeason');
+    var games = PlayerStats.find({ playerName: currentPlayer, playerSeason: currentSeason }, {sort: { playerDate: -1 }});
     return games;
   },
   'getDate': function(){

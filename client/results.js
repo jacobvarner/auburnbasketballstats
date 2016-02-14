@@ -1,4 +1,13 @@
-Router.route('/results');
+Router.route('/results', {
+  name: 'results',
+  template: 'results',
+  data: function() {
+    var season = SeasonInfo.find({}, {field: {season: 1}, sort: {season: -1}}).fetch();
+    season = _.pluck(season, 'season');
+    season = season[0];
+    Session.set('resultsSeason', season);
+  }
+});
 
 Router.route('/results/:date/:opponent', {
   name: "resultsGame",
@@ -32,8 +41,6 @@ Router.route('/results/:team', {
     return teamResults;
   }
 });
-
-Session.set('resultsSeason', "2015-2016"); //UPDATE AFTER EACH SEASON
 
 Template.results.events({
   'change #season-select': function() {

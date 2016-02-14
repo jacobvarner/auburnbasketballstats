@@ -1,6 +1,13 @@
-Router.route('/roster');
-
-Session.set('rosterSeason', "2015-2016") //UPDATE AFTER EACH SEASON
+Router.route('/roster', {
+  name: 'roster',
+  template: 'roster',
+  data: function() {
+    var season = PlayerInfo.find({}, {field: {season: 1}, sort: {season: -1}}).fetch();
+    season = _.pluck(season, 'season');
+    season = season[0];
+    Session.set('rosterSeason', season);
+  }
+});
 
 Template.roster.helpers({
   'seasonList': function() {

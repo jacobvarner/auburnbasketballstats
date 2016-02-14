@@ -43,7 +43,7 @@ Template.teamInput.events({
 
 Template.teamInput.helpers({
   'currentTeam': function(){
-    var season = "2015-2016";
+    var season = PlayerInfo.findOne({}, {field: {season: 1}, sort: {season: -1}}).season;
     var output = PlayerInfo.find({ season: season}, {sort: { number: 1 }}).fetch();
     return output;
   }
