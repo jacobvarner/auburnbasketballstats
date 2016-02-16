@@ -1,15 +1,17 @@
 <template name="main">
-  {{> header}}
+  {{> navigation}}
   {{> yield}}
   {{> footer}}
 </template>
 
-<template name="header">
+<template name="navigation">
   <h1>Auburn Basketball Stats</h1>
 </template>
 
 <template name="footer">
-  <p>Copyright &copy; Auburn Basketball Stats, 2016</p>
+  <div class="footer-wrapper">
+    <p id="footer-text">Copyright &copy; 2016 | Designed, Developed, and Managed by <a href="http://www.jacobvarner.com" target="_blank">Jacob Varner</a> | Corrections or suggestions? <a href="mailto:jacob.varner14@gmail.com" target="_blank">Let me know</a>.</p>
+  </div>
 </template>
 
 <template name="home">
