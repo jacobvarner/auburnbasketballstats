@@ -26,5 +26,69 @@
 </template>
 
 <template name="home">
-  <p>This is the home page...for now.</p>
+  <div class="banner">
+    <div class="container">
+      <h1 id="banner-title">Auburn Basketball <span>Stats</span></h1>
+      <hr/>
+      <p id="banner-subtitle">The best looking and easiest collection of Auburn basketball statistics all in one place</p>
+    </div>
+  </div>
+  <div class="sections">
+    <div class="section-column">
+      <div class="section-heading">
+        <h2>Individual Player Stats</h2>
+      </div>
+      <div class="section-body">
+        <p>All major individual player statistics</p>
+        <hr/>
+        <p>Entire season or last 3, 5, or 10 games</p>
+        <hr/>
+        <p>Per-game averages and season totals</p>
+        <hr/>
+      </div>
+      <a class="section-button" href="{{pathFor route='player'}}">View Section</a>
+    </div>
+    <div class="section-column">
+      <div class="section-heading">
+        <h2>Current &amp; Past Rosters</h2>
+      </div>
+      <div class="section-body">
+        <p>Partial rosters all the way back to 1906</p>
+        <hr/>
+        <p>Position and height info for recent players</p>
+        <hr/>
+        <p>Link to career stats for recent players</p>
+        <hr/>
+      </div>
+      <a class="section-button" href="{{pathFor route='roster'}}">View Section</a>
+    </div>
+    <div class="section-column">
+      <div class="section-heading">
+        <h2>All-Time Game Results</h2>
+      </div>
+      <div class="section-body">
+        <p>Scores for each season since 1905</p>
+        <hr/>
+        <p>All-time, conference, home/road records</p>
+        <hr/>
+        <p>Filter by each team Auburn has faced</p>
+        <hr/>
+      </div>
+      <a class="section-button" href="{{pathFor route='results'}}">View Section</a>
+    </div>
+    <div class="section-column">
+      <div class="section-heading">
+        <h2>Individual Records</h2>
+      </div>
+      <div class="section-body">
+        <p>All-time and season individual records</p>
+        <hr/>
+        <p>Top 10-25 players in each major category</p>
+        <hr/>
+        <p>View how long records have stood</p>
+        <hr/>
+      </div>
+      <a class="section-button" href="{{pathFor route='records'}}">View Section</a>
+    </div>
+  </div>
 </template>
