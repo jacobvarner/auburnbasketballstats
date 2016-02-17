@@ -18,15 +18,33 @@ body
     height: 60px
     margin: 10px
 
+  .mobile-menu
+    float: right
+    display: none
+
+    #menu-button
+      text-transform: uppercase
+      display: block
+      margin: 10px
+      text-align: center
+      padding: 11px
+      color: white
+      text-decoration: none
+      background: $main-orange
+      border-radius: 10px
+      width: 60px
+      cursor: pointer
+
   .nav-links
     float: right
     height: 100%
+    display: none
 
     ul
       list-style: none
       height: 100%
       margin: 0
-      padding: 0 15px
+      padding: 0 10px
 
       li
         display: inline-block
@@ -42,6 +60,40 @@ body
           font-weight: bold
         a:hover
           border-bottom: 5px solid $main-orange
+
+@media screen and (max-width: 655px)
+  .nav-wrapper
+    height: 60px
+
+    img
+      height: 40px
+      margin: 10px
+
+    .mobile-menu
+      display: block
+
+    .nav-links
+      height: 200px
+      width: 100%
+      background: $main-blue
+
+      ul
+        padding: 0
+
+        li
+          display: block
+          padding: 0
+          height: 17px
+          padding: 9px 0 13px
+          border-bottom: 1px solid $main-orange
+          text-align: right
+
+          a
+            font-size: 16px
+            padding: 0 20px
+          a:hover
+            border-bottom: none
+            color: $secondary-orange
 
 // ----- Banner ----- //
 .banner

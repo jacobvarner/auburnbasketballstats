@@ -6,3 +6,17 @@ Router.route('/', {
 Router.configure({
   layoutTemplate: 'main'
 });
+
+Template.navigation.events({
+  'click #menu-button': function() {
+    var button = $('#menu-button')
+    if (button.text() == button.data("text-swap")) {
+      button.text(button.data("text-original"));
+    } else {
+      button.data("text-original", button.text());
+      button.text(button.data("text-swap"));
+    }
+
+    $('.nav-links').toggle();
+  }
+});
