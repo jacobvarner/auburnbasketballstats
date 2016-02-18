@@ -17,6 +17,6 @@ Template.navigation.events({
       button.text(button.data("text-swap"));
     }
 
-    $('.nav-links').toggle();
+    $('.mobile-nav-links').toggle();
   }
 });
