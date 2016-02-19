@@ -1,23 +1,64 @@
 Session.set('category', "Points");
 Session.set('duration', "Career");
 
-Router.route('/submit');
+Router.route('/submit', {
+  onBeforeAction: function(){
+    var currentUser = Meteor.userId();
+    if(currentUser == "tFshn3W287dh68DdS") {
+      this.next();
+    } else {
+      this.render('login');
+    }
+  }
+});
 
 Router.route('/submit/team', {
   name: 'teamInput',
-  template: 'teamInput'
+  template: 'teamInput',
+  onBeforeAction: function(){
+    var currentUser = Meteor.userId();
+    if(currentUser == "tFshn3W287dh68DdS") {
+      this.next();
+    } else {
+      this.render('login');
+    }
+  }
 });
 Router.route('/submit/game', {
   name: 'statsInput',
-  template: 'statsInput'
+  template: 'statsInput',
+  onBeforeAction: function(){
+    var currentUser = Meteor.userId();
+    if(currentUser == "tFshn3W287dh68DdS") {
+      this.next();
+    } else {
+      this.render('login');
+    }
+  }
 });
 Router.route('/submit/records', {
   name: 'recordInput',
-  template: 'recordInput'
+  template: 'recordInput',
+  onBeforeAction: function(){
+    var currentUser = Meteor.userId();
+    if(currentUser == "tFshn3W287dh68DdS") {
+      this.next();
+    } else {
+      this.render('login');
+    }
+  }
 });
 Router.route('/submit/season', {
   name: 'seasonInput',
-  template: 'seasonInput'
+  template: 'seasonInput',
+  onBeforeAction: function(){
+    var currentUser = Meteor.userId();
+    if(currentUser == "tFshn3W287dh68DdS") {
+      this.next();
+    } else {
+      this.render('login');
+    }
+  }
 });
 
 Template.teamInput.events({
