@@ -1,15 +1,18 @@
 <template name="player">
-  <h2>Players</h2>
-  <select id="season-select">
-    {{#each seasonList}}
-      <option value="{{this}}">{{this}}</option>
-    {{/each}}
-  </select>
-  <ul>
-    {{#each playerList}}
-      <li><a href="{{pathFor route='playerPage'}}">{{this.name}}</a></li>
-    {{/each}}
-  </ul>
+  <div class="player-menu">
+    <h2>Players</h2>
+    <select id="season-select">
+      <option value="" disabled selected>Choose a season</option>
+      {{#each seasonList}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+    <ul>
+      {{#each playerList}}
+        <li><a href="{{pathFor route='playerPage'}}">{{this.name}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
 </template>
 
 <template name="playerPage">

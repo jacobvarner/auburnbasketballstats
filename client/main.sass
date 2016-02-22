@@ -8,6 +8,7 @@ body
   background: $main-blue
   display: block
   overflow: auto
+  padding-top: 80px
 
 html
 	position: relative
@@ -19,6 +20,8 @@ html
   height: 80px
   background: white
   box-shadow: black 0px 5px 20px 0px
+  position: absolute
+  top: 0
 
   img
     height: 60px
@@ -70,6 +73,9 @@ html
           border-bottom: 5px solid $main-orange
 
 @media screen and (max-width: 655px)
+  body
+    padding-top: 60px
+
   .nav-wrapper
     height: 60px
 
@@ -84,36 +90,39 @@ html
       display: none
 
     .mobile-nav-links
-      height: 200px
+      height: 220px
       width: 100%
-      background: $main-blue
+      background: white
+      margin-top: -5px
       display: none
+      overflow: none
       float: right
       ul
         padding: 0
         list-style: none
         height: 100%
-        margin: 0
+        margin: 10px 0
 
         li
           display: block
+          overflow: none
           padding: 0
-          height: 17px
-          padding: 9px 0 13px
-          border-bottom: 1px solid $main-orange
+          margin: 0
+          height: 40px
           text-align: right
 
           a
             font-family: Open Sans, sans-serif
             color: $main-orange
-            height: 100%
+            display: block
             text-decoration: none
             font-weight: bold
-            font-size: 16px
-            padding: 0 20px
+            font-size: 18px
+            padding: 8px 10px
+            border-right: 5px solid white
           a:hover
-            border-bottom: none
-            color: $secondary-orange
+            background: #eeeeee
+            border-right: 5px solid $main-orange
 
 // ----- Banner ----- //
 .banner

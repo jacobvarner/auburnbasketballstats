@@ -7,7 +7,6 @@ Router.route('/players', {
     var season = PlayerStats.find({}, {field: {playerSeason: 1}, sort: {playerSeason: -1}}).fetch();
     season = _.pluck(season, 'playerSeason');
     season = season[0];
-    Session.set('playersSeason', season);
   }
 });
 
@@ -33,14 +32,18 @@ Template.player.events({
 Template.player.helpers({
   'playerList': function(){
     var season = Session.get('playersSeason');
-    var playerList = PlayerStats.find({playerSeason: season}, {fields: {playerName: 1}, sort: {playerName: 1}}).fetch();
-    playerList = _.pluck(playerList, 'playerName');
-    var uniquePlayers = _.uniq(playerList, true);
-    var output = [];
-    for (i = 0; i < uniquePlayers.length; i++) {
-      output.push({name: uniquePlayers[i], season: season, player: uniquePlayers[i].replace(" ", "+")});
+    if (season.length === 9) {
+      var playerList = PlayerStats.find({playerSeason: season}, {fields: {playerName: 1}, sort: {playerName: 1}}).fetch();
+      playerList = _.pluck(playerList, 'playerName');
+      var uniquePlayers = _.uniq(playerList, true);
+      var output = [];
+      for (i = 0; i < uniquePlayers.length; i++) {
+        output.push({name: uniquePlayers[i], season: season, player: uniquePlayers[i].replace(" ", "+")});
+      }
+      return output;
+    } else {
+      return null;
     }
-    return output;
   },
   'seasonList': function() {
     var seasons = PlayerStats.find({}, {sort: {playerSeason: -1}, fields: {playerSeason: 1}}).fetch();
