@@ -8,179 +8,194 @@
 </template>
 
 <template name="teamInput">
-  <h2>Team Info</h2>
-  <p>Add Player</p>
-  <form class="addPlayer">
-    Season: <input type="text" name="season" placeholder="2015-2016" size="9" />&nbsp;
-    Player Name:&nbsp;<input type="text" name="name" size="30" /> &nbsp;
-    Number:&nbsp;<input type="text" name="number" size="2" /> &nbsp;
-    Position:&nbsp;<input type="text" name="position" placeholder="PG" size="4"/> &nbsp;
-    Height:&nbsp;<input type="text" name="height" placeholder="6&#39;2&#34;" size="5"/> &nbsp;
-    Weight:&nbsp;<input type="text" name="weight" size="3"/> &nbsp;
-    Class:&nbsp;
-    <select name="class">
-      <option value="Freshman">Freshman</option>
-      <option value="Sophomore">Sophomore</option>
-      <option value="Junior">Junior</option>
-      <option value="Senior">Senior</option>
-      <option value="Graduate">Graduate</option>
-    </select>
-    Transfer:&nbsp;<input type="checkbox" name="transfer" /> &nbsp;
-    Hometown:&nbsp;<input type="text" name="hometown" size="20"/> &nbsp;
-    Last School:&nbsp;<input type="text" name="lastSchool" size="30"/>
-    <input type="submit" value="Submit" />
-  </form>
-  <hr />
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Class</th>
-        <th>Pos.</th>
-        <th>Height</th>
-        <th>Weight</th>
-        <th>Hometown</th>
-        <th>Last School</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each currentTeam}}
-        <tr>
-          <td>{{this.number}}</td>
-          <td>{{this.name}}</td>
-          <td>{{this.class}}</td>
-          <td>{{this.position}}</td>
-          <td>{{this.height}}</td>
-          <td>{{this.weight}}</td>
-          <td>{{this.hometown}}</td>
-          <td>{{this.lastSchool}}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+  <div class="container">
+    <div class="wrapper">
+      <h2>Team Info</h2>
+      <p>Add Player</p>
+      <form class="addPlayer">
+        Season: <input type="text" name="season" placeholder="2015-2016" size="9" />&nbsp;
+        Player Name:&nbsp;<input type="text" name="name" size="20" /> &nbsp;
+        Number:&nbsp;<input type="text" name="number" size="2" /> &nbsp;
+        Position:&nbsp;<input type="text" name="position" placeholder="PG" size="4"/> &nbsp;
+        Height:&nbsp;<input type="text" name="height" placeholder="6&#39;2&#34;" size="5"/> &nbsp;
+        Weight:&nbsp;<input type="text" name="weight" size="3"/> &nbsp;
+        Class:&nbsp;
+        <select name="class">
+          <option value="Freshman">Freshman</option>
+          <option value="Sophomore">Sophomore</option>
+          <option value="Junior">Junior</option>
+          <option value="Senior">Senior</option>
+          <option value="Graduate">Graduate</option>
+        </select>
+        Transfer:&nbsp;<input type="checkbox" name="transfer" /> &nbsp;
+        Hometown:&nbsp;<input type="text" name="hometown" size="20"/> &nbsp;
+        Last School:&nbsp;<input type="text" name="lastSchool" size="30"/>
+        <input type="submit" value="Submit" />
+      </form>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="center">#</th>
+              <th class="left">Name</th>
+              <th class="center">Class</th>
+              <th class="center">Pos.</th>
+              <th class="center">Height</th>
+              <th class="center">Weight</th>
+              <th class="left">Hometown</th>
+              <th class="left">Last School</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each currentTeam}}
+              <tr>
+                <td class="center">{{this.number}}</td>
+                <td class="left">{{this.name}}</td>
+                <td class="center">{{this.class}}</td>
+                <td class="center">{{this.position}}</td>
+                <td class="center">{{this.height}}</td>
+                <td class="center">{{this.weight}}</td>
+                <td class="left">{{this.hometown}}</td>
+                <td class="left">{{this.lastSchool}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="recordInput">
-  <h2>Submit Records</h2>
-  <form class="recordInput">
-    <select class="category" name="category">
-      <option value="Points">Points</option>
-      <option value="Scoring Average">Scoring Average</option>
-      <option value="Rebounds">Rebounds</option>
-      <option value="Rebound Average">Rebound Average</option>
-      <option value="Field Goals Made">Field Goals Made</option>
-      <option value="Field Goals Attempted">Field Goals Attempted</option>
-      <option value="Field Goal Percentage">Field Goal Percentage</option>
-      <option value="3pt Field Goals Made">3pt Field Goals Made</option>
-      <option value="3pt Field Goals Attempted">3pt Field Goals Attempted</option>
-      <option value="3pt Field Goal Percentage">3pt Field Goal Percentage</option>
-      <option value="Free Throws Made">Free Throws Made</option>
-      <option value="Free Throws Attempted">Free Throws Attempted</option>
-      <option value="Free Throw Percentage">Free Throw Percentage</option>
-      <option value="Assists">Assists</option>
-      <option value="Blocks">Blocks</option>
-      <option value="Steals">Steals</option>
-    </select>
-    <select class="duration" name="duration">
-      <option value="Career">Career</option>
-      <option value="Season">Season</option>
-    </select><br/><br/>
-    Rank: <input type="number" name="rank" min="0" max="99" />
-    Player: <input type="text" name="player" size="30" />
-    Season: <input type="text" name="season" size="10" />
-    Value: <input type="text" name="value" size="6" />
-    <input type="submit" value="Add" />
-  </form>
-  <hr />
-  <h3>{{recordTitle}}</h3>
-  <table>
-    <tbody>
-      {{#each recordTable}}
-        <tr>
-          <td>{{this.rank}}</td>
-          <td>{{this.player}}</td>
-          <td>{{this.season}}</td>
-          <td>{{this.value}}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+  <div class="container">
+    <div class="wrapper">
+      <h2>Submit Records</h2>
+      <form class="recordInput">
+        <select class="category" name="category">
+          <option value="Points">Points</option>
+          <option value="Scoring Average">Scoring Average</option>
+          <option value="Rebounds">Rebounds</option>
+          <option value="Rebound Average">Rebound Average</option>
+          <option value="Field Goals Made">Field Goals Made</option>
+          <option value="Field Goals Attempted">Field Goals Attempted</option>
+          <option value="Field Goal Percentage">Field Goal Percentage</option>
+          <option value="3pt Field Goals Made">3pt Field Goals Made</option>
+          <option value="3pt Field Goals Attempted">3pt Field Goals Attempted</option>
+          <option value="3pt Field Goal Percentage">3pt Field Goal Percentage</option>
+          <option value="Free Throws Made">Free Throws Made</option>
+          <option value="Free Throws Attempted">Free Throws Attempted</option>
+          <option value="Free Throw Percentage">Free Throw Percentage</option>
+          <option value="Assists">Assists</option>
+          <option value="Blocks">Blocks</option>
+          <option value="Steals">Steals</option>
+        </select>
+        <select class="duration" name="duration">
+          <option value="Career">Career</option>
+          <option value="Season">Season</option>
+        </select><br/><br/>
+        Rank: <input type="number" name="rank" min="0" max="99" />
+        Player: <input type="text" name="player" size="30" />
+        Season: <input type="text" name="season" size="10" />
+        Value: <input type="text" name="value" size="6" />
+        <input type="submit" value="Add" />
+      </form>
+      <h3>{{recordTitle}}</h3>
+      <div class="table-wrapper">
+        <table>
+          <tbody>
+            {{#each recordTable}}
+              <tr>
+                <td class="left">{{this.rank}}</td>
+                <td class="left">{{this.player}}</td>
+                <td class="left">{{this.season}}</td>
+                <td class="left">{{this.value}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="seasonInput">
-  <h2>Submit Season</h2>
-  <form class="seasonInput">
-    Season: <input type="text" class="season" name="season" size="9"/><br/><br/>
-    Date: <input type="date" name="date" />
-    Opponent: <input type="text" name="opponent" size="30"/>
-    Opp. Rank: <input type="number" name="oppRank" max="25" />
-    AU Rank: <input type="number" name="auRank" max="25" />
-    Location:
-    <select name="location">
-      <option value="Home">Home</option>
-      <option value="Away">Away</option>
-      <option value="Neutral">Neutral</option>
-    </select>
-    AU Score: <input type="number" name="auScore" max="999" />
-    Opp. Score: <input type="number" name="oppScore" max="999" />
-    OT: <input type="number" name="ot" min="0" max="99" />
-    Conference Game? <input type="checkbox" name="conference" />
-    Conf. Tourney Game? <input type="checkbox" name="confTourney" />
-    NIT? <input type="checkbox" name="nit" />
-    NCAA? <input type="checkbox" name="ncaa" /><br/><br/>
-    <input type="submit" value="Submit" />
-  </form>
-  <hr/>
-  <h4>Games for {{year}} Season</h4>
-  <table class="seasonDisplay">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Home (Rank)</th>
-        <th>Away (Rank)</th>
-        <th>Result</th>
-        <th>AU</th>
-        <th>Opp</th>
-        <th>C</th>
-        <th>CT</th>
-        <th>NIT</th>
-        <th>NCAA</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each display}}
-        <tr>
-          <td>{{getDate}}</td>
-          <td>{{home}}</td>
-          <td>{{away}}</td>
-          <td>{{this.result}} {{overtime}}</td>
-          <td>{{this.auScore}}</td>
-          <td>{{this.oppScore}}</td>
-          <td>
-            {{#if conference}}
-              &#9632;
-            {{/if}}
-          </td>
-          <td>
-            {{#if confTourney}}
-              &#9632;
-            {{/if}}
-          </td>
-          <td>
-            {{#if nit}}
-              &#9632;
-            {{/if}}
-          </td>
-          <td>
-            {{#if ncaa}}
-              &#9632;
-            {{/if}}
-          </td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+  <div class="container">
+    <div class="wrapper">
+      <h2>Submit Season</h2>
+      <form class="seasonInput">
+        Season: <input type="text" class="season" name="season" size="9"/><br/><br/>
+        Date: <input type="date" name="date" />
+        Opponent: <input type="text" name="opponent" size="30"/>
+        Opp. Rank: <input type="number" name="oppRank" max="25" />
+        AU Rank: <input type="number" name="auRank" max="25" /> <br/>
+        Location:
+        <select name="location">
+          <option value="Home">Home</option>
+          <option value="Away">Away</option>
+          <option value="Neutral">Neutral</option>
+        </select>
+        AU Score: <input type="number" name="auScore" max="999" />
+        Opp. Score: <input type="number" name="oppScore" max="999" />
+        OT: <input type="number" name="ot" min="0" max="99" /><br/>
+        Conference Game? <input type="checkbox" name="conference" />
+        Conf. Tourney Game? <input type="checkbox" name="confTourney" />
+        NIT? <input type="checkbox" name="nit" />
+        NCAA? <input type="checkbox" name="ncaa" /><br/><br/>
+        <input type="submit" value="Submit" />
+      </form>
+      <h4>Games for {{year}} Season</h4>
+      <div class="table-wrapper">
+        <table class="seasonDisplay">
+          <thead>
+            <tr>
+              <th class="left">Date</th>
+              <th class="left">Home (Rank)</th>
+              <th class="left">Away (Rank)</th>
+              <th class="center">Result</th>
+              <th class="center">AU</th>
+              <th class="center">Opp</th>
+              <th class="center">C</th>
+              <th class="center">CT</th>
+              <th class="center">NIT</th>
+              <th class="center">NCAA</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each display}}
+              <tr>
+                <td class="left">{{getDate}}</td>
+                <td class="left">{{home}}</td>
+                <td class="left">{{away}}</td>
+                <td class="center">{{this.result}} {{overtime}}</td>
+                <td class="center">{{this.auScore}}</td>
+                <td class="center">{{this.oppScore}}</td>
+                <td class="center">
+                  {{#if conference}}
+                    &#9632;
+                  {{/if}}
+                </td>
+                <td class="center">
+                  {{#if confTourney}}
+                    &#9632;
+                  {{/if}}
+                </td>
+                <td class="center">
+                  {{#if nit}}
+                    &#9632;
+                  {{/if}}
+                </td>
+                <td class="center">
+                  {{#if ncaa}}
+                    &#9632;
+                  {{/if}}
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="statsInput">
@@ -202,52 +217,52 @@
           <table>
             <thead>
               <tr>
-                <th>Team</th>
-                <th>FGM/A</th>
-                <th>3PM/A</th>
-                <th>FTM/A</th>
-                <th>ORB</th>
-                <th>DRB</th>
-                <th>PF</th>
-                <th>TP</th>
-                <th>AST</th>
-                <th>TO</th>
-                <th>BLK</th>
-                <th>STL</th>
-                <th>MIN</th>
-                <th>POT</th>
-                <th>PIP</th>
-                <th>2CP</th>
-                <th>FBP</th>
-                <th>BP</th>
+                <th class="left">Team</th>
+                <th class="center">FGM/A</th>
+                <th class="center">3PM/A</th>
+                <th class="center">FTM/A</th>
+                <th class="center">ORB</th>
+                <th class="center">DRB</th>
+                <th class="center">PF</th>
+                <th class="center">TP</th>
+                <th class="center">AST</th>
+                <th class="center">TO</th>
+                <th class="center">BLK</th>
+                <th class="center">STL</th>
+                <th class="center">MIN</th>
+                <th class="center">POT</th>
+                <th class="center">PIP</th>
+                <th class="center">2CP</th>
+                <th class="center">FBP</th>
+                <th class="center">BP</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Auburn</td>
-                <td><input type="number" class="game" name="auburnFGM" min="0" max="999">&nbsp;/&nbsp;<input type="number" class="game" name="auburnFGA" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburn3PM" min="0" max="999">&nbsp;/&nbsp;<input type="number" class="game" name="auburn3PA" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnFTM" min="0" max="999">&nbsp;/&nbsp;<input type="number" class="game" name="auburnFTA" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnORB" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnDRB" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnPoints" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnAST" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnTO" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnBLK" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnSTL" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnPF" min="0" max="99"></td>
-                <td><input type="number" class="game" name="auburnMIN" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnPOT" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnPIP" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburn2CP" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnFBP" min="0" max="999"></td>
-                <td><input type="number" class="game" name="auburnBP" min="0" max="999"></td>
+                <td class="left">Auburn</td>
+                <td class="center"><input type="number" class="game" name="auburnFGM" min="0" max="999">/<input type="number" class="game" name="auburnFGA" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburn3PM" min="0" max="999">/<input type="number" class="game" name="auburn3PA" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnFTM" min="0" max="999">/<input type="number" class="game" name="auburnFTA" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnORB" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnDRB" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnPoints" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnAST" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnTO" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnBLK" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnSTL" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnPF" min="0" max="99"></td>
+                <td class="center"><input type="number" class="game" name="auburnMIN" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnPOT" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnPIP" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburn2CP" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnFBP" min="0" max="999"></td>
+                <td class="center"><input type="number" class="game" name="auburnBP" min="0" max="999"></td>
               </tr>
               <tr>
                 <td>Opponent</td>
-                <td><input type="number" class="game" name="opponentFGM" min="0" max="999">&nbsp;/&nbsp;<input type="number" class="game" name="opponentFGA" min="0" max="999"></td>
-                <td><input type="number" class="game" name="opponent3PM" min="0" max="999">&nbsp;/&nbsp;<input type="number" class="game" name="opponent3PA" min="0" max="999"></td>
-                <td><input type="number" class="game" name="opponentFTM" min="0" max="999">&nbsp;/&nbsp;<input type="number" class="game" name="opponentFTA" min="0" max="999"></td>
+                <td><input type="number" class="game" name="opponentFGM" min="0" max="999">/<input type="number" class="game" name="opponentFGA" min="0" max="999"></td>
+                <td><input type="number" class="game" name="opponent3PM" min="0" max="999">/<input type="number" class="game" name="opponent3PA" min="0" max="999"></td>
+                <td><input type="number" class="game" name="opponentFTM" min="0" max="999">/<input type="number" class="game" name="opponentFTA" min="0" max="999"></td>
                 <td><input type="number" class="game" name="opponentORB" min="0" max="999"></td>
                 <td><input type="number" class="game" name="opponentDRB" min="0" max="999"></td>
                 <td><input type="number" class="game" name="opponentPoints" min="0" max="999"></td>
@@ -295,9 +310,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player1" name="playerFGM1" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player1" name="playerFGA1" min="0" max="99"></td>
-                <td><input type="number" class="player1" name="player3PM1" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player1" name="player3PA1" min="0" max="99"></td>
-                <td><input type="number" class="player1" name="playerFTM1" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player1" name="playerFTA1" min="0" max="99"></td>
+                <td><input type="number" class="player1" name="playerFGM1" min="0" max="99">/<input type="number" class="player1" name="playerFGA1" min="0" max="99"></td>
+                <td><input type="number" class="player1" name="player3PM1" min="0" max="99">/<input type="number" class="player1" name="player3PA1" min="0" max="99"></td>
+                <td><input type="number" class="player1" name="playerFTM1" min="0" max="99">/<input type="number" class="player1" name="playerFTA1" min="0" max="99"></td>
                 <td><input type="number" class="player1" name="playerORB1" min="0" max="99"></td>
                 <td><input type="number" class="player1" name="playerDRB1" min="0" max="99"></td>
                 <td><input type="number" class="player1" name="playerPF1" min="0" max="5"></td>
@@ -316,9 +331,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player2" name="playerFGM2" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player2" name="playerFGA2" min="0" max="99"></td>
-                <td><input type="number" class="player2" name="player3PM2" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player2" name="player3PA2" min="0" max="99"></td>
-                <td><input type="number" class="player2" name="playerFTM2" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player2" name="playerFTA2" min="0" max="99"></td>
+                <td><input type="number" class="player2" name="playerFGM2" min="0" max="99">/<input type="number" class="player2" name="playerFGA2" min="0" max="99"></td>
+                <td><input type="number" class="player2" name="player3PM2" min="0" max="99">/<input type="number" class="player2" name="player3PA2" min="0" max="99"></td>
+                <td><input type="number" class="player2" name="playerFTM2" min="0" max="99">/<input type="number" class="player2" name="playerFTA2" min="0" max="99"></td>
                 <td><input type="number" class="player2" name="playerORB2" min="0" max="99"></td>
                 <td><input type="number" class="player2" name="playerDRB2" min="0" max="99"></td>
                 <td><input type="number" class="player2" name="playerPF2" min="0" max="5"></td>
@@ -337,9 +352,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player3" name="playerFGM3" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player3" name="playerFGA3" min="0" max="99"></td>
-                <td><input type="number" class="player3" name="player3PM3" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player3" name="player3PA3" min="0" max="99"></td>
-                <td><input type="number" class="player3" name="playerFTM3" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player3" name="playerFTA3" min="0" max="99"></td>
+                <td><input type="number" class="player3" name="playerFGM3" min="0" max="99">/<input type="number" class="player3" name="playerFGA3" min="0" max="99"></td>
+                <td><input type="number" class="player3" name="player3PM3" min="0" max="99">/<input type="number" class="player3" name="player3PA3" min="0" max="99"></td>
+                <td><input type="number" class="player3" name="playerFTM3" min="0" max="99">/<input type="number" class="player3" name="playerFTA3" min="0" max="99"></td>
                 <td><input type="number" class="player3" name="playerORB3" min="0" max="99"></td>
                 <td><input type="number" class="player3" name="playerDRB3" min="0" max="99"></td>
                 <td><input type="number" class="player3" name="playerPF3" min="0" max="5"></td>
@@ -358,9 +373,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player4" name="playerFGM4" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player4" name="playerFGA4" min="0" max="99"></td>
-                <td><input type="number" class="player4" name="player3PM4" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player4" name="player3PA4" min="0" max="99"></td>
-                <td><input type="number" class="player4" name="playerFTM4" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player4" name="playerFTA4" min="0" max="99"></td>
+                <td><input type="number" class="player4" name="playerFGM4" min="0" max="99">/<input type="number" class="player4" name="playerFGA4" min="0" max="99"></td>
+                <td><input type="number" class="player4" name="player3PM4" min="0" max="99">/<input type="number" class="player4" name="player3PA4" min="0" max="99"></td>
+                <td><input type="number" class="player4" name="playerFTM4" min="0" max="99">/<input type="number" class="player4" name="playerFTA4" min="0" max="99"></td>
                 <td><input type="number" class="player4" name="playerORB4" min="0" max="99"></td>
                 <td><input type="number" class="player4" name="playerDRB4" min="0" max="99"></td>
                 <td><input type="number" class="player4" name="playerPF4" min="0" max="5"></td>
@@ -379,9 +394,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player5" name="playerFGM5" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player5" name="playerFGA5" min="0" max="99"></td>
-                <td><input type="number" class="player5" name="player3PM5" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player5" name="player3PA5" min="0" max="99"></td>
-                <td><input type="number" class="player5" name="playerFTM5" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player5" name="playerFTA5" min="0" max="99"></td>
+                <td><input type="number" class="player5" name="playerFGM5" min="0" max="99">/<input type="number" class="player5" name="playerFGA5" min="0" max="99"></td>
+                <td><input type="number" class="player5" name="player3PM5" min="0" max="99">/<input type="number" class="player5" name="player3PA5" min="0" max="99"></td>
+                <td><input type="number" class="player5" name="playerFTM5" min="0" max="99">/<input type="number" class="player5" name="playerFTA5" min="0" max="99"></td>
                 <td><input type="number" class="player5" name="playerORB5" min="0" max="99"></td>
                 <td><input type="number" class="player5" name="playerDRB5" min="0" max="99"></td>
                 <td><input type="number" class="player5" name="playerPF5" min="0" max="5"></td>
@@ -400,9 +415,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player6" name="playerFGM6" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player6" name="playerFGA6" min="0" max="99"></td>
-                <td><input type="number" class="player6" name="player3PM6" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player6" name="player3PA6" min="0" max="99"></td>
-                <td><input type="number" class="player6" name="playerFTM6" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player6" name="playerFTA6" min="0" max="99"></td>
+                <td><input type="number" class="player6" name="playerFGM6" min="0" max="99">/<input type="number" class="player6" name="playerFGA6" min="0" max="99"></td>
+                <td><input type="number" class="player6" name="player3PM6" min="0" max="99">/<input type="number" class="player6" name="player3PA6" min="0" max="99"></td>
+                <td><input type="number" class="player6" name="playerFTM6" min="0" max="99">/<input type="number" class="player6" name="playerFTA6" min="0" max="99"></td>
                 <td><input type="number" class="player6" name="playerORB6" min="0" max="99"></td>
                 <td><input type="number" class="player6" name="playerDRB6" min="0" max="99"></td>
                 <td><input type="number" class="player6" name="playerPF6" min="0" max="5"></td>
@@ -421,9 +436,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player7" name="playerFGM7" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player7" name="playerFGA7" min="0" max="99"></td>
-                <td><input type="number" class="player7" name="player3PM7" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player7" name="player3PA7" min="0" max="99"></td>
-                <td><input type="number" class="player7" name="playerFTM7" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player7" name="playerFTA7" min="0" max="99"></td>
+                <td><input type="number" class="player7" name="playerFGM7" min="0" max="99">/<input type="number" class="player7" name="playerFGA7" min="0" max="99"></td>
+                <td><input type="number" class="player7" name="player3PM7" min="0" max="99">/<input type="number" class="player7" name="player3PA7" min="0" max="99"></td>
+                <td><input type="number" class="player7" name="playerFTM7" min="0" max="99">/<input type="number" class="player7" name="playerFTA7" min="0" max="99"></td>
                 <td><input type="number" class="player7" name="playerORB7" min="0" max="99"></td>
                 <td><input type="number" class="player7" name="playerDRB7" min="0" max="99"></td>
                 <td><input type="number" class="player7" name="playerPF7" min="0" max="5"></td>
@@ -442,9 +457,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player8" name="playerFGM8" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player8" name="playerFGA8" min="0" max="99"></td>
-                <td><input type="number" class="player8" name="player3PM8" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player8" name="player3PA8" min="0" max="99"></td>
-                <td><input type="number" class="player8" name="playerFTM8" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player8" name="playerFTA8" min="0" max="99"></td>
+                <td><input type="number" class="player8" name="playerFGM8" min="0" max="99">/<input type="number" class="player8" name="playerFGA8" min="0" max="99"></td>
+                <td><input type="number" class="player8" name="player3PM8" min="0" max="99">/<input type="number" class="player8" name="player3PA8" min="0" max="99"></td>
+                <td><input type="number" class="player8" name="playerFTM8" min="0" max="99">/<input type="number" class="player8" name="playerFTA8" min="0" max="99"></td>
                 <td><input type="number" class="player8" name="playerORB8" min="0" max="99"></td>
                 <td><input type="number" class="player8" name="playerDRB8" min="0" max="99"></td>
                 <td><input type="number" class="player8" name="playerPF8" min="0" max="5"></td>
@@ -463,9 +478,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player9" name="playerFGM9" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player9" name="playerFGA9" min="0" max="99"></td>
-                <td><input type="number" class="player9" name="player3PM9" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player9" name="player3PA9" min="0" max="99"></td>
-                <td><input type="number" class="player9" name="playerFTM9" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player9" name="playerFTA9" min="0" max="99"></td>
+                <td><input type="number" class="player9" name="playerFGM9" min="0" max="99">/<input type="number" class="player9" name="playerFGA9" min="0" max="99"></td>
+                <td><input type="number" class="player9" name="player3PM9" min="0" max="99">/<input type="number" class="player9" name="player3PA9" min="0" max="99"></td>
+                <td><input type="number" class="player9" name="playerFTM9" min="0" max="99">/<input type="number" class="player9" name="playerFTA9" min="0" max="99"></td>
                 <td><input type="number" class="player9" name="playerORB9" min="0" max="99"></td>
                 <td><input type="number" class="player9" name="playerDRB9" min="0" max="99"></td>
                 <td><input type="number" class="player9" name="playerPF9" min="0" max="5"></td>
@@ -484,9 +499,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player10" name="playerFGM10" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player10" name="playerFGA10" min="0" max="99"></td>
-                <td><input type="number" class="player10" name="player3PM10" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player10" name="player3PA10" min="0" max="99"></td>
-                <td><input type="number" class="player10" name="playerFTM10" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player10" name="playerFTA10" min="0" max="99"></td>
+                <td><input type="number" class="player10" name="playerFGM10" min="0" max="99">/<input type="number" class="player10" name="playerFGA10" min="0" max="99"></td>
+                <td><input type="number" class="player10" name="player3PM10" min="0" max="99">/<input type="number" class="player10" name="player3PA10" min="0" max="99"></td>
+                <td><input type="number" class="player10" name="playerFTM10" min="0" max="99">/<input type="number" class="player10" name="playerFTA10" min="0" max="99"></td>
                 <td><input type="number" class="player10" name="playerORB10" min="0" max="99"></td>
                 <td><input type="number" class="player10" name="playerDRB10" min="0" max="99"></td>
                 <td><input type="number" class="player10" name="playerPF10" min="0" max="5"></td>
@@ -505,9 +520,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player11" name="playerFGM11" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player11" name="playerFGA11" min="0" max="99"></td>
-                <td><input type="number" class="player11" name="player3PM11" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player11" name="player3PA11" min="0" max="99"></td>
-                <td><input type="number" class="player11" name="playerFTM11" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player11" name="playerFTA11" min="0" max="99"></td>
+                <td><input type="number" class="player11" name="playerFGM11" min="0" max="99">/<input type="number" class="player11" name="playerFGA11" min="0" max="99"></td>
+                <td><input type="number" class="player11" name="player3PM11" min="0" max="99">/<input type="number" class="player11" name="player3PA11" min="0" max="99"></td>
+                <td><input type="number" class="player11" name="playerFTM11" min="0" max="99">/<input type="number" class="player11" name="playerFTA11" min="0" max="99"></td>
                 <td><input type="number" class="player11" name="playerORB11" min="0" max="99"></td>
                 <td><input type="number" class="player11" name="playerDRB11" min="0" max="99"></td>
                 <td><input type="number" class="player11" name="playerPF11" min="0" max="5"></td>
@@ -526,9 +541,9 @@
                     <option value="no">No</option>
                   </select>
                 </td>
-                <td><input type="number" class="player12" name="playerFGM12" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player12" name="playerFGA12" min="0" max="99"></td>
-                <td><input type="number" class="player12" name="player3PM12" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player12" name="player3PA12" min="0" max="99"></td>
-                <td><input type="number" class="player12" name="playerFTM12" min="0" max="99">&nbsp;/&nbsp;<input type="number" class="player12" name="playerFTA12" min="0" max="99"></td>
+                <td><input type="number" class="player12" name="playerFGM12" min="0" max="99">/<input type="number" class="player12" name="playerFGA12" min="0" max="99"></td>
+                <td><input type="number" class="player12" name="player3PM12" min="0" max="99">/<input type="number" class="player12" name="player3PA12" min="0" max="99"></td>
+                <td><input type="number" class="player12" name="playerFTM12" min="0" max="99">/<input type="number" class="player12" name="playerFTA12" min="0" max="99"></td>
                 <td><input type="number" class="player12" name="playerORB12" min="0" max="99"></td>
                 <td><input type="number" class="player12" name="playerDRB12" min="0" max="99"></td>
                 <td><input type="number" class="player12" name="playerPF12" min="0" max="5"></td>
