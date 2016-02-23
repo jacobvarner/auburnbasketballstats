@@ -16,92 +16,87 @@
 </template>
 
 <template name="playerPage">
-  <h3>{{name}} - {{season}} Stats</h3>
-  <select class="span">
-    <option value="0">Entire Season</option>
-    {{#if season3}}
-      <option value="3">Past 3 Games</option>
-    {{/if}}
-    {{#if season5}}
-      <option value="5">Past 5 Games</option>
-    {{/if}}
-    {{#if season10}}
-      <option value="10">Past 10 Games</option>
-    {{/if}}
-  </select>
-  <div>
-    <p class="main">{{ppg}}</p>
-    <p class="label">PPG</p>
-    <p class="secondary">{{points}}</p>
-    <p class="secondaryLabel">PTS</p>
+  <div class="player-header">
+    <h2>{{name}}</h2>
+    <h3>{{season}} Stats</h3>
+    <div class="span-select">
+      <span>View stats from the</span>
+      <select class="span">
+        <option value="0">Entire Season</option>
+        {{#if season3}}
+          <option value="3">Past 3 Games</option>
+        {{/if}}
+        {{#if season5}}
+          <option value="5">Past 5 Games</option>
+        {{/if}}
+        {{#if season10}}
+          <option value="10">Past 10 Games</option>
+        {{/if}}
+      </select>
+    </div>
   </div>
-  <div>
-    <p class="main">{{rpg}}</p>
-    <p class="label">RPG</p>
-    <p class="secondary">{{rebounds}}</p>
-    <p class="secondaryLabel">REB</p>
+  <div class="main-stats-container">
+    <div class="stat-block">
+      <p class="main">{{ppg}}</p>
+      <p class="label">Points Per Game</p>
+      <p class="secondary">{{points}} <span>Points</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{rpg}}</p>
+      <p class="label">Rebounds Per Game</p>
+      <p class="secondary">{{rebounds}} <span>Rebounds</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{apg}}</p>
+      <p class="label">Assists Per Game</p>
+      <p class="secondary">{{assists}} <span>Assists</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{fgp}}</p>
+      <p class="label">Field Goal Percentage</p>
+      <p class="secondary">{{fgm}}-{{fga}} <span>Field Goals</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{threepp}}</p>
+      <p class="label">3pt Percentage</p>
+      <p class="secondary">{{threepm}}-{{threepa}} <span>3pt Field Goals</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{twopp}}</p>
+      <p class="label">2pt Percentage</p>
+      <p class="secondary">{{twopm}}-{{twopa}} <span>2pt Field Goals</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{ftp}}</p>
+      <p class="label">Free Throw Percentage</p>
+      <p class="secondary">{{ftm}}-{{fta}} <span>Free Throws</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{bpg}}</p>
+      <p class="label">Blocks Per Game</p>
+      <p class="secondary">{{blocks}} <span>Blocks</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{spg}}</p>
+      <p class="label">Steals Per Game</p>
+      <p class="secondary">{{steals}} <span>Steals</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{topg}}</p>
+      <p class="label">Turnovers Per Game</p>
+      <p class="secondary">{{turnovers}} <span>Turnovers</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{pfpg}}</p>
+      <p class="label">Fouls Per Game</p>
+      <p class="secondary">{{fouls}} <span>Fouls</span></p>
+    </div>
+    <div class="stat-block">
+      <p class="main">{{mpg}}</p>
+      <p class="label">Minutes Per Game</p>
+      <p class="secondary">{{minutes}} <span>Minutes</span></p>
+    </div>
   </div>
-  <div>
-    <p class="main">{{apg}}</p>
-    <p class="label">APG</p>
-    <p class="secondary">{{assists}}</p>
-    <p class="secondaryLabel">AST</p>
-  </div>
-  <div>
-    <p class="main">{{fgp}}%</p>
-    <p class="label">FG%</p>
-    <p class="secondary">{{fgm}}-{{fga}}</p>
-    <p class="secondaryLabel">FGM/A</p>
-  </div>
-  <div>
-    <p class="main">{{threepp}}%</p>
-    <p class="label">3P%</p>
-    <p class="secondary">{{threepm}}-{{threepa}}</p>
-    <p class="secondaryLabel">3PM/A</p>
-  </div>
-  <div>
-    <p class="main">{{twopp}}%</p>
-    <p class="label">2P%</p>
-    <p class="secondary">{{twopm}}-{{twopa}}</p>
-    <p class="secondaryLabel">2PM/A</p>
-  </div>
-  <div>
-    <p class="main">{{ftp}}</p>
-    <p class="label">FT%</p>
-    <p class="secondary">{{ftm}}-{{fta}}</p>
-    <p class="secondaryLabel">FTM/A</p>
-  </div>
-  <div>
-    <p class="main">{{bpg}}</p>
-    <p class="label">BPG</p>
-    <p class="secondary">{{blocks}}</p>
-    <p class="secondaryLabel">BLK</p>
-  </div>
-  <div>
-    <p class="main">{{spg}}</p>
-    <p class="label">SPG</p>
-    <p class="secondary">{{steals}}</p>
-    <p class="secondaryLabel">STL</p>
-  </div>
-  <div>
-    <p class="main">{{topg}}</p>
-    <p class="label">TOPG</p>
-    <p class="secondary">{{turnovers}}</p>
-    <p class="secondaryLabel">TO</p>
-  </div>
-  <div>
-    <p class="main">{{pfpg}}</p>
-    <p class="label">PFPG</p>
-    <p class="secondary">{{fouls}}</p>
-    <p class="secondaryLabel">PF</p>
-  </div>
-  <div>
-    <p class="main">{{mpg}}</p>
-    <p class="label">MPG</p>
-    <p class="secondary">{{minutes}}</p>
-    <p class="secondaryLabel">MIN</p>
-  </div>
-  <hr />
   {{> games}}
 </template>
 

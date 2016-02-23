@@ -198,11 +198,15 @@ Template.playerPage.helpers({
     } else {
       for (i = (this.length - span); i < this.length; i++) {
         total1 += this[i].playerFGM;
-        total1 += this[i].playerFGA;
+        total2 += this[i].playerFGA;
       }
     }
-    var percent = ((total1 / total2) * 100).toFixed(1);
-    return percent;
+    if (total2 === 0) {
+      return "N/A";
+    } else {
+      var percent = ((total1 / total2) * 100).toFixed(1);
+      return percent + "%";
+    }
   },
   'fgm': function() {
     var total = 0;
@@ -244,11 +248,15 @@ Template.playerPage.helpers({
     } else {
       for (i = (this.length - span); i < this.length; i++) {
         total1 += this[i].player3PM;
-        total1 += this[i].player3PA;
+        total2 += this[i].player3PA;
       }
     }
-    var percent = ((total1 / total2) * 100).toFixed(1);
-    return percent;
+    if (total2 === 0) {
+      return "N/A";
+    } else {
+      var percent = ((total1 / total2) * 100).toFixed(1);
+      return percent + "%";
+    }
   },
   'threepm': function() {
     var total = 0;
@@ -290,11 +298,15 @@ Template.playerPage.helpers({
     } else {
       for (i = (this.length - span); i < this.length; i++) {
         total1 += this[i].player2PM;
-        total1 += this[i].player2PA;
+        total2 += this[i].player2PA;
       }
     }
-    var percent = ((total1 / total2) * 100).toFixed(1);
-    return percent;
+    if (total2 === 0) {
+      return "N/A";
+    } else {
+      var percent = ((total1 / total2) * 100).toFixed(1);
+      return percent = "%";
+    }
   },
   'twopm': function() {
     var total = 0;
@@ -336,11 +348,15 @@ Template.playerPage.helpers({
     } else {
       for (i = (this.length - span); i < this.length; i++) {
         total1 += this[i].playerFTM;
-        total1 += this[i].playerFTA;
+        total2 += this[i].playerFTA;
       }
     }
-    var percent = ((total1 / total2) * 100).toFixed(1);
-    return percent;
+    if (total2 === 0) {
+      return "N/A";
+    } else {
+      var percent = ((total1 / total2) * 100).toFixed(1);
+      return percent + "%";
+    }
   },
   'ftm': function() {
     var total = 0;
