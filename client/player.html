@@ -97,58 +97,61 @@
       <p class="secondary">{{minutes}} <span>Minutes</span></p>
     </div>
   </div>
-  {{> games}}
+  <div class="player-table-container">
+    <h3>{{name}} vs Opponents</h3>
+    {{> games}}
+  </div>
 </template>
 
 <template name="games">
-  <table class="player-games">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Opponent</th>
-        <th>Start?</th>
-        <th>MIN</th>
-        <th>PTS</th>
-        <th>REB</th>
-        <th>AST</th>
-        <th>FGM/A</th>
-        <th>3PM/A</th>
-        <th>FTM/A</th>
-        <th>ORB</th>
-        <th>DRB</th>
-        <th>PF</th>
-        <th>TO</th>
-        <th>BLK</th>
-        <th>STL</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each playerGames}}
+  <div class="table-container">
+    <table class="player-games">
+      <thead>
         <tr>
-          <td>{{getDate}}</td>
-          <td>{{this.playerOpponent}}</td>
-          <td>
-            {{#if this.playerStarter}}
-              Y
-            {{else}}
-              N
-            {{/if}}
-          </td>
-          <td>{{this.playerMIN}}</td>
-          <td>{{this.playerPoints}}</td>
-          <td>{{this.playerREB}}</td>
-          <td>{{this.playerAST}}</td>
-          <td>{{this.playerFGM}}-{{this.playerFGA}}</td>
-          <td>{{this.player3PM}}-{{this.player3PA}}</td>
-          <td>{{this.playerFTM}}-{{this.playerFTA}}</td>
-          <td>{{this.playerORB}}</td>
-          <td>{{this.playerDRB}}</td>
-          <td>{{this.playerPF}}</td>
-          <td>{{this.playerTO}}</td>
-          <td>{{this.playerBLK}}</td>
-          <td>{{this.playerSTL}}</td>
+          <th class="date">Date</th>
+          <th class="opponent">Opponent</th>
+          <th class="start">Start?</th>
+          <th class="stat">MIN</th>
+          <th class="stat">PTS</th>
+          <th class="stat">REB</th>
+          <th class="stat">AST</th>
+          <th class="stat">FGM/A</th>
+          <th class="stat">3PM/A</th>
+          <th class="stat">FTM/A</th>
+          <th class="stat">ORB</th>
+          <th class="stat">DRB</th>
+          <th class="stat">PF</th>
+          <th class="stat">TO</th>
+          <th class="stat">BLK</th>
+          <th class="stat">STL</th>
         </tr>
-      {{/each}}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {{#each playerGames}}
+          <tr>
+            <td class="left">{{getDate}}</td>
+            <td class="left">{{this.playerOpponent}}</td>
+            <td>
+              {{#if this.playerStarter}}
+                &#10004;
+              {{/if}}
+            </td>
+            <td>{{this.playerMIN}}</td>
+            <td>{{this.playerPoints}}</td>
+            <td>{{this.playerREB}}</td>
+            <td>{{this.playerAST}}</td>
+            <td>{{this.playerFGM}}-{{this.playerFGA}}</td>
+            <td>{{this.player3PM}}-{{this.player3PA}}</td>
+            <td>{{this.playerFTM}}-{{this.playerFTA}}</td>
+            <td>{{this.playerORB}}</td>
+            <td>{{this.playerDRB}}</td>
+            <td>{{this.playerPF}}</td>
+            <td>{{this.playerTO}}</td>
+            <td>{{this.playerBLK}}</td>
+            <td>{{this.playerSTL}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 </template>

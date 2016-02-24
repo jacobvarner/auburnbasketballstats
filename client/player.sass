@@ -56,8 +56,8 @@ $secondary-blue: #496e9c
 
 // ----- Player Page ----- //
 .player-header
-  width: 800px
-  height: 180px
+  width: 1260px
+  height: 185px
   background: white
   display: block
   margin: 20px auto
@@ -67,9 +67,9 @@ $secondary-blue: #496e9c
   h2
     font-family: Open Sans, sans-serif
     text-align: center
-    font-size: 50px
+    font-size: 70px
     color: $main-orange
-    margin: 10px
+    margin: 0px 10px
 
   h3
     font-family: Open Sans, sans-serif
@@ -94,13 +94,21 @@ $secondary-blue: #496e9c
     select
       width: 99%
 
-@media screen and (max-width: 820px)
+@media screen and (max-width: 1280px)
   .player-header
-    width: 300px
-    height: 130px
+    width: 620px
+    height: 155px
 
     h2
-      font-size: 24px
+      font-size: 50px
+
+@media screen and (max-width: 640px)
+  .player-header
+    width: 300px
+    height: 110px
+
+    h2
+      font-size: 30px
 
     h3
       font-size: 18px
@@ -108,12 +116,13 @@ $secondary-blue: #496e9c
 .main-stats-container
   width: 1280px
   margin: 0 auto
+  overflow: auto
   display: block
 
   .stat-block
     width: 300px
-    float: left
     margin: 10px
+    float: left
     background: $secondary-orange
     box-shadow: black 0px 5px 20px 0px
 
@@ -160,3 +169,74 @@ $secondary-blue: #496e9c
 @media screen and (max-width: 640px)
   .main-stats-container
     width: 320px
+
+.player-table-container
+  display: block
+  overflow: auto
+  width: 1260px
+  margin: 20px auto
+  background: white
+  box-shadow: black 0px 5px 20px 0px
+
+  h3
+    font-family: Open Sans, sans-serif
+    font-size: 24px
+    color: $main-orange
+    text-align: center
+    margin: 10px 15px
+
+  table
+    width: 1230px
+    border: 3px solid $secondary-blue
+
+    th
+      font-family: Open Sans, sans-serif
+      color: white
+      font-size: 18px
+      background: $secondary-blue
+      padding: 5px 10px
+
+    .date
+      width: 100px
+      text-align: left
+
+    .opponent
+      width: 200px
+      text-align: left
+
+    td
+      font-family: Open Sans, sans-serif
+      font-size: 16px
+      font-weight: bold
+      padding: 5px 10px
+      color: $main-blue
+      text-align: center
+      border-right: 3px solid $secondary-blue
+      border-bottom: 3px solid $secondary-blue
+
+
+    .left
+      text-align: left
+
+    tr:hover
+      background: #dddddd
+
+  .table-container
+    overflow-x: auto
+    display: block
+    width: 1230px
+    margin: 0 15px 15px
+
+@media screen and (max-width: 1280px)
+  .player-table-container
+    width: 620px
+
+    .table-container
+      width: 590px
+
+@media screen and (max-width: 640px)
+  .player-table-container
+    width: 300px
+
+    .table-container
+      width: 270px
