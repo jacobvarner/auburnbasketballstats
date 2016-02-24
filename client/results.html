@@ -1,27 +1,41 @@
 <template name="results">
-  <p>
-    View results against
-    <select id="team-select">
-      {{#each teamList}}
-        <option value="{{this}}">{{this}}</option>
-      {{/each}}
-    </select>
-  </p>
-  <p>
-    Auburn results from the&nbsp;
-    <select id="season-select">
-      {{#each seasonList}}
-        <option value="{{this}}">{{this}}</option>
-      {{/each}}
-    </select>
-    &nbsp;season.
-  </p>
-  <hr />
-  <div class="resultsSummary">
-    <p>Record: {{getRecord}}</p>
-    <p>Home: {{getHomeRecord}}</p>
-    <p>Away: {{getAwayRecord}}</p>
-    <p>Neutral: {{getNeutralRecord}}</p>
+  <div class="banner-wrapper">
+    <div class="banner-container">
+      <h2>Auburn All-Time Game Results</h2>
+      <div class="buffer"></div>
+      <div class="season-select-container">
+        <p>
+          Show results from:<br/>
+          <select id="season-select">
+            {{#each seasonList}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </p>
+      </div>
+      <div class="team-select-container">
+        <p>
+          Show results against:<br/>
+          <select id="team-select">
+            {{#each teamList}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-container">
+    <div class="select-container">
+
+    </div>
+    <div class="summary-container">
+      <p><strong>Record:</strong> {{getRecord}}</p>
+      <p><strong>Home:</strong> {{getHomeRecord}}</p>
+      <p><strong>Away:</strong> {{getAwayRecord}}</p>
+      <p><strong>Neutral:</strong> {{getNeutralRecord}}</p>
+    </div>
   </div>
   <table>
     <thead>
