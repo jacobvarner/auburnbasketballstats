@@ -71,6 +71,9 @@ Template.results.helpers({
     var output = SeasonInfo.find({ season: season }, {sort: {date: 1}}).fetch();
     return output;
   },
+  'season': function() {
+    return Session.get('resultsSeason');
+  },
   'getDate': function() {
     var d = this.date;
     var month = d.getUTCMonth() + 1;
@@ -78,6 +81,15 @@ Template.results.helpers({
     var year = d.getUTCFullYear();
     var output = month + "/" + day + "/" + year;
     return output;
+  },
+  'resultRow': function() {
+    if (this.result === "W") {
+      return 'class="win"';
+    } else if (this.result === "L") {
+      return 'class="loss"';
+    } else {
+      return '';
+    }
   },
   'home': function() {
     if (this.location === "Away") {

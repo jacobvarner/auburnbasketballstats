@@ -13,7 +13,7 @@ $secondary-blue: #496e9c
   .banner-container
     width: 1260px
     display: block
-    margin: 10px
+    margin: 20px auto
     background: white
     box-shadow: black 0px 5px 20px 0px
     overflow: auto
@@ -27,12 +27,12 @@ $secondary-blue: #496e9c
 
     .buffer
       display: block
-      width: 300px
-      margin: 20px 10px
+      width: 280px
+      margin: 0px 10px 20px
       float: left
 
     .season-select-container
-      width: 300px
+      width: 280px
       margin: 0px 10px 20px
       float: left
       display: block
@@ -51,7 +51,7 @@ $secondary-blue: #496e9c
         margin: 5px 5px 10px
 
     .team-select-container
-      width: 300px
+      width: 280px
       float: left
       display: block
       margin: 0px 10px 20px
@@ -69,63 +69,188 @@ $secondary-blue: #496e9c
         width: 260px
         margin: 5px 5px 10px
 
-.top-container
-  width: 1280px
-  display: block
-  margin: 20px auto
-
-  .buffer
+  .top-container
+    width: 1260px
     display: block
-    width: 310px
-    margin: 20px 10px
-    float: left
+    overflow: auto
+    margin: 20px auto
 
-  .all-time-record
-    width: 300px
-    float: left
-    margin: 10px
-    background: $secondary-orange
+    .buffer
+      display: block
+      width: 280px
+      margin: 10px
+      float: left
+
+    .all-time-record
+      width: 280px
+      float: left
+      margin: 0 10px
+      background: $secondary-orange
+      box-shadow: black 0px 5px 20px 0px
+
+      .heading
+        display: block
+        width: 100%
+        background: $main-orange
+
+        h3
+          font-family: Open Sans, sans-serif
+          color: $main-blue
+          font-size: 21px
+          margin: 0
+          padding: 7px 10px 10px
+
+      p
+        font-family: Open Sans, sans-serif
+        font-size: 18px
+        margin: 5px 10px
+        color: white
+
+    .season-record
+      width: 280px
+      float: left
+      margin: 0 10px
+      background: $secondary-orange
+      box-shadow: black 0px 5px 20px 0px
+
+      .heading
+        display: block
+        width: 100%
+        background: $main-orange
+
+        h3
+          font-family: Open Sans, sans-serif
+          color: $main-blue
+          font-size: 21px
+          margin: 0
+          padding: 7px 10px 10px
+
+      p
+        font-family: Open Sans, sans-serif
+        font-size: 18px
+        margin: 5px 10px
+        color: white
+
+  .main-container
+    display: block
+    clear: both
+    overflow: auto
+    width: 1260px
+    margin: 20px auto
+    background: white
     box-shadow: black 0px 5px 20px 0px
 
-    .heading
-      display: block
-      width: 100%
-      background: $main-orange
-
-      h3
-        font-family: Open Sans, sans-serif
-        color: $main-blue
-        font-size: 22px
-        margin: 0
-        padding: 7px 10px 10px
-
-    p
+    h3
       font-family: Open Sans, sans-serif
-      font-size: 18px
-      margin: 5px 10px
-      color: white
+      font-size: 24px
+      color: $main-orange
+      text-align: center
+      margin: 10px 15px
 
-  .season-record
-    width: 300px
-    float: left
-    margin: 10px
-    background: $secondary-orange
-    box-shadow: black 0px 5px 20px 0px
+    table
+      width: 1112px
+      border: 3px solid $secondary-blue
 
-    .heading
-      display: block
-      width: 100%
-      background: $main-orange
-
-      h3
+      th
         font-family: Open Sans, sans-serif
-        color: $main-blue
-        font-size: 22px
-        margin: 0
-        padding: 7px 10px 10px
+        color: white
+        font-size: 18px
+        background: $secondary-blue
+        padding: 5px 10px
 
-    p
-      font-family: Open Sans, sans-serif
-      font-size: 18px
-      margin: 5px 10px
-      color: white
+      .date
+        width: 100px
+        text-align: left
+
+      .opponent
+        width: 220px
+        text-align: left
+
+      td
+        font-family: Open Sans, sans-serif
+        font-size: 16px
+        font-weight: bold
+        padding: 5px 10px
+        color: $main-blue
+        text-align: center
+        border-right: 3px solid $secondary-blue
+        border-bottom: 3px solid $secondary-blue
+
+        a
+          text-decoration: none
+          color: $main-orange
+        a:hover
+          color: $secondary-orange
+
+
+      .left
+        text-align: left
+
+      .stats
+        width: 94px
+
+      tr:hover
+        background: #dddddd
+
+    .table-container
+      overflow-x: auto
+      display: block
+      width: 1112px
+      margin: 0 auto 15px
+
+@media screen and (max-width: 1280px)
+  .banner-wrapper
+    width: 640px
+
+    .banner-container
+      width: 620px
+
+      h2
+        font-size: 38px
+
+      .buffer
+        width: 10px
+        margin: 10px 0px
+
+    .top-container
+      width: 620px
+
+      .buffer
+        width: 10px
+        margin: 10px 0px
+
+    .main-container
+      width: 620px
+
+      .table-container
+        width: 600px
+        margin: 0 10px 15px
+
+@media screen and (max-width: 640px)
+  .banner-wrapper
+    width: 320px
+
+    .banner-container
+      width: 300px
+
+      h2
+        font-size: 30px
+
+      .buffer
+        display: none
+
+    .top-container
+      width: 300px
+
+      .buffer
+        display: none
+
+      .all-time-record
+        margin: 0 10px 20px
+
+    .main-container
+      width: 300px
+
+      .table-container
+        width: 280px
+        margin: 0 10px 15px
