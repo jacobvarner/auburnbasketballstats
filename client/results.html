@@ -27,10 +27,20 @@
   </div>
 
   <div class="top-container">
-    <div class="select-container">
-
+    <div class="buffer"></div>
+    <div class="all-time-record">
+      <div class="heading">
+        <h3>All-Time Records</h3>
+      </div>
+      <p><strong>Record:</strong> {{getRecordAllTime}}</p>
+      <p><strong>Home:</strong> {{getHomeRecordAllTime}}</p>
+      <p><strong>Away:</strong> {{getAwayRecordAllTime}}</p>
+      <p><strong>Neutral:</strong> {{getNeutralRecordAllTime}}</p>
     </div>
-    <div class="summary-container">
+    <div class="season-record">
+      <div class="heading">
+        <h3>Selected Season Records</h3>
+      </div>
       <p><strong>Record:</strong> {{getRecord}}</p>
       <p><strong>Home:</strong> {{getHomeRecord}}</p>
       <p><strong>Away:</strong> {{getAwayRecord}}</p>

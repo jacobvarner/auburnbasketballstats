@@ -228,9 +228,7 @@ Template.results.helpers({
     var confWins = SeasonInfo.find({result: "W", conference: true}).count();
     var confLosses = SeasonInfo.find({result: "L", conference: true}).count();
     var confTies = SeasonInfo.find({result: "T", conference: true}).count();
-    var winPercentage = ((wins / (wins + losses + ties)) * 100).toFixed(2);
-    var confWinPercentage = ((confWins / (confWins + confLosses + confTies)) * 100).toFixed(2);
-    return wins + "-" + losses + "-" + ties + " " + "(" + confWins + "-" + confLosses + "-" + confTies + ") : " + winPercentage + "% (" + confWinPercentage + "%)";
+    return wins + "-" + losses + "-" + ties + " " + "(" + confWins + "-" + confLosses + "-" + confTies + ")";
   },
   'getHomeRecordAllTime': function() {
     var wins = SeasonInfo.find({result: "W", location: "Home"}).count();
@@ -239,9 +237,7 @@ Template.results.helpers({
     var confWins = SeasonInfo.find({result: "W", location: "Home", conference: true}).count();
     var confLosses = SeasonInfo.find({result: "L", location: "Home", conference: true}).count();
     var confTies = SeasonInfo.find({result: "T", location: "Home", conference: true}).count();
-    var winPercentage = ((wins / (wins + losses + ties)) * 100).toFixed(2);
-    var confWinPercentage = ((confWins / (confWins + confLosses + confTies)) * 100).toFixed(2);
-    return wins + "-" + losses + "-" + ties + " " + "(" + confWins + "-" + confLosses + "-" + confTies + ") : " + winPercentage + "% (" + confWinPercentage + "%)";
+    return wins + "-" + losses + "-" + ties + " " + "(" + confWins + "-" + confLosses + "-" + confTies + ")";
   },
   'getAwayRecordAllTime': function() {
     var wins = SeasonInfo.find({result: "W", location: "Away"}).count();
@@ -250,9 +246,7 @@ Template.results.helpers({
     var confWins = SeasonInfo.find({result: "W", location: "Away", conference: true}).count();
     var confLosses = SeasonInfo.find({result: "L", location: "Away", conference: true}).count();
     var confTies = SeasonInfo.find({result: "T", location: "Away", conference: true}).count();
-    var winPercentage = ((wins / (wins + losses + ties)) * 100).toFixed(2);
-    var confWinPercentage = ((confWins / (confWins + confLosses + confTies)) * 100).toFixed(2);
-    return wins + "-" + losses + "-" + ties + " " + "(" + confWins + "-" + confLosses + "-" + confTies + ") : " + winPercentage + "% (" + confWinPercentage + "%)";
+    return wins + "-" + losses + "-" + ties + " " + "(" + confWins + "-" + confLosses + "-" + confTies + ")";
   },
   'getNeutralRecordAllTime': function() {
     var wins = SeasonInfo.find({result: "W", location: "Neutral"}).count();
@@ -261,9 +255,7 @@ Template.results.helpers({
     var confWins = SeasonInfo.find({result: "W", location: "Neutral", conference: true}).count();
     var confLosses = SeasonInfo.find({result: "L", location: "Neutral", conference: true}).count();
     var confTies = SeasonInfo.find({result: "T", location: "Neutral", conference: true}).count();
-    var winPercentage = ((wins / (wins + losses + ties)) * 100).toFixed(2);
-    var confWinPercentage = ((confWins / (confWins + confLosses + confTies)) * 100).toFixed(2);
-    return wins + "-" + losses + "-" + ties + " " + "(" + confWins + "-" + confLosses + "-" + confTies + ") : " + winPercentage + "% (" + confWinPercentage + "%)";
+    return wins + "-" + losses + "-" + ties + " " + "(" + confWins + "-" + confLosses + "-" + confTies + ")";
   }
 });
 
