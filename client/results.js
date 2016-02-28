@@ -5,7 +5,9 @@ Router.route('/results', {
     var season = SeasonInfo.find({}, {field: {season: 1}, sort: {season: -1}}).fetch();
     season = _.pluck(season, 'season');
     season = season[0];
-    Session.set('resultsSeason', season);
+    if (!Session.get('resultsSeason')) {
+      Session.set('resultsSeason', season);
+    }
   }
 });
 
@@ -276,6 +278,12 @@ Template.resultsTeam.helpers({
     var team = Session.get('team');
     return team;
   },
+  'seasonList': function() {
+    var seasons = SeasonInfo.find({}, {sort: {season: -1}, fields: {season: 1}}).fetch();
+    seasons = _.pluck(seasons, 'season');
+    var uniqueSeasons = _.uniq(seasons, true);
+    return uniqueSeasons;
+  },
   'teamList': function() {
     var teams = SeasonInfo.find({}, {sort: {opponent: 1}, fields: {opponent: 1}}).fetch();
     teams = _.pluck(teams, 'opponent');
@@ -395,7 +403,7 @@ Template.resultsTeam.helpers({
       }
       return winner + ", " + count
     } else if (results[0].result === "L") {
-      var winner = team;
+      var winner = "Opponent";
       var count = 1;
       for (i = 1; i < results.length; i++) {
         if (results[i].result === "L") {
@@ -434,6 +442,10 @@ Template.resultsTeam.events({
     var team = $('#team-select').val();
     var link = team.replace(" ", "+");
     Router.go('/results/' + link);
+  },
+  'change #season-select': function() {
+    Session.set('resultsSeason', $('#season-select').val());
+    Router.go('/results')
   }
 });
 
