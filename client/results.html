@@ -218,216 +218,219 @@
       <h2>{{heading}}</h2>
       <p>{{attendance}} in attendance</p>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Stat</th>
-          <th>Auburn</th>
-          <th>{{opponent}}</th>
-          <th>Margin</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Points</td>
-          <td>{{auburnPoints}}</td>
-          <td>{{opponentPoints}}</td>
-          <td>{{pointsDiff}}</td>
-        </tr>
-        <tr>
-          <td>Field Goals Made</td>
-          <td>{{auburnFGM}}</td>
-          <td>{{opponentFGM}}</td>
-          <td>{{fgmDiff}}</td>
-        </tr>
-        <tr>
-          <td>Field Goals Attempted</td>
-          <td>{{auburnFGA}}</td>
-          <td>{{opponentFGA}}</td>
-          <td>{{fgaDiff}}</td>
-        </tr>
-        <tr>
-          <td>Field Goal %</td>
-          <td>{{auburnFGP}}</td>
-          <td>{{opponentFGP}}</td>
-          <td>{{fgpDiff}}</td>
-        </tr>
-        <tr>
-          <td>3-Pointers Made</td>
-          <td>{{auburn3PM}}</td>
-          <td>{{opponent3PM}}</td>
-          <td>{{threepmDiff}}</td>
-        </tr>
-        <tr>
-          <td>3-Pointers Attempted</td>
-          <td>{{auburn3PA}}</td>
-          <td>{{opponent3PA}}</td>
-          <td>{{threepaDiff}}</td>
-        </tr>
-        <tr>
-          <td>3-Point %</td>
-          <td>{{auburn3PP}}</td>
-          <td>{{opponent3PP}}</td>
-          <td>{{threeppDiff}}</td>
-        </tr>
-        <tr>
-          <td>2-Pointers Made</td>
-          <td>{{auburn2PM}}</td>
-          <td>{{opponent2PM}}</td>
-          <td>{{twopmDiff}}</td>
-        </tr>
-        <tr>
-          <td>2-Pointers Attempted</td>
-          <td>{{auburn2PA}}</td>
-          <td>{{opponent2PA}}</td>
-          <td>{{twopaDiff}}</td>
-        </tr>
-        <tr>
-          <td>2-Point %</td>
-          <td>{{auburn2PP}}</td>
-          <td>{{opponent2PP}}</td>
-          <td>{{twoppDiff}}</td>
-        </tr>
-        <tr>
-          <td>Free Throws Made</td>
-          <td>{{auburnFTM}}</td>
-          <td>{{opponentFTM}}</td>
-          <td>{{ftmDiff}}</td>
-        </tr>
-        <tr>
-          <td>Free Throws Attempted</td>
-          <td>{{auburnFTA}}</td>
-          <td>{{opponentFTA}}</td>
-          <td>{{ftaDiff}}</td>
-        </tr>
-        <tr>
-          <td>Free Throw %</td>
-          <td>{{auburnFTP}}</td>
-          <td>{{opponentFTP}}</td>
-          <td>{{ftpDiff}}</td>
-        </tr>
-        <tr>
-          <td>Offensive Rebounds</td>
-          <td>{{auburnORB}}</td>
-          <td>{{opponentORB}}</td>
-          <td>{{orbDiff}}</td>
-        </tr>
-        <tr>
-          <td>Defensive Rebounds</td>
-          <td>{{auburnDRB}}</td>
-          <td>{{opponentDRB}}</td>
-          <td>{{drbDiff}}</td>
-        </tr>
-        <tr>
-          <td>Total Rebounds</td>
-          <td>{{auburnREB}}</td>
-          <td>{{opponentREB}}</td>
-          <td>{{rebDiff}}</td>
-        </tr>
-        <tr>
-          <td>Assists</td>
-          <td>{{auburnAST}}</td>
-          <td>{{opponentAST}}</td>
-          <td>{{astDiff}}</td>
-        </tr>
-        <tr>
-          <td>Turnovers</td>
-          <td>{{auburnTO}}</td>
-          <td>{{opponentTO}}</td>
-          <td>{{toDiff}}</td>
-        </tr>
-        <tr>
-          <td>Blocks</td>
-          <td>{{auburnBLK}}</td>
-          <td>{{opponentBLK}}</td>
-          <td>{{blkDiff}}</td>
-        </tr>
-        <tr>
-          <td>Steals</td>
-          <td>{{auburnSTL}}</td>
-          <td>{{opponentSTL}}</td>
-          <td>{{stlDiff}}</td>
-        </tr>
-        <tr>
-          <td>Personal Fouls</td>
-          <td>{{auburnPF}}</td>
-          <td>{{opponentPF}}</td>
-          <td>{{pfDiff}}</td>
-        </tr>
-        <tr>
-          <td>Points Off Turnovers</td>
-          <td>{{auburnPOT}}</td>
-          <td>{{opponentPOT}}</td>
-          <td>{{potDiff}}</td>
-        </tr>
-        <tr>
-          <td>Points in the Paint</td>
-          <td>{{auburnPIP}}</td>
-          <td>{{opponentPIP}}</td>
-          <td>{{pipDiff}}</td>
-        </tr>
-        <tr>
-          <td>2nd Chance Points</td>
-          <td>{{auburn2CP}}</td>
-          <td>{{opponent2CP}}</td>
-          <td>{{scpDiff}}</td>
-        </tr>
-        <tr>
-          <td>Fast Break Points</td>
-          <td>{{auburnFBP}}</td>
-          <td>{{opponentFBP}}</td>
-          <td>{{fbpDiff}}</td>
-        </tr>
-        <tr>
-          <td>Bench Points</td>
-          <td>{{auburnBP}}</td>
-          <td>{{opponentBP}}</td>
-          <td>{{bpDiff}}</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr />
-    <table>
-      <thead>
-        <tr>
-          <th>Player</th>
-          <th>MIN</th>
-          <th>PTS</th>
-          <th>ORB</th>
-          <th>DRB</th>
-          <th>REB</th>
-          <th>AST</th>
-          <th>TO</th>
-          <th>STL</th>
-          <th>BLK</th>
-          <th>FGM-A (%)</th>
-          <th>3PM-A (%)</th>
-          <th>2PM-A (%)</th>
-          <th>FTM-A (%)</th>
-          <th>PF</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each playerData}}
+    <div class="game-stats-table-container">
+      <table>
+        <thead>
           <tr>
-            <td>{{this.playerName}} {{starter}}</td>
-            <td>{{this.playerMIN}}</td>
-            <td>{{this.playerPoints}}</td>
-            <td>{{this.playerORB}}</td>
-            <td>{{this.playerDRB}}</td>
-            <td>{{this.playerREB}}</td>
-            <td>{{this.playerAST}}</td>
-            <td>{{this.playerTO}}</td>
-            <td>{{this.playerSTL}}</td>
-            <td>{{this.playerBLK}}</td>
-            <td>{{this.playerFGM}}-{{this.playerFGA}} ({{fgp}})</td>
-            <td>{{this.player3PM}}-{{this.player3PM}} ({{threepp}})</td>
-            <td>{{this.player2PM}}-{{this.player2PM}} ({{twopp}})</td>
-            <td>{{this.playerFTM}}-{{this.playerFTM}} ({{ftp}})</td>
-            <td>{{this.playerPF}}</td>
+            <th class="left"></th>
+            <th>AU</th>
+            <th>Opp</th>
+            <th>Margin</th>
           </tr>
-        {{/each}}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="category">Points</td>
+            <td>{{auburnPoints}}</td>
+            <td>{{opponentPoints}}</td>
+            <td>{{pointsDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Field Goals Made</td>
+            <td>{{auburnFGM}}</td>
+            <td>{{opponentFGM}}</td>
+            <td>{{fgmDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Field Goals Attempted</td>
+            <td>{{auburnFGA}}</td>
+            <td>{{opponentFGA}}</td>
+            <td>{{fgaDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Field Goal %</td>
+            <td>{{auburnFGP}}</td>
+            <td>{{opponentFGP}}</td>
+            <td>{{fgpDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">3-Pointers Made</td>
+            <td>{{auburn3PM}}</td>
+            <td>{{opponent3PM}}</td>
+            <td>{{threepmDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">3-Pointers Attempted</td>
+            <td>{{auburn3PA}}</td>
+            <td>{{opponent3PA}}</td>
+            <td>{{threepaDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">3-Point %</td>
+            <td>{{auburn3PP}}</td>
+            <td>{{opponent3PP}}</td>
+            <td>{{threeppDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">2-Pointers Made</td>
+            <td>{{auburn2PM}}</td>
+            <td>{{opponent2PM}}</td>
+            <td>{{twopmDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">2-Pointers Attempted</td>
+            <td>{{auburn2PA}}</td>
+            <td>{{opponent2PA}}</td>
+            <td>{{twopaDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">2-Point %</td>
+            <td>{{auburn2PP}}</td>
+            <td>{{opponent2PP}}</td>
+            <td>{{twoppDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Free Throws Made</td>
+            <td>{{auburnFTM}}</td>
+            <td>{{opponentFTM}}</td>
+            <td>{{ftmDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Free Throws Attempted</td>
+            <td>{{auburnFTA}}</td>
+            <td>{{opponentFTA}}</td>
+            <td>{{ftaDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Free Throw %</td>
+            <td>{{auburnFTP}}</td>
+            <td>{{opponentFTP}}</td>
+            <td>{{ftpDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Offensive Rebounds</td>
+            <td>{{auburnORB}}</td>
+            <td>{{opponentORB}}</td>
+            <td>{{orbDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Defensive Rebounds</td>
+            <td>{{auburnDRB}}</td>
+            <td>{{opponentDRB}}</td>
+            <td>{{drbDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Total Rebounds</td>
+            <td>{{auburnREB}}</td>
+            <td>{{opponentREB}}</td>
+            <td>{{rebDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Assists</td>
+            <td>{{auburnAST}}</td>
+            <td>{{opponentAST}}</td>
+            <td>{{astDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Turnovers</td>
+            <td>{{auburnTO}}</td>
+            <td>{{opponentTO}}</td>
+            <td>{{toDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Blocks</td>
+            <td>{{auburnBLK}}</td>
+            <td>{{opponentBLK}}</td>
+            <td>{{blkDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Steals</td>
+            <td>{{auburnSTL}}</td>
+            <td>{{opponentSTL}}</td>
+            <td>{{stlDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Personal Fouls</td>
+            <td>{{auburnPF}}</td>
+            <td>{{opponentPF}}</td>
+            <td>{{pfDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Points Off Turnovers</td>
+            <td>{{auburnPOT}}</td>
+            <td>{{opponentPOT}}</td>
+            <td>{{potDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Points in the Paint</td>
+            <td>{{auburnPIP}}</td>
+            <td>{{opponentPIP}}</td>
+            <td>{{pipDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">2nd Chance Points</td>
+            <td>{{auburn2CP}}</td>
+            <td>{{opponent2CP}}</td>
+            <td>{{scpDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Fast Break Points</td>
+            <td>{{auburnFBP}}</td>
+            <td>{{opponentFBP}}</td>
+            <td>{{fbpDiff}}</td>
+          </tr>
+          <tr>
+            <td class="category">Bench Points</td>
+            <td>{{auburnBP}}</td>
+            <td>{{opponentBP}}</td>
+            <td>{{bpDiff}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="player-stats-table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>MIN</th>
+            <th>PTS</th>
+            <th>ORB</th>
+            <th>DRB</th>
+            <th>REB</th>
+            <th>AST</th>
+            <th>TO</th>
+            <th>STL</th>
+            <th>BLK</th>
+            <th>FGM-A</th>
+            <th>3PM-A</th>
+            <th>2PM-A</th>
+            <th>FTM-A</th>
+            <th>PF</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each playerData}}
+            <tr>
+              <td class="player">{{this.playerName}} {{starter}}</td>
+              <td>{{this.playerMIN}}</td>
+              <td>{{this.playerPoints}}</td>
+              <td>{{this.playerORB}}</td>
+              <td>{{this.playerDRB}}</td>
+              <td>{{this.playerREB}}</td>
+              <td>{{this.playerAST}}</td>
+              <td>{{this.playerTO}}</td>
+              <td>{{this.playerSTL}}</td>
+              <td>{{this.playerBLK}}</td>
+              <td>{{this.playerFGM}}-{{this.playerFGA}}</td>
+              <td>{{this.player3PM}}-{{this.player3PM}}</td>
+              <td>{{this.player2PM}}-{{this.player2PM}}</td>
+              <td>{{this.playerFTM}}-{{this.playerFTM}}</td>
+              <td>{{this.playerPF}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
