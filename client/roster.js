@@ -63,6 +63,9 @@ Template.roster.helpers({
     } else {
       return false;
     }
+  },
+  'season': function() {
+    return Session.get('rosterSeason');
   }
 });
 

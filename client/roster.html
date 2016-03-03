@@ -1,11 +1,12 @@
 <template name="roster">
-  <h3>Auburn Basketball roster for the&nbsp;
-  <select id="season-select">
+  <h2>Auburn Basketball {{season}} Roster</h2>
+  <p>Show roster for
+    <select id="season-select">
     {{#each seasonList}}
       <option value="{{this}}">{{this}}</option>
     {{/each}}
   </select>
-  &nbsp;season</h3>
+  &nbsp;season</p>
   <hr/>
   <table>
     <thead>
