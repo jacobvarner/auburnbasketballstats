@@ -232,6 +232,7 @@ $secondary-blue: #496e9c
 
   .game-header
     width: 1260px
+    margin: 0 auto
     display: block
     background: white
     overflow: auto
@@ -254,7 +255,7 @@ $secondary-blue: #496e9c
     display: block
     float: left
     width: 393px
-    margin: 20px 20px 20px 0px
+    margin: 20px 20px 20px 10px
     background: white
 
     table
@@ -325,12 +326,13 @@ $secondary-blue: #496e9c
       tr:hover
         background: rgba($secondary-blue, 0.25)
 
-@media screen and (max-width: 1280px)
+@media screen and (max-width: 1281px)
   .banner-wrapper
     width: 640px
 
     .game-header
       width: 620px
+      margin: 0 auto
 
       h2
         font-size: 30px
@@ -364,12 +366,49 @@ $secondary-blue: #496e9c
         width: 600px
         margin: 0 10px 15px
 
-@media screen and (max-width: 640px)
+      table
+        width: 900px
+        border: 2px solid $secondary-blue
+
+        th
+          font-size: 14px
+          padding: 5px
+
+        .date
+          width: 80px
+
+        .opponent
+          width: 200px
+
+        td
+          font-size: 14px
+          padding: 5px
+          border-right: 2px solid $secondary-blue
+          border-bottom: 2px solid $secondary-blue
+
+        .stats
+          width: 94px
+
+        tr:hover
+          background: #dddddd
+
+    .game-stats-table-container
+      float: none
+      margin: 20px auto
+
+    .player-stats-table-container
+      float: none
+      width: 640px
+      margin: 0px 0px 20px
+      overflow-x: auto
+
+@media screen and (max-width: 641px)
   .banner-wrapper
     width: 320px
 
     .game-header
       width: 300px
+      margin: 0 auto
 
       h2
         font-size: 24px
@@ -410,3 +449,38 @@ $secondary-blue: #496e9c
       .table-container
         width: 280px
         margin: 0 10px 15px
+
+    .game-stats-table-container
+      float: none
+      width: 320px
+      margin: 20px auto
+
+      table
+        th
+          font-size: 14px
+          padding: 5px 5px
+
+        td
+          font-size: 14px
+          padding: 0px 3px
+
+        .category
+          font-size: 12px
+
+    .player-stats-table-container
+      float: none
+      width: 320px
+      margin: 0px 0px 20px
+      overflow-x: auto
+
+      table
+        width: 800px
+        th
+          font-size: 14px
+
+        td
+          font-size: 14px
+          padding: 0px 3px
+
+        .player
+          font-size: 12px
