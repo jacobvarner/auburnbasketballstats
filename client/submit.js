@@ -73,7 +73,8 @@ Template.teamInput.events({
       height: $('[name=height]').val(),
       weight: $('[name=weight]').val(),
       class: $('[name=class]').val(),
-      transfer: $('[name=transfer]').val(),
+      scholarship: $('[name=scholarship]').is(":checked"),
+      transfer: $('[name=transfer]').is(":checked"),
       hometown: $('[name=hometown]').val(),
       lastSchool: $('[name=lastSchool]').val()
     });

@@ -28,6 +28,32 @@ Template.roster.helpers({
     var output = "/player/" + nameLink;
     return output;
   },
+  'playerInfo': function() {
+    if (this.transfer === true || this.scholarship === true) {
+      if (this.transfer === true) {
+        var transfer = "T";
+      } else {
+        var transfer = "";
+      }
+
+      if (this.scholarship === true) {
+        var scholarship = "S";
+      } else {
+        var scholarship = "";
+      }
+
+      if (this.transfer === true && this.scholarship === true) {
+        var comma = ", ";
+      } else {
+        var comma = "";
+      }
+
+      var output = "[" + transfer + comma + scholarship + "]";
+    } else {
+      var output = "";
+    }
+    return output;
+  },
   'hasStats': function() {
     var name = this.name;
     var season = Session.get('rosterSeason');
