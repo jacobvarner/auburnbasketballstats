@@ -1,0 +1,101 @@
+// ----- Variables ----- //
+$main-orange: #dd550c
+$main-blue: #03244d
+$secondary-orange: #f68026
+$secondary-blue: #496e9c
+
+.wrapper
+  display: block
+  width: 1280px
+  margin: 0 auto
+  overflow: auto
+
+  .heading
+    display: block
+    width: 1260px
+    margin: 20px auto
+    overflow: auto
+    box-shadow: black 0px 5px 20px 0px
+    background: white
+    text-align: center
+
+
+    h2
+      font-family: Open Sans, sans-serif
+      font-size: 50px
+      color: $main-orange
+      margin: 10px 10px 10px
+
+    p
+      font-family: Open Sans, sans-serif
+      font-size: 20px
+      color: $secondary-orange
+      margin: 0px 10px 20px
+
+  .table-container
+    display: block
+    width: 1120px
+    margin: 0 auto 20px
+    overflow: auto
+    box-shadow: black 0px 5px 20px 0px
+    background: white
+
+    .table-wrapper
+      width: 1100px
+      margin: 10px
+      overflow-x: auto
+
+      table
+        width: 1100px
+        border: 3px solid $secondary-blue
+
+        th
+          font-family: Open Sans, sans-serif
+          color: white
+          font-size: 18px
+          background: $secondary-blue
+          padding: 5px 10px
+
+        .player
+          text-align: left
+          width: 200px
+
+        .class
+          text-align: left
+          width: 100px
+
+        .hometown
+          text-align: left
+          width: 200px
+
+        .last-school
+          text-align: left
+          width: 300px
+
+        td
+          font-family: Open Sans, sans-serif
+          font-size: 16px
+          font-weight: bold
+          padding: 5px 10px
+          color: $main-blue
+          text-align: center
+          border-right: 3px solid $secondary-blue
+          border-bottom: 3px solid $secondary-blue
+
+          a
+            text-decoration: none
+            color: $main-orange
+          a:hover
+            color: $secondary-orange
+
+        .left
+          text-align: left
+
+        tr:hover
+          background: #dddddd
+
+    .legend
+      font-family: Open Sans, sans-serif
+      font-size: 14px
+      color: $main-blue
+      margin: 20px

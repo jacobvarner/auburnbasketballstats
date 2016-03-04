@@ -1,45 +1,53 @@
 <template name="roster">
-  <h2>Auburn Basketball {{season}} Roster</h2>
-  <p>Show roster for
-    <select id="season-select">
-    {{#each seasonList}}
-      <option value="{{this}}">{{this}}</option>
-    {{/each}}
-  </select>
-  &nbsp;season</p>
-  <hr/>
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Player Name</th>
-        <th>Class</th>
-        <th>Position</th>
-        <th>H</th>
-        <th>W</th>
-        <th>Hometown</th>
-        <th>Last School</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each getRoster}}
-        <tr>
-          <td>{{this.number}}</td>
-          <td>
-            {{#if hasStats}}
-              <a href="{{link}}">{{this.name}}{{playerInfo}}</a>
-            {{else}}
-              {{this.name}}{{playerInfo}}
-            {{/if}}
-          </td>
-          <td>{{this.class}}</td>
-          <td>{{this.position}}</td>
-          <td>{{this.height}}</td>
-          <td>{{this.weight}}</td>
-          <td>{{this.hometown}}</td>
-          <td>{{this.lastSchool}}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+  <div class="wrapper">
+    <div class="heading">
+      <h2>Auburn Basketball {{season}} Roster</h2>
+      <p>Show roster for the
+        <select id="season-select">
+        {{#each seasonList}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+      &nbsp;season</p>
+    </div>
+    <div class="table-container">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th class="player">Player Name</th>
+              <th class="class">Class</th>
+              <th>Pos.</th>
+              <th>H</th>
+              <th>W</th>
+              <th class="hometown">Hometown</th>
+              <th class="last-school">Last School</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each getRoster}}
+              <tr>
+                <td>{{this.number}}</td>
+                <td class="left">
+                  {{#if hasStats}}
+                    <a href="{{link}}">{{this.name}}{{playerInfo}}</a>
+                  {{else}}
+                    {{this.name}}{{playerInfo}}
+                  {{/if}}
+                </td>
+                <td class="left">{{this.class}}</td>
+                <td>{{this.position}}</td>
+                <td>{{this.height}}</td>
+                <td>{{this.weight}}</td>
+                <td class="left">{{this.hometown}}</td>
+                <td class="left">{{this.lastSchool}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      <p class="legend">T = Transfer, S = On Scholarship<br/>*Not all rosters are complete, especially earlier ones</p>
+    </div>
+  </div>
 </template>
