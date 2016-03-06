@@ -80,6 +80,14 @@ Template.teamInput.events({
     });
 
     $('.addPlayer').val('');
+  },
+  'click .delete': function(event){
+    event.preventDefault();
+    var documentId = this._id;
+    var confirm = window.confirm("Delete this player?");
+    if(confirm){
+      PlayerInfo.remove({ _id: documentId });
+    }
   }
 });
 
