@@ -1,55 +1,61 @@
 <template name="records">
-  <h3>Auburn Basketball All-time and Season Records</h3>
-  <p>
-    Show record for
-    <select id="category-select">
-      {{#each categories}}
-        <option value="{{this}}">{{this}}</option>
-      {{/each}}
-    </select>
-  </p>
-  <hr />
-  <h4>Career</h4>
-  <table>
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Player</th>
-        <th>Season(s)</th>
-        <th>Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each career}}
-        <tr>
-          <td>{{this.rank}}</td>
-          <td>{{this.player}}</td>
-          <td>{{this.season}}</td>
-          <td>{{this.value}}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-
-  <h4>Season</h4>
-  <table>
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Player</th>
-        <th>Season</th>
-        <th>Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each season}}
-        <tr>
-          <td>{{this.rank}}</td>
-          <td>{{this.player}}</td>
-          <td>{{this.season}}</td>
-          <td>{{this.value}}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+  <div class="records-wrapper">
+    <div class="header">
+      <h2>Auburn Basketball All-Time and Single-Season Records</h2>
+      <p>
+        Show records for&nbsp;
+        <select id="category-select">
+          {{#each categories}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
+      </p>
+    </div>
+    <div class="career">
+      <h3>Career</h3>
+      <table>
+        <thead>
+          <tr>
+            <th class="center">Rank</th>
+            <th class="left">Player</th>
+            <th class="center">Season(s)</th>
+            <th class="center">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each career}}
+            <tr>
+              <td class="center">{{this.rank}}</td>
+              <td class="left">{{this.player}}</td>
+              <td class="center">{{this.season}}</td>
+              <td class="center">{{this.value}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <div class="season">
+      <h3>Season</h3>
+      <table>
+        <thead>
+          <tr>
+            <th class="center">Rank</th>
+            <th class="left">Player</th>
+            <th class="center">Season</th>
+            <th class="center">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each season}}
+            <tr>
+              <td class="center">{{this.rank}}</td>
+              <td class="left">{{this.player}}</td>
+              <td class="center">{{this.season}}</td>
+              <td class="center">{{this.value}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </template>

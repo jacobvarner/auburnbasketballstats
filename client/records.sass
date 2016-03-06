@@ -1,0 +1,194 @@
+// ----- Variables ----- //
+$main-orange: #dd550c
+$main-blue: #03244d
+$secondary-orange: #f68026
+$secondary-blue: #496e9c
+
+.records-wrapper
+  display: block
+  width: 1280px
+  margin: 20px auto
+  overflow: auto
+
+  .header
+    display: block
+    width: 1260px
+    margin: 0 auto
+    overflow: auto
+    box-shadow: black 0px 5px 20px 0px
+    background: white
+    text-align: center
+
+    h2
+      font-family: Open Sans, sans-serif
+      font-size: 40px
+      color: $main-orange
+      margin: 10px 10px 10px
+
+    p
+      font-family: Open Sans, sans-serif
+      font-size: 20px
+      color: $secondary-orange
+      margin: 0px 10px 20px
+
+  .career
+    width: 620px
+    display: block
+    background: white
+    box-shadow: black 0px 5px 20px 0px
+    float: left
+    margin: 20px 20px 0 10px
+
+    h3
+      text-align: center
+      font-family: Open Sans, sans-serif
+      font-size: 30px
+      color: $main-orange
+      margin: 5px 10px 10px
+
+    table
+      width: 600px
+      margin: 0px auto 10px
+      border: 3px solid $secondary-blue
+
+      th
+        font-family: Open Sans, sans-serif
+        color: white
+        font-size: 18px
+        background: $secondary-blue
+        padding: 5px 10px
+
+      td
+        font-family: Open Sans, sans-serif
+        font-size: 16px
+        font-weight: bold
+        padding: 5px 10px
+        color: $main-blue
+        text-align: center
+        border-right: 3px solid $secondary-blue
+        border-bottom: 3px solid $secondary-blue
+
+      .left
+        text-align: left
+
+      .center
+        text-align: center
+
+      tr:hover
+        background: #dddddd
+
+  .season
+    width: 620px
+    display: block
+    background: white
+    box-shadow: black 0px 5px 20px 0px
+    float: left
+    margin: 20px 0 0 0
+
+    h3
+      text-align: center
+      font-family: Open Sans, sans-serif
+      font-size: 30px
+      color: $main-orange
+      margin: 5px 10px 10px
+
+    table
+      width: 600px
+      margin: 0px auto 10px
+      border: 3px solid $secondary-blue
+
+      th
+        font-family: Open Sans, sans-serif
+        color: white
+        font-size: 18px
+        background: $secondary-blue
+        padding: 5px 10px
+
+      td
+        font-family: Open Sans, sans-serif
+        font-size: 16px
+        font-weight: bold
+        padding: 5px 10px
+        color: $main-blue
+        text-align: center
+        border-right: 3px solid $secondary-blue
+        border-bottom: 3px solid $secondary-blue
+
+      .left
+        text-align: left
+
+      .center
+        text-align: center
+
+      tr:hover
+        background: #dddddd
+
+@media screen and (max-width: 1281px)
+  .records-wrapper
+    width: 640px
+
+    .header
+      width: 620px
+
+      h2
+        font-size: 36px
+
+      p
+        font-size: 20px
+
+    .career
+      margin: 20px 10px
+
+    .season
+      margin: 0 10px
+
+@media screen and (max-width: 641px)
+  .records-wrapper
+    width: 320px
+
+    .header
+      width: 300px
+
+      h2
+        font-size: 20px
+
+      p
+        font-size: 16px
+
+    .career
+      width: 300px
+      margin: 20px 10px
+
+      h3
+        font-size: 20px
+
+      table
+        width: 280px
+
+        th
+          font-size: 14px
+          padding: 5px
+
+        td
+          font-size: 12px
+          font-weight: normal
+          padding: 3px
+
+    .season
+      width: 300px
+      margin: 0px 10px
+
+      h3
+        font-size: 20px
+
+      table
+        width: 280px
+
+        th
+          font-size: 14px
+          padding: 5px
+
+        td
+          font-size: 12px
+          font-weight: normal
+          padding: 3px

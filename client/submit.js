@@ -123,6 +123,14 @@ Template.recordInput.events({
     $('[name=player]').val('');
     $('[name=season]').val('');
     $('[name=value]').val('');
+  },
+  'click .delete': function(event){
+    event.preventDefault();
+    var documentId = this._id;
+    var confirm = window.confirm("Delete this record?");
+    if(confirm){
+      RecordInfo.remove({ _id: documentId });
+    }
   }
 });
 
