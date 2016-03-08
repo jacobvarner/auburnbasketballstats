@@ -13,12 +13,17 @@ Router.route('/players', {
 Router.route('/players/:season/:player', {
   name: 'playerPage',
   template: 'playerPage',
+  subscriptions: function() {
+    var name = this.params.player.replace("+", " ");
+    var season = this.params.season;
+    return Meteor.subscribe('singlePlayer', name, season);
+  },
   data: function() {
     var playerName = this.params.player.replace("+", " ");
     var playerSeason = this.params.season;
     Session.set('currentSeason', playerSeason);
     Session.set('currentPlayer', playerName);
-    var playerStats = PlayerStats.find({playerSeason: playerSeason, playerName: playerName}).fetch();
+    var playerStats = PlayerStats.find().fetch();
     return playerStats;
   }
 });
@@ -32,6 +37,7 @@ Template.player.events({
 Template.player.helpers({
   'playerList': function(){
     var season = Session.get('playersSeason');
+    Meteor.subscribe('playerStats');
     if (season.length === 9) {
       var playerList = PlayerStats.find({playerSeason: season}, {fields: {playerName: 1}, sort: {playerName: 1}}).fetch();
       playerList = _.pluck(playerList, 'playerName');
