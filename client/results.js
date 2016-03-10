@@ -1,6 +1,10 @@
 Router.route('/results', {
   name: 'results',
   template: 'results',
+  subscriptions: function() {
+    Meteor.subscribe('gameStats');
+    Meteor.subscribe('seasonInfo');
+  },
   data: function() {
     var season = SeasonInfo.find({}, {field: {season: 1}, sort: {season: -1}}).fetch();
     season = _.pluck(season, 'season');
@@ -14,6 +18,19 @@ Router.route('/results', {
 Router.route('/results/:date/:opponent', {
   name: "resultsGame",
   template: "resultsGame",
+  subscriptions: function() {
+    var dateString = this.params.date;
+    var dateArray = dateString.split("-");
+    var month = dateArray[0];
+    if (month.length === 1) {
+      month = "0" + month;
+    }
+    var day = dateArray[1];
+    var year = dateArray[2];
+    var date = new Date(year + "-" + month + "-" + day);
+    var opponent = this.params.opponent.replace("+", " ");
+    Meteor.subscribe('resultsGame', date, opponent);
+  },
   data: function() {
     var dateString = this.params.date;
     var dateArray = dateString.split("-");
@@ -35,6 +52,10 @@ Router.route('/results/:date/:opponent', {
 Router.route('/results/:team', {
   name: "resultsTeam",
   template: "resultsTeam",
+  subscriptions: function() {
+    var team = this.params.team.replace("+", " ");
+    Meteor.subscribe('resultsTeam', team);
+  },
   data: function() {
     var teamLink = this.params.team;
     var teamString = teamLink.replace("+", " ");

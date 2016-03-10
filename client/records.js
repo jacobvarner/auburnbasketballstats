@@ -1,4 +1,8 @@
-Router.route('/records');
+Router.route('/records', {
+  subscriptions: function() {
+    Meteor.subscribe('records');
+  }
+});
 Session.set('category', "Points");
 
 Template.records.events({
