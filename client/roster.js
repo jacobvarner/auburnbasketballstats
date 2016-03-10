@@ -1,6 +1,9 @@
 Router.route('/rosters', {
   name: 'roster',
   template: 'roster',
+  subscriptions: function() {
+    Meteor.subscribe('roster');
+  },
   data: function() {
     var season = PlayerInfo.find({}, {field: {season: 1}, sort: {season: -1}}).fetch();
     season = _.pluck(season, 'season');
@@ -11,7 +14,7 @@ Router.route('/rosters', {
 
 Template.roster.helpers({
   'seasonList': function() {
-    var seasons = PlayerInfo.find({}, {sort: {season: -1}, fields: {season: 1}}).fetch();
+    var seasons = PlayerInfo.find({}, {sort: {season: -1}}).fetch();
     seasons = _.pluck(seasons, 'season');
     var uniqueSeasons = _.uniq(seasons, true);
     return uniqueSeasons;
