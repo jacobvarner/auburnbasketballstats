@@ -1,6 +1,7 @@
 Router.route('/rosters', {
   name: 'roster',
   template: 'roster',
+  title: "Rosters | Auburn Basketball Stats",
   subscriptions: function() {
     Meteor.subscribe('roster');
   },

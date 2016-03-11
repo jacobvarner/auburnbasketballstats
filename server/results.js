@@ -1,5 +1,5 @@
 Meteor.publish('resultsTeam', function(team) {
-  return ResultsInfo.find({opponent: team});
+  return SeasonInfo.find({opponent: team});
 });
 
 Meteor.publish('resultsGame', function(date, opponent) {
@@ -12,4 +12,8 @@ Meteor.publish('gameStats', function() {
 
 Meteor.publish('seasonInfo', function() {
   return SeasonInfo.find();
+});
+
+Meteor.publish('resultsPlayer', function(date) {
+  return PlayerStats.find({playerDate: date});
 });

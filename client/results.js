@@ -1,6 +1,7 @@
 Router.route('/results', {
   name: 'results',
   template: 'results',
+  title: "All-Time Results | Auburn Basketball Stats",
   subscriptions: function() {
     Meteor.subscribe('gameStats');
     Meteor.subscribe('seasonInfo');
@@ -18,6 +19,7 @@ Router.route('/results', {
 Router.route('/results/:date/:opponent', {
   name: "resultsGame",
   template: "resultsGame",
+  title: "Game Results | Auburn Basketball Stats",
   subscriptions: function() {
     var dateString = this.params.date;
     var dateArray = dateString.split("-");
@@ -30,6 +32,7 @@ Router.route('/results/:date/:opponent', {
     var date = new Date(year + "-" + month + "-" + day);
     var opponent = this.params.opponent.replace("+", " ");
     Meteor.subscribe('resultsGame', date, opponent);
+    Meteor.subscribe('resultsPlayer', date);
   },
   data: function() {
     var dateString = this.params.date;
@@ -52,9 +55,11 @@ Router.route('/results/:date/:opponent', {
 Router.route('/results/:team', {
   name: "resultsTeam",
   template: "resultsTeam",
+  title: "Auburn vs Opponents | Auburn Basketball Stats",
   subscriptions: function() {
     var team = this.params.team.replace("+", " ");
     Meteor.subscribe('resultsTeam', team);
+    Meteor.subscribe('seasonInfo');
   },
   data: function() {
     var teamLink = this.params.team;

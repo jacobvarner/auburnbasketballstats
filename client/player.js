@@ -3,6 +3,7 @@ Session.set('span', 0);
 Router.route('/players', {
   name: 'player',
   template: 'player',
+  title: "Individual Player Stats | Auburn Basketball Stats",
   data: function() {
     var season = PlayerStats.find({}, {field: {playerSeason: 1}, sort: {playerSeason: -1}}).fetch();
     season = _.pluck(season, 'playerSeason');

@@ -1,4 +1,5 @@
 Router.route('/records', {
+  title: "All-Time and Season Records | Auburn Basketball Stats",
   subscriptions: function() {
     Meteor.subscribe('records');
   }

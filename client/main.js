@@ -1,6 +1,7 @@
 Router.route('/', {
   name: 'home',
-  template: 'home'
+  template: 'home',
+  title: "Home | Auburn Basketball Stats"
 });
 
 Router.configure({
