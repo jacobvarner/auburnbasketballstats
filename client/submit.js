@@ -4,7 +4,7 @@ Session.set('duration', "Career");
 Router.route('/submit', {
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       this.next();
     } else {
       this.render('login');
@@ -15,9 +15,12 @@ Router.route('/submit', {
 Router.route('/submit/team', {
   name: 'teamInput',
   template: 'teamInput',
+  subscriptions: function() {
+    Meteor.subscribe('roster');
+  },
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       this.next();
     } else {
       this.render('login');
@@ -29,7 +32,7 @@ Router.route('/submit/game', {
   template: 'statsInput',
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       this.next();
     } else {
       this.render('login');
@@ -39,9 +42,12 @@ Router.route('/submit/game', {
 Router.route('/submit/records', {
   name: 'recordInput',
   template: 'recordInput',
+  subscriptions: function() {
+    Meteor.subscribe('records');
+  },
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       this.next();
     } else {
       this.render('login');
@@ -51,9 +57,12 @@ Router.route('/submit/records', {
 Router.route('/submit/season', {
   name: 'seasonInput',
   template: 'seasonInput',
+  subscriptions: function() {
+    Meteor.subscribe('season');
+  },
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       this.next();
     } else {
       this.render('login');
@@ -92,10 +101,22 @@ Template.teamInput.events({
 });
 
 Template.teamInput.helpers({
-  'currentTeam': function(){
-    var season = PlayerInfo.findOne({}, {field: {season: 1}, sort: {season: -1}}).season;
-    var output = PlayerInfo.find({ season: season}, {sort: { number: 1 }}).fetch();
-    return output;
+  'seasonList': function() {
+    var seasons = PlayerInfo.find({}, {sort: {season: -1}}).fetch();
+    seasons = _.pluck(seasons, 'season');
+    var uniqueSeasons = _.uniq(seasons, true);
+    return uniqueSeasons;
+  },
+  'getRoster': function() {
+    var season = Session.get('rosterSeason');
+    var roster = PlayerInfo.find({season: season}, {sort: {number: 1}}).fetch();
+    return roster;
+  }
+});
+
+Template.teamInput.events({
+  "change #season-select": function() {
+    Session.set('rosterSeason', $('#season-select').val());
   }
 });
 

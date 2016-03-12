@@ -32,6 +32,12 @@
       Last School:&nbsp;<input type="text" name="lastSchool" size="30"/>
       <input type="submit" value="Submit" />
     </form>
+    <p>Show roster for the&nbsp;
+      <select id="season-select">
+      {{#each seasonList}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select></p>
     <table>
       <thead>
         <tr>
@@ -46,7 +52,7 @@
         </tr>
       </thead>
       <tbody>
-        {{#each currentTeam}}
+        {{#each getRoster}}
           <tr>
             <td class="center">{{this.number}}</td>
             <td class="left">{{this.name}}</td>
