@@ -309,7 +309,7 @@ html
       font-family: Open Sans, sans-serif
       font-size: 16px
       color: $main-blue
-      margin: 20px
+      margin: 20px 40px
 
     p#signature
       border-top: 1px solid $main-orange
@@ -325,6 +325,33 @@ html
       text-decoration: none
     a:hover
       color: $main-orange
+
+@media screen and (max-width: 1281px)
+  .about-wrapper
+    width: 640px
+
+    .about-container
+      width: 620px
+
+      h2
+        font-size: 38px
+
+@media screen and (max-width: 641px)
+  .about-wrapper
+    width: 320px
+
+    .about-container
+      width: 300px
+
+      h2
+        font-size: 30px
+
+      p
+        margin: 20px
+        font-size: 14px
+
+      p#signature
+        width: 220px
 
 // ----- Footer ----- //
 footer.footer-wrapper
