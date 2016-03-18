@@ -31,9 +31,9 @@
                 <td>{{this.number}}</td>
                 <td class="left">
                   {{#if hasStats}}
-                    <a href="{{link}}">{{this.name}}{{playerInfo}}</a>
+                    <a href="{{link}}">{{this.name}} {{playerInfo}}</a>
                   {{else}}
-                    {{this.name}}{{playerInfo}}
+                    {{this.name}} {{playerInfo}}
                   {{/if}}
                 </td>
                 <td class="left">{{this.class}}</td>
@@ -47,7 +47,7 @@
           </tbody>
         </table>
       </div>
-      <p class="legend">T = Transfer, S = On Scholarship<br/>*Not all rosters are complete, especially earlier ones</p>
+      <p class="legend">T = Transfer, S = On Scholarship</p>
     </div>
   </div>
 </template>
