@@ -74,19 +74,19 @@ Template.teamInput.events({
   'submit form': function(event){
     event.preventDefault();
 
-    PlayerInfo.insert({
-      season: $('[name=season]').val(),
-      name: $('[name=name]').val(),
-      number: parseInt($('[name=number]').val()),
-      position: $('[name=position]').val(),
-      height: $('[name=height]').val(),
-      weight: $('[name=weight]').val(),
-      class: $('[name=class]').val(),
-      scholarship: $('[name=scholarship]').is(":checked"),
-      transfer: $('[name=transfer]').is(":checked"),
-      hometown: $('[name=hometown]').val(),
-      lastSchool: $('[name=lastSchool]').val()
-    });
+    var season = $('[name=season]').val();
+    var name = $('[name=name]').val();
+    var number = parseInt($('[name=number]').val());
+    var position = $('[name=position]').val();
+    var height = $('[name=height]').val();
+    var weight = $('[name=weight]').val();
+    var class = $('[name=class]').val();
+    var scholarship = $('[name=scholarship]').is(":checked");
+    var transfer = $('[name=transfer]').is(":checked");
+    var hometown = $('[name=hometown]').val();
+    var lastSchool = $('[name=lastSchool]').val();
+
+    Meter.call('addPlayer', season, name, number, position, height, weight, class, scholarship, transfer, hometown, lastSchool);
 
     $('.addPlayer').val('');
   },
@@ -95,7 +95,7 @@ Template.teamInput.events({
     var documentId = this._id;
     var confirm = window.confirm("Delete this player?");
     if(confirm){
-      PlayerInfo.remove({ _id: documentId });
+      Meteor.call('deletePlayer', documentId);
     }
   }
 });
