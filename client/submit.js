@@ -131,14 +131,15 @@ Template.recordInput.events({
   },
   'submit form': function(event) {
     event.preventDefault();
-    RecordInfo.insert({
-      category: $('.category').val(),
-      duration: $('.duration').val(),
-      rank: parseInt($('[name=rank]').val()),
-      player: $('[name=player]').val(),
-      season: $('[name=season]').val(),
-      value: $('[name=value]').val()
-    });
+
+    var category = $('.category').val();
+    var duration = $('.duration').val();
+    var rank = parseInt($('[name=rank]').val());
+    var player = $('[name=player]').val();
+    var season = $('[name=season]').val();
+    var value = $('[name=value]').val();
+
+    Meteor.call('addRecord', category, duration, rank, player, season, value);
 
     $('[name=rank]').val('');
     $('[name=player]').val('');
@@ -150,7 +151,7 @@ Template.recordInput.events({
     var documentId = this._id;
     var confirm = window.confirm("Delete this record?");
     if(confirm){
-      RecordInfo.remove({ _id: documentId });
+      Meteor.call('deleteRecord', documentId);
     }
   }
 });
