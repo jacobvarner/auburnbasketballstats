@@ -49,5 +49,25 @@ Meteor.methods({
     if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       RecordInfo.remove({ _id: id });
     }
+  },
+  'addGame': function(season, date, opponent, oppRank, auRank, location, auScore, oppScore, result, ot, conference, confTourney, nit, ncaa) {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+      SeasonInfo.insert({
+        season: season,
+        date: date,
+        opponent: opponent,
+        oppRank: oppRank,
+        auRank: auRank,
+        location: location,
+        auScore: auScore,
+        oppScore: oppScore,
+        result: result,
+        ot: ot,
+        conference: conference,
+        confTourney: confTourney,
+        nit: nit,
+        ncaa: ncaa
+      });
+    }
   }
 });

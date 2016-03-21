@@ -198,22 +198,7 @@ Template.seasonInput.events({
     var nit = $('[name=nit]').is(':checked');
     var ncaa = $('[name=ncaa]').is(':checked');
 
-    SeasonInfo.insert({
-      season: season,
-      date: date,
-      opponent: opponent,
-      oppRank: oppRank,
-      auRank: auRank,
-      location: location,
-      auScore: auScore,
-      oppScore: oppScore,
-      result: result,
-      ot: ot,
-      conference: conference,
-      confTourney: confTourney,
-      nit: nit,
-      ncaa: ncaa
-    });
+    Meteor.call('addGame', season, date, opponent, oppRank, auRank, location, auScore, oppScore, result, ot, conference, confTourney, nit, ncaa);
 
     $('[name=date]').val('');
     $('[name=opponent]').val('');
