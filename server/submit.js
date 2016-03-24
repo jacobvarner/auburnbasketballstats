@@ -11,7 +11,8 @@ Meteor.publish('season', function() {
 });
 
 Meteor.methods({
-  'addPlayer': function(season, name, number, position, height, weight, class, scholarship, transfer, hometown, lastSchool) {
+  'addPlayer': function(season, name, number, position, height, weight, classYear, scholarship, transfer, hometown, lastSchool) {
+    var currentUser = Meteor.userId();
     if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       PlayerInfo.insert({
         season: season,
@@ -20,7 +21,7 @@ Meteor.methods({
         position: position,
         height: height,
         weight: weight,
-        class: class,
+        class: classYear,
         scholarship: scholarship,
         transfer: transfer,
         hometown: hometown,
@@ -29,11 +30,13 @@ Meteor.methods({
     }
   },
   'deletePlayer': function(id) {
+    var currentUser = Meteor.userId();
     if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       PlayerInfo.remove({ _id: id });
     }
   },
   'addRecord': function(category, duration, rank, player, season, value) {
+    var currentUser = Meteor.userId();
     if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       RecordInfo.insert({
         category: category,
@@ -46,11 +49,13 @@ Meteor.methods({
     }
   },
   'deleteRecord': function(id) {
+    var currentUser = Meteor.userId();
     if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       RecordInfo.remove({ _id: id });
     }
   },
   'addGame': function(season, date, opponent, oppRank, auRank, location, auScore, oppScore, result, ot, conference, confTourney, nit, ncaa) {
+    var currentUser = Meteor.userId();
     if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       SeasonInfo.insert({
         season: season,
@@ -71,6 +76,7 @@ Meteor.methods({
     }
   },
   'addGameStats': function(season, opponent, date, location, attendance, auburnFGM, auburnFGA, auburn3PM, auburn3PA, auburn2PM, auburn2PA, auburnFTM, auburnFTA, auburnORB, auburnDRB, auburnREB, auburnPoints, auburnAST, auburnTO, auburnBLK, auburnSTL, auburnPF, auburnMIN, auburnPOT, auburnPIP, auburn2CP, auburnFBP, auburnBP, opponentFGM, opponentFGA, opponent3PM, opponent3PA, opponent2PM, opponent2PA, opponentFTM, opponentFTA, opponentORB, opponentDRB, opponentREB, opponentPoints, opponentAST, opponentTO, opponentBLK, opponentSTL, opponentPF, opponentMIN, opponentPOT, opponentPIP, opponent2CP, opponentFBP, opponentBP) {
+    var currentUser = Meteor.userId();
     if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       GameStats.insert({
         season: season,
@@ -128,6 +134,7 @@ Meteor.methods({
     }
   },
   'addPlayerStats': function(playerName, playerDate, playerSeason, playerOpponent, playerStarter, playerFGM, playerFGA, player3PM, player3PA, player2PM, player2PA, playerFTM, playerFTA, playerORB, playerDRB, playerREB, playerPoints, playerAST, playerTO, playerBLK, playerSTL, playerPF, playerMIN) {
+    var currentUser = Meteor.userId();
     if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
       PlayerStats.insert({
         playerName: playerName,

@@ -80,13 +80,13 @@ Template.teamInput.events({
     var position = $('[name=position]').val();
     var height = $('[name=height]').val();
     var weight = $('[name=weight]').val();
-    var class = $('[name=class]').val();
+    var classYear = $('[name=class]').val();
     var scholarship = $('[name=scholarship]').is(":checked");
     var transfer = $('[name=transfer]').is(":checked");
     var hometown = $('[name=hometown]').val();
     var lastSchool = $('[name=lastSchool]').val();
 
-    Meter.call('addPlayer', season, name, number, position, height, weight, class, scholarship, transfer, hometown, lastSchool);
+    Meteor.call('addPlayer', season, name, number, position, height, weight, classYear, scholarship, transfer, hometown, lastSchool);
 
     $('.addPlayer').val('');
   },
