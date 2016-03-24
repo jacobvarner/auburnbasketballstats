@@ -450,31 +450,7 @@ Template.statsInput.events({
     var playerMIN1 = parseInt($('[name=playerMIN1]').val());
 
     if($('.player1').val() != null && $('.player1').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName1,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter1,
-        playerFGM: playerFGM1,
-        playerFGA: playerFGA1,
-        player3PM: player3PM1,
-        player3PA: player3PA1,
-        player2PM: player2PM1,
-        player2PA: player2PA1,
-        playerFTM: playerFTM1,
-        playerFTA: playerFTA1,
-        playerORB: playerORB1,
-        playerDRB: playerDRB1,
-        playerREB: playerREB1,
-        playerPoints: playerPoints1,
-        playerAST: playerAST1,
-        playerTO: playerTO1,
-        playerBLK: playerBLK1,
-        playerSTL: playerSTL1,
-        playerPF: playerPF1,
-        playerMIN: playerMIN1
-      });
+      Meteor.call('addPlayerStats', playerName1, date, season, opponent, playerStarter1, playerFGM1, playerFGA1, player3PM1, player3PA1, player2PM1, player2PA1, playerFTM1, playerFTA1, playerORB1, playerDRB1, playerREB1, playerPoints1, playerAST1, playerTO1, playerBLK1, playerSTL1, playerPF1, playerMIN1);
     }
 
     $('.player1').val('');
@@ -507,31 +483,7 @@ Template.statsInput.events({
     var playerMIN2 = parseInt($('[name=playerMIN2]').val());
 
     if($('.player2').val() != null && $('.player2').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName2,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter2,
-        playerFGM: playerFGM2,
-        playerFGA: playerFGA2,
-        player3PM: player3PM2,
-        player3PA: player3PA2,
-        player2PM: player2PM2,
-        player2PA: player2PA2,
-        playerFTM: playerFTM2,
-        playerFTA: playerFTA2,
-        playerORB: playerORB2,
-        playerDRB: playerDRB2,
-        playerREB: playerREB2,
-        playerPoints: playerPoints2,
-        playerAST: playerAST2,
-        playerTO: playerTO2,
-        playerBLK: playerBLK2,
-        playerSTL: playerSTL2,
-        playerPF: playerPF2,
-        playerMIN: playerMIN2
-      });
+      Meteor.call('addPlayerStats', playerName2, date, season, opponent, playerStarter2, playerFGM2, playerFGA2, player3PM2, player3PA2, player2PM2, player2PA2, playerFTM2, playerFTA2, playerORB2, playerDRB2, playerREB2, playerPoints2, playerAST2, playerTO2, playerBLK2, playerSTL2, playerPF2, playerMIN2);
     }
 
     $('.player2').val('');
@@ -564,31 +516,7 @@ Template.statsInput.events({
     var playerMIN3 = parseInt($('[name=playerMIN3]').val());
 
     if($('.player3').val() != null && $('.player3').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName3,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter3,
-        playerFGM: playerFGM3,
-        playerFGA: playerFGA3,
-        player3PM: player3PM3,
-        player3PA: player3PA3,
-        player2PM: player2PM3,
-        player2PA: player2PA3,
-        playerFTM: playerFTM3,
-        playerFTA: playerFTA3,
-        playerORB: playerORB3,
-        playerDRB: playerDRB3,
-        playerREB: playerREB3,
-        playerPoints: playerPoints3,
-        playerAST: playerAST3,
-        playerTO: playerTO3,
-        playerBLK: playerBLK3,
-        playerSTL: playerSTL3,
-        playerPF: playerPF3,
-        playerMIN: playerMIN3
-      });
+      Meteor.call('addPlayerStats', playerName3, date, season, opponent, playerStarter3, playerFGM3, playerFGA3, player3PM3, player3PA3, player2PM3, player2PA3, playerFTM3, playerFTA3, playerORB3, playerDRB3, playerREB3, playerPoints3, playerAST3, playerTO3, playerBLK3, playerSTL3, playerPF3, playerMIN3);
     }
 
     $('.player3').val('');
@@ -621,31 +549,7 @@ Template.statsInput.events({
     var playerMIN4 = parseInt($('[name=playerMIN4]').val());
 
     if($('.player4').val() != null && $('.player4').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName4,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter4,
-        playerFGM: playerFGM4,
-        playerFGA: playerFGA4,
-        player3PM: player3PM4,
-        player3PA: player3PA4,
-        player2PM: player2PM4,
-        player2PA: player2PA4,
-        playerFTM: playerFTM4,
-        playerFTA: playerFTA4,
-        playerORB: playerORB4,
-        playerDRB: playerDRB4,
-        playerREB: playerREB4,
-        playerPoints: playerPoints4,
-        playerAST: playerAST4,
-        playerTO: playerTO4,
-        playerBLK: playerBLK4,
-        playerSTL: playerSTL4,
-        playerPF: playerPF4,
-        playerMIN: playerMIN4
-      });
+      Meteor.call('addPlayerStats', playerName4, date, season, opponent, playerStarter4, playerFGM4, playerFGA4, player3PM4, player3PA4, player2PM4, player2PA4, playerFTM4, playerFTA4, playerORB4, playerDRB4, playerREB4, playerPoints4, playerAST4, playerTO4, playerBLK4, playerSTL4, playerPF4, playerMIN4);
     }
 
     $('.player4').val('');
@@ -678,31 +582,7 @@ Template.statsInput.events({
     var playerMIN5 = parseInt($('[name=playerMIN5]').val());
 
     if($('.player5').val() != null && $('.player5').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName5,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter5,
-        playerFGM: playerFGM5,
-        playerFGA: playerFGA5,
-        player3PM: player3PM5,
-        player3PA: player3PA5,
-        player2PM: player2PM5,
-        player2PA: player2PA5,
-        playerFTM: playerFTM5,
-        playerFTA: playerFTA5,
-        playerORB: playerORB5,
-        playerDRB: playerDRB5,
-        playerREB: playerREB5,
-        playerPoints: playerPoints5,
-        playerAST: playerAST5,
-        playerTO: playerTO5,
-        playerBLK: playerBLK5,
-        playerSTL: playerSTL5,
-        playerPF: playerPF5,
-        playerMIN: playerMIN5
-      });
+      Meteor.call('addPlayerStats', playerName5, date, season, opponent, playerStarter5, playerFGM5, playerFGA5, player3PM5, player3PA5, player2PM5, player2PA5, playerFTM5, playerFTA5, playerORB5, playerDRB5, playerREB5, playerPoints5, playerAST5, playerTO5, playerBLK5, playerSTL5, playerPF5, playerMIN5);
     }
 
     $('.player5').val('');
@@ -735,31 +615,7 @@ Template.statsInput.events({
     var playerMIN6 = parseInt($('[name=playerMIN6]').val());
 
     if($('.player6').val() != null && $('.player6').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName6,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter6,
-        playerFGM: playerFGM6,
-        playerFGA: playerFGA6,
-        player3PM: player3PM6,
-        player3PA: player3PA6,
-        player2PM: player2PM6,
-        player2PA: player2PA6,
-        playerFTM: playerFTM6,
-        playerFTA: playerFTA6,
-        playerORB: playerORB6,
-        playerDRB: playerDRB6,
-        playerREB: playerREB6,
-        playerPoints: playerPoints6,
-        playerAST: playerAST6,
-        playerTO: playerTO6,
-        playerBLK: playerBLK6,
-        playerSTL: playerSTL6,
-        playerPF: playerPF6,
-        playerMIN: playerMIN6
-      });
+      Meteor.call('addPlayerStats', playerName6, date, season, opponent, playerStarter6, playerFGM6, playerFGA6, player3PM6, player3PA6, player2PM6, player2PA6, playerFTM6, playerFTA6, playerORB6, playerDRB6, playerREB6, playerPoints6, playerAST6, playerTO6, playerBLK6, playerSTL6, playerPF6, playerMIN6);
     }
 
     $('.player6').val('');
@@ -792,31 +648,7 @@ Template.statsInput.events({
     var playerMIN7 = parseInt($('[name=playerMIN7]').val());
 
     if($('.player7').val() != null && $('.player7').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName7,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter7,
-        playerFGM: playerFGM7,
-        playerFGA: playerFGA7,
-        player3PM: player3PM7,
-        player3PA: player3PA7,
-        player2PM: player2PM7,
-        player2PA: player2PA7,
-        playerFTM: playerFTM7,
-        playerFTA: playerFTA7,
-        playerORB: playerORB7,
-        playerDRB: playerDRB7,
-        playerREB: playerREB7,
-        playerPoints: playerPoints7,
-        playerAST: playerAST7,
-        playerTO: playerTO7,
-        playerBLK: playerBLK7,
-        playerSTL: playerSTL7,
-        playerPF: playerPF7,
-        playerMIN: playerMIN7
-      });
+      Meteor.call('addPlayerStats', playerName7, date, season, opponent, playerStarter7, playerFGM7, playerFGA7, player3PM7, player3PA7, player2PM7, player2PA7, playerFTM7, playerFTA7, playerORB7, playerDRB7, playerREB7, playerPoints7, playerAST7, playerTO7, playerBLK7, playerSTL7, playerPF7, playerMIN7);
     }
 
     $('.player7').val('');
@@ -849,31 +681,7 @@ Template.statsInput.events({
     var playerMIN8 = parseInt($('[name=playerMIN8]').val());
 
     if($('.player8').val() != null && $('.player8').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName8,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter8,
-        playerFGM: playerFGM8,
-        playerFGA: playerFGA8,
-        player3PM: player3PM8,
-        player3PA: player3PA8,
-        player2PM: player2PM8,
-        player2PA: player2PA8,
-        playerFTM: playerFTM8,
-        playerFTA: playerFTA8,
-        playerORB: playerORB8,
-        playerDRB: playerDRB8,
-        playerREB: playerREB8,
-        playerPoints: playerPoints8,
-        playerAST: playerAST8,
-        playerTO: playerTO8,
-        playerBLK: playerBLK8,
-        playerSTL: playerSTL8,
-        playerPF: playerPF8,
-        playerMIN: playerMIN8
-      });
+      Meteor.call('addPlayerStats', playerName8, date, season, opponent, playerStarter8, playerFGM8, playerFGA8, player3PM8, player3PA8, player2PM8, player2PA8, playerFTM8, playerFTA8, playerORB8, playerDRB8, playerREB8, playerPoints8, playerAST8, playerTO8, playerBLK8, playerSTL8, playerPF8, playerMIN8);
     }
 
     $('.player8').val('');
@@ -906,31 +714,7 @@ Template.statsInput.events({
     var playerMIN9 = parseInt($('[name=playerMIN9]').val());
 
     if($('.player9').val() != null && $('.player9').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName9,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter9,
-        playerFGM: playerFGM9,
-        playerFGA: playerFGA9,
-        player3PM: player3PM9,
-        player3PA: player3PA9,
-        player2PM: player2PM9,
-        player2PA: player2PA9,
-        playerFTM: playerFTM9,
-        playerFTA: playerFTA9,
-        playerORB: playerORB9,
-        playerDRB: playerDRB9,
-        playerREB: playerREB9,
-        playerPoints: playerPoints9,
-        playerAST: playerAST9,
-        playerTO: playerTO9,
-        playerBLK: playerBLK9,
-        playerSTL: playerSTL9,
-        playerPF: playerPF9,
-        playerMIN: playerMIN9
-      });
+      Meteor.call('addPlayerStats', playerName9, date, season, opponent, playerStarter9, playerFGM9, playerFGA9, player3PM9, player3PA9, player2PM9, player2PA9, playerFTM9, playerFTA9, playerORB9, playerDRB9, playerREB9, playerPoints9, playerAST9, playerTO9, playerBLK9, playerSTL9, playerPF9, playerMIN9);
     }
 
     $('.player9').val('');
@@ -963,31 +747,7 @@ Template.statsInput.events({
     var playerMIN10 = parseInt($('[name=playerMIN10]').val());
 
     if($('.player10').val() != null && $('.player10').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName10,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter10,
-        playerFGM: playerFGM10,
-        playerFGA: playerFGA10,
-        player3PM: player3PM10,
-        player3PA: player3PA10,
-        player2PM: player2PM10,
-        player2PA: player2PA10,
-        playerFTM: playerFTM10,
-        playerFTA: playerFTA10,
-        playerORB: playerORB10,
-        playerDRB: playerDRB10,
-        playerREB: playerREB10,
-        playerPoints: playerPoints10,
-        playerAST: playerAST10,
-        playerTO: playerTO10,
-        playerBLK: playerBLK10,
-        playerSTL: playerSTL10,
-        playerPF: playerPF10,
-        playerMIN: playerMIN10
-      });
+      Meteor.call('addPlayerStats', playerName10, date, season, opponent, playerStarter10, playerFGM10, playerFGA10, player3PM10, player3PA10, player2PM10, player2PA10, playerFTM10, playerFTA10, playerORB10, playerDRB10, playerREB10, playerPoints10, playerAST10, playerTO10, playerBLK10, playerSTL10, playerPF10, playerMIN10);
     }
 
     $('.player10').val('');
@@ -1020,31 +780,7 @@ Template.statsInput.events({
     var playerMIN11 = parseInt($('[name=playerMIN11]').val());
 
     if($('.player11').val() != null && $('.player11').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName11,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter11,
-        playerFGM: playerFGM11,
-        playerFGA: playerFGA11,
-        player3PM: player3PM11,
-        player3PA: player3PA11,
-        player2PM: player2PM11,
-        player2PA: player2PA11,
-        playerFTM: playerFTM11,
-        playerFTA: playerFTA11,
-        playerORB: playerORB11,
-        playerDRB: playerDRB11,
-        playerREB: playerREB11,
-        playerPoints: playerPoints11,
-        playerAST: playerAST11,
-        playerTO: playerTO11,
-        playerBLK: playerBLK11,
-        playerSTL: playerSTL11,
-        playerPF: playerPF11,
-        playerMIN: playerMIN11
-      });
+      Meteor.call('addPlayerStats', playerName11, date, season, opponent, playerStarter11, playerFGM11, playerFGA11, player3PM11, player3PA11, player2PM11, player2PA11, playerFTM11, playerFTA11, playerORB11, playerDRB11, playerREB11, playerPoints11, playerAST11, playerTO11, playerBLK11, playerSTL11, playerPF11, playerMIN11);
     }
 
     $('.player11').val('');
@@ -1077,31 +813,7 @@ Template.statsInput.events({
     var playerMIN12 = parseInt($('[name=playerMIN12]').val());
 
     if($('.player12').val() != null && $('.player12').val() != ''){
-      PlayerStats.insert({
-        playerName: playerName12,
-        playerDate: date,
-        playerSeason: season,
-        playerOpponent: opponent,
-        playerStarter: playerStarter12,
-        playerFGM: playerFGM12,
-        playerFGA: playerFGA12,
-        player3PM: player3PM12,
-        player3PA: player3PA12,
-        player2PM: player2PM12,
-        player2PA: player2PA12,
-        playerFTM: playerFTM12,
-        playerFTA: playerFTA12,
-        playerORB: playerORB12,
-        playerDRB: playerDRB12,
-        playerREB: playerREB12,
-        playerPoints: playerPoints12,
-        playerAST: playerAST12,
-        playerTO: playerTO12,
-        playerBLK: playerBLK12,
-        playerSTL: playerSTL12,
-        playerPF: playerPF12,
-        playerMIN: playerMIN12
-      });
+      Meteor.call('addPlayerStats', playerName12, date, season, opponent, playerStarter12, playerFGM12, playerFGA12, player3PM12, player3PA12, player2PM12, player2PA12, playerFTM12, playerFTA12, playerORB12, playerDRB12, playerREB12, playerPoints12, playerAST12, playerTO12, playerBLK12, playerSTL12, playerPF12, playerMIN12);
     }
 
     $('.player12').val('');

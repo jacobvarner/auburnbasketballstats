@@ -126,5 +126,34 @@ Meteor.methods({
         opponentBP: opponentBP
       });
     }
+  },
+  'addPlayerStats': function(playerName, playerDate, playerSeason, playerOpponent, playerStarter, playerFGM, playerFGA, player3PM, player3PA, player2PM, player2PA, playerFTM, playerFTA, playerORB, playerDRB, playerREB, playerPoints, playerAST, playerTO, playerBLK, playerSTL, playerPF, playerMIN) {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+      PlayerStats.insert({
+        playerName: playerName,
+        playerDate: playerDate,
+        playerSeason: playerSeason,
+        playerOpponent: playerOpponent,
+        playerStarter: playerStarter,
+        playerFGM: playerFGM,
+        playerFGA: playerFGA,
+        player3PM: player3PM,
+        player3PA: player3PA,
+        player2PM: player2PM,
+        player2PA: player2PA,
+        playerFTM: playerFTM,
+        playerFTA: playerFTA,
+        playerORB: playerORB,
+        playerDRB: playerDRB,
+        playerREB: playerREB,
+        playerPoints: playerPoints,
+        playerAST: playerAST,
+        playerTO: playerTO,
+        playerBLK: playerBLK,
+        playerSTL: playerSTL,
+        playerPF: playerPF,
+        playerMIN: playerMIN
+      });
+    }
   }
 });
