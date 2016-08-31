@@ -4,7 +4,7 @@ Session.set('duration', "Career");
 Router.route('/submit', {
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       this.next();
     } else {
       this.render('login');
@@ -20,7 +20,7 @@ Router.route('/submit/team', {
   },
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       this.next();
     } else {
       this.render('login');
@@ -32,7 +32,7 @@ Router.route('/submit/game', {
   template: 'statsInput',
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       this.next();
     } else {
       this.render('login');
@@ -47,7 +47,7 @@ Router.route('/submit/records', {
   },
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       this.next();
     } else {
       this.render('login');
@@ -62,7 +62,7 @@ Router.route('/submit/season', {
   },
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       this.next();
     } else {
       this.render('login');
