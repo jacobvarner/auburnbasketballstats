@@ -13,7 +13,7 @@ Meteor.publish('season', function() {
 Meteor.methods({
   'addPlayer': function(season, name, number, position, height, weight, classYear, scholarship, transfer, hometown, lastSchool) {
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       PlayerInfo.insert({
         season: season,
         name: name,
@@ -31,13 +31,13 @@ Meteor.methods({
   },
   'deletePlayer': function(id) {
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       PlayerInfo.remove({ _id: id });
     }
   },
   'addRecord': function(category, duration, rank, player, season, value) {
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       RecordInfo.insert({
         category: category,
         duration: duration,
@@ -50,13 +50,13 @@ Meteor.methods({
   },
   'deleteRecord': function(id) {
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       RecordInfo.remove({ _id: id });
     }
   },
   'addGame': function(season, date, opponent, oppRank, auRank, location, auScore, oppScore, result, ot, conference, confTourney, nit, ncaa) {
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       SeasonInfo.insert({
         season: season,
         date: date,
@@ -77,7 +77,7 @@ Meteor.methods({
   },
   'addGameStats': function(season, opponent, date, location, attendance, auburnFGM, auburnFGA, auburn3PM, auburn3PA, auburn2PM, auburn2PA, auburnFTM, auburnFTA, auburnORB, auburnDRB, auburnREB, auburnPoints, auburnAST, auburnTO, auburnBLK, auburnSTL, auburnPF, auburnMIN, auburnPOT, auburnPIP, auburn2CP, auburnFBP, auburnBP, opponentFGM, opponentFGA, opponent3PM, opponent3PA, opponent2PM, opponent2PA, opponentFTM, opponentFTA, opponentORB, opponentDRB, opponentREB, opponentPoints, opponentAST, opponentTO, opponentBLK, opponentSTL, opponentPF, opponentMIN, opponentPOT, opponentPIP, opponent2CP, opponentFBP, opponentBP) {
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       GameStats.insert({
         season: season,
         opponent: opponent,
@@ -135,7 +135,7 @@ Meteor.methods({
   },
   'addPlayerStats': function(playerName, playerDate, playerSeason, playerOpponent, playerStarter, playerFGM, playerFGA, player3PM, player3PA, player2PM, player2PA, playerFTM, playerFTA, playerORB, playerDRB, playerREB, playerPoints, playerAST, playerTO, playerBLK, playerSTL, playerPF, playerMIN) {
     var currentUser = Meteor.userId();
-    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4") {
+    if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
       PlayerStats.insert({
         playerName: playerName,
         playerDate: playerDate,

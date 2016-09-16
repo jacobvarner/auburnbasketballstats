@@ -88,7 +88,17 @@ Template.teamInput.events({
 
     Meteor.call('addPlayer', season, name, number, position, height, weight, classYear, scholarship, transfer, hometown, lastSchool);
 
-    $('.addPlayer').val('');
+    $('[name=season]').val('');
+    $('[name=name]').val('');
+    $('[name=number]').val('');
+    $('[name=position]').val('');
+    $('[name=height]').val('');
+    $('[name=weight]').val('');
+    $('[name=class]').val('');
+    $('[name=scholarship]').prop("checked", false);
+    $('[name=transfer]').prop("checked", false);
+    $('[name=hometown]').val('');
+    $('[name=lastSchool]').val('');
   },
   'click .delete': function(event){
     event.preventDefault();
