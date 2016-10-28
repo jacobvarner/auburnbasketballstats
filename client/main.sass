@@ -1,6 +1,6 @@
 // ----- Variables ----- //
-$main-orange: #dd550c
-$main-blue: #03244d
+$main-orange: #F26522
+$main-blue: #0C2340
 $secondary-orange: #f68026
 $secondary-blue: #496e9c
 
@@ -8,7 +8,7 @@ body
   background: $main-blue
   display: block
   overflow: auto
-  padding-top: 80px
+  padding-top: 60px
   padding-bottom: 50px
 
 html
@@ -18,14 +18,15 @@ html
 // ---- Navigation ----- //
 .nav-wrapper
   width: 100%
-  height: 80px
+  height: 60px
   background: white
-  box-shadow: black 0px 5px 20px 0px
-  position: absolute
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4)
+  position: fixed
   top: 0
+  z-index: 99
 
   img
-    height: 60px
+    height: 40px
     margin: 10px
 
   .mobile-menu
@@ -34,15 +35,16 @@ html
 
     #menu-button
       text-transform: uppercase
+      font-size: 14px
       display: block
       margin: 10px
       text-align: center
-      padding: 11px
+      padding: 11px 15px
       color: white
       text-decoration: none
       background: $main-orange
       border-radius: 10px
-      width: 60px
+      width: 40px
       cursor: pointer
 
   .mobile-nav-links
@@ -50,37 +52,52 @@ html
 
   .nav-links
     float: right
-    height: 100%
+    line-height: 60px
 
     ul
       list-style: none
-      height: 100%
       margin: 0
       padding: 0 10px
+      overflow: none
 
       li
         display: inline-block
-        padding: 27px 0px 24px
+        height: 60px
+        position: relative
+        overflow: none
 
         a
           font-family: Open Sans, sans-serif
-          font-size: 18px
+          font-size: 14px
           color: $main-orange
           height: 100%
-          padding: 24px 10px
+          line-height: 14px
+          padding: 16px 10px
           text-decoration: none
           font-weight: bold
         a:hover
           border-bottom: 5px solid $main-orange
 
 .ad-wrapper
-  display: block
-  width: 100%
-  margin: 20px 0
+  overflow: auto
+  margin: 20px 0px
+  width: calc(100% - 300px)
+  //transition: width 0.3s ease-in
+  //-webkit-transition: width 0.3s ease-in
+
+  @media only screen and (max-width: 1540px)
+    width: 100%
 
   .ad
     display: block
+    width: 1200px
     margin: 0 auto
+
+    @media only screen and (max-width: 1240px)
+      width: calc(100% - 40px)
+
+    @media only screen and (max-width: 600px)
+      width: 100%
 
 @media screen and (max-width: 655px)
   body
@@ -100,9 +117,10 @@ html
       display: none
 
     .mobile-nav-links
-      height: 220px
+      height: 190px
       width: 100%
       background: white
+      box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.4)
       margin-top: -5px
       display: none
       overflow: none

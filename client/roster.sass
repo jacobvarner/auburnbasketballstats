@@ -1,6 +1,6 @@
 // ----- Variables ----- //
-$main-orange: #dd550c
-$main-blue: #03244d
+$main-orange: #F26522
+$main-blue: #0C2340
 $secondary-orange: #f68026
 $secondary-blue: #496e9c
 
@@ -100,7 +100,58 @@ $secondary-blue: #496e9c
       color: $main-blue
       margin: 20px
 
-@media screen and (max-width: 1281px)
+@media screen and (max-width: 1280px)
+  .wrapper
+    width: 960px
+
+    .heading
+      width: 940px
+
+      h2
+        font-size: 40px
+
+      p
+        font-size: 20px
+
+    .table-container
+      width: 940px
+
+      .table-wrapper
+        width: 920px
+
+        table
+          width: 920px
+          border: 3px solid $secondary-blue
+
+          th
+            font-size: 14px
+            padding: 5px
+
+          .player
+            text-align: left
+            width: 150px
+
+          .class
+            text-align: left
+            width: 50px
+
+          .hometown
+            text-align: left
+            width: 150px
+
+          .last-school
+            text-align: left
+            width: 200px
+
+          td
+            font-size: 14px
+            font-weight: normal
+            padding: 5px
+
+      .legend
+        font-size: 12px
+
+@media screen and (max-width: 960px)
   .wrapper
     width: 640px
 
@@ -151,7 +202,7 @@ $secondary-blue: #496e9c
       .legend
         font-size: 12px
 
-@media screen and (max-width: 641px)
+@media screen and (max-width: 640px)
   .wrapper
     width: 320px
 

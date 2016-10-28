@@ -1,6 +1,6 @@
 // ----- Variables ----- //
-$main-orange: #dd550c
-$main-blue: #03244d
+$main-orange: #F26522
+$main-blue: #0C2340
 $secondary-orange: #f68026
 $secondary-blue: #496e9c
 
@@ -9,14 +9,14 @@ $secondary-blue: #496e9c
   width: 1280px
   display: block
   overflow: auto
-  margin: 20px auto
+  margin: 0px auto 20px
 
   .banner-container
     width: 1260px
     display: block
-    margin: 20px auto
+    margin: 0px auto 20px
     background: white
-    box-shadow: black 0px 5px 20px 0px
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4)
     overflow: auto
 
     h2
@@ -39,16 +39,18 @@ $secondary-blue: #496e9c
       display: block
       text-align: center
       background: $secondary-orange
-      box-shadow: black 0px 5px 20px 0px
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4)
 
-      p
+      .select-p
         font-family: Open Sans, sans-serif
         font-size: 20px
         color: white
         margin: 10px
 
       select
-        width: 260px
+        color: black
+        font-size: 14px
+        width: 240px
         margin: 5px 5px 10px
 
     .team-select-container
@@ -58,16 +60,18 @@ $secondary-blue: #496e9c
       margin: 0px 10px 20px
       text-align: center
       background: $secondary-orange
-      box-shadow: black 0px 5px 20px 0px
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4)
 
-      p
+      .select-p
         font-family: Open Sans, sans-serif
         font-size: 20px
         color: white
         margin: 10px
 
       select
-        width: 260px
+        color: black
+        font-size: 14px
+        width: 240px
         margin: 5px 5px 10px
 
   .top-container
@@ -87,7 +91,7 @@ $secondary-blue: #496e9c
       float: left
       margin: 0 10px
       background: $secondary-orange
-      box-shadow: black 0px 5px 20px 0px
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4)
 
       .heading
         display: block
@@ -112,8 +116,7 @@ $secondary-blue: #496e9c
       float: left
       margin: 0 10px
       background: $secondary-orange
-      box-shadow: black 0px 5px 20px 0px
-
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4)
       .heading
         display: block
         width: 100%
@@ -139,7 +142,7 @@ $secondary-blue: #496e9c
     width: 1260px
     margin: 20px auto
     background: white
-    box-shadow: black 0px 5px 20px 0px
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4)
 
     h3
       font-family: Open Sans, sans-serif
@@ -166,7 +169,7 @@ $secondary-blue: #496e9c
         font-family: Open Sans, sans-serif
         font-size: 24px
         padding: 5px 0px
-        box-shadow: black 0px 5px 20px 0px
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4)
 
         strong
           display: block
@@ -237,7 +240,7 @@ $secondary-blue: #496e9c
     background: white
     overflow: auto
     text-align: center
-    box-shadow: black 0px 5px 20px 0px
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4)
 
     h2
       color: $main-orange
@@ -326,7 +329,83 @@ $secondary-blue: #496e9c
       tr:hover
         background: rgba($secondary-blue, 0.25)
 
-@media screen and (max-width: 1281px)
+@media screen and (max-width: 1280px)
+  .banner-wrapper
+    width: 960px
+
+    .game-header
+      width: 940px
+      margin: 0 auto
+
+      h2
+        font-size: 30px
+        margin: 7px 7px 10px
+
+      p
+        font-size: 20px
+        margin: 0px 7px 10px
+
+    .banner-container
+      width: 620px
+
+      h2
+        font-size: 38px
+
+      .buffer
+        width: 10px
+        margin: 10px 0px
+
+    .top-container
+      width: 620px
+
+      .buffer
+        width: 10px
+        margin: 10px 0px
+
+    .main-container
+      width: 940px
+
+      .table-container
+        width: 920px
+        margin: 0 10px 15px
+
+      table
+        width: 920px
+        border: 2px solid $secondary-blue
+
+        th
+          font-size: 14px
+          padding: 5px
+
+        .date
+          width: 80px
+
+        .opponent
+          width: 200px
+
+        td
+          font-size: 14px
+          padding: 5px
+          border-right: 2px solid $secondary-blue
+          border-bottom: 2px solid $secondary-blue
+
+        .stats
+          width: 94px
+
+        tr:hover
+          background: #dddddd
+
+    .game-stats-table-container
+      float: none
+      margin: 20px auto
+
+    .player-stats-table-container
+      float: none
+      width: 847px
+      margin: 0px auto 20px
+      overflow-x: auto
+
+@media screen and (max-width: 960px)
   .banner-wrapper
     width: 640px
 
@@ -367,7 +446,7 @@ $secondary-blue: #496e9c
         margin: 0 10px 15px
 
       table
-        width: 900px
+        width: 800px
         border: 2px solid $secondary-blue
 
         th
@@ -381,7 +460,7 @@ $secondary-blue: #496e9c
           width: 200px
 
         td
-          font-size: 14px
+          font-size: 12px
           padding: 5px
           border-right: 2px solid $secondary-blue
           border-bottom: 2px solid $secondary-blue
@@ -402,7 +481,7 @@ $secondary-blue: #496e9c
       margin: 0px 0px 20px
       overflow-x: auto
 
-@media screen and (max-width: 641px)
+@media screen and (max-width: 640px)
   .banner-wrapper
     width: 320px
 
@@ -479,7 +558,7 @@ $secondary-blue: #496e9c
           font-size: 14px
 
         td
-          font-size: 14px
+          font-size: 12px
           padding: 0px 3px
 
         .player

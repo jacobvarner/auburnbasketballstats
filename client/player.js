@@ -1,4 +1,5 @@
 Session.set('span', 0);
+Session.set('playerSeason', "2016-2017") // Update every year
 
 Router.route('/players', {
   name: 'player',

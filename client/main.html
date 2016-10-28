@@ -29,13 +29,12 @@
 
 <template name="navigation">
   <div class="nav-wrapper">
-    <img src="/img/header-logo.png" alt="Auburn Basketball Stats logo" />
+    <a href="{{pathFor route='home'}}"><img src="/img/header-logo.png" alt="Auburn Basketball Stats logo" /></a>
     <div class="mobile-menu">
-      <a id="menu-button" data-text-swap="Close">Menu</a>
+      <a id="menu-button">Menu</a>
     </div>
     <div class="nav-links">
       <ul>
-        <li><a href="{{pathFor route='home'}}">HOME</a></li>
         <li><a href="{{pathFor route='player'}}">PLAYERS</a></li>
         <li><a href="{{pathFor route='roster'}}">ROSTERS</a></li>
         <li><a href="{{pathFor route='results'}}">RESULTS</a></li>
@@ -44,7 +43,6 @@
     </div>
     <div class="mobile-nav-links">
       <ul>
-        <li><a href="{{pathFor route='home'}}">HOME</a></li>
         <li><a href="{{pathFor route='player'}}">PLAYERS</a></li>
         <li><a href="{{pathFor route='roster'}}">ROSTERS</a></li>
         <li><a href="{{pathFor route='results'}}">RESULTS</a></li>
