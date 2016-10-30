@@ -122,7 +122,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var ppg = total / (this.length);
+    var ppg = total / (this.length - span);
     var output = (Math.round(ppg * 10) / 10).toFixed(1);
     return output;
   },
@@ -156,7 +156,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rpg = total / this.length;
+    var rpg = total / (this.length - span);
     var output = (Math.round(rpg * 10) / 10).toFixed(1);
     return output;
   },
@@ -190,7 +190,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var apg = total / this.length;
+    var apg = total / (this.length - span);
     var output = (Math.round(apg * 10) / 10).toFixed(1);
     return output;
   },
@@ -313,7 +313,7 @@ Template.playerPage.helpers({
       return "N/A";
     } else {
       var percent = ((total1 / total2) * 100).toFixed(1);
-      return percent = "%";
+      return percent + "%";
     }
   },
   'twopm': function() {
@@ -424,7 +424,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length);
+    var rate = total / (this.length - span);
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   },
@@ -458,7 +458,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length);
+    var rate = total / (this.length - span);
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   },
@@ -492,7 +492,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length);
+    var rate = total / (this.length - span);
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   },
@@ -526,7 +526,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length);
+    var rate = total / (this.length - span);
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   },
@@ -560,7 +560,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length);
+    var rate = total / (this.length - span);
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   }

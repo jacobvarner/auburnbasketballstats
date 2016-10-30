@@ -30,6 +30,9 @@ Router.route('/submit/team', {
 Router.route('/submit/game', {
   name: 'statsInput',
   template: 'statsInput',
+  subscriptions: function() {
+    Meteor.subscribe('player');
+  },
   onBeforeAction: function(){
     var currentUser = Meteor.userId();
     if(currentUser == "tFshn3W287dh68DdS" || currentUser == "kecEwKrgveYfHNXL4" || currentUser == "BsGLSHNC3hPpEfBH3") {
