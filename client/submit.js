@@ -827,5 +827,104 @@ Template.statsInput.events({
     }
 
     $('.player12').val('');
+
+    var playerName13 = $('[name=playerName13]').val();
+    var playerDate = date;
+    var playerOpponent = opponent;
+    if($('[name=playerStarter13]').val() === "yes") {
+      var playerStarter13 = true;
+    } else {
+      var playerStarter13 = false;
+    }
+    var playerFGM13 = parseInt($('[name=playerFGM13]').val());
+    var playerFGA13 = parseInt($('[name=playerFGA13]').val());
+    var player3PM13 = parseInt($('[name=player3PM13]').val());
+    var player3PA13 = parseInt($('[name=player3PA13]').val());
+    var player2PM13 = playerFGM13 - player3PM13;
+    var player2PA13 = playerFGA13 - player3PA13;
+    var playerFTM13 = parseInt($('[name=playerFTM13]').val());
+    var playerFTA13 = parseInt($('[name=playerFTA13]').val());
+    var playerORB13 = parseInt($('[name=playerORB13]').val());
+    var playerDRB13 = parseInt($('[name=playerDRB13]').val());
+    var playerREB13 = playerORB13 + playerDRB13;
+    var playerPoints13 = parseInt($('[name=playerPoints13]').val());
+    var playerAST13 = parseInt($('[name=playerAST13]').val());
+    var playerTO13 = parseInt($('[name=playerTO13]').val());
+    var playerBLK13 = parseInt($('[name=playerBLK13]').val());
+    var playerSTL13 = parseInt($('[name=playerSTL13]').val());
+    var playerPF13 = parseInt($('[name=playerPF13]').val());
+    var playerMIN13 = parseInt($('[name=playerMIN13]').val());
+
+    if($('.player13').val() != null && $('.player13').val() != ''){
+      Meteor.call('addPlayerStats', playerName13, date, season, opponent, playerStarter13, playerFGM13, playerFGA13, player3PM13, player3PA13, player2PM13, player2PA13, playerFTM13, playerFTA13, playerORB13, playerDRB13, playerREB13, playerPoints13, playerAST13, playerTO13, playerBLK13, playerSTL13, playerPF13, playerMIN13);
+    }
+
+    $('.player13').val('');
+
+    var playerName14 = $('[name=playerName14]').val();
+    var playerDate = date;
+    var playerOpponent = opponent;
+    if($('[name=playerStarter14]').val() === "yes") {
+      var playerStarter14 = true;
+    } else {
+      var playerStarter14 = false;
+    }
+    var playerFGM14 = parseInt($('[name=playerFGM14]').val());
+    var playerFGA14 = parseInt($('[name=playerFGA14]').val());
+    var player3PM14 = parseInt($('[name=player3PM14]').val());
+    var player3PA14 = parseInt($('[name=player3PA14]').val());
+    var player2PM14 = playerFGM14 - player3PM14;
+    var player2PA14 = playerFGA14 - player3PA14;
+    var playerFTM14 = parseInt($('[name=playerFTM14]').val());
+    var playerFTA14 = parseInt($('[name=playerFTA14]').val());
+    var playerORB14 = parseInt($('[name=playerORB14]').val());
+    var playerDRB14 = parseInt($('[name=playerDRB14]').val());
+    var playerREB14 = playerORB14 + playerDRB14;
+    var playerPoints14 = parseInt($('[name=playerPoints14]').val());
+    var playerAST14 = parseInt($('[name=playerAST14]').val());
+    var playerTO14 = parseInt($('[name=playerTO14]').val());
+    var playerBLK14 = parseInt($('[name=playerBLK14]').val());
+    var playerSTL14 = parseInt($('[name=playerSTL14]').val());
+    var playerPF14 = parseInt($('[name=playerPF14]').val());
+    var playerMIN14 = parseInt($('[name=playerMIN14]').val());
+
+    if($('.player14').val() != null && $('.player14').val() != ''){
+      Meteor.call('addPlayerStats', playerName14, date, season, opponent, playerStarter14, playerFGM14, playerFGA14, player3PM14, player3PA14, player2PM14, player2PA14, playerFTM14, playerFTA14, playerORB14, playerDRB14, playerREB14, playerPoints14, playerAST14, playerTO14, playerBLK14, playerSTL14, playerPF14, playerMIN14);
+    }
+
+    $('.player14').val('');
+
+    var playerName15 = $('[name=playerName15]').val();
+    var playerDate = date;
+    var playerOpponent = opponent;
+    if($('[name=playerStarter15]').val() === "yes") {
+      var playerStarter15 = true;
+    } else {
+      var playerStarter15 = false;
+    }
+    var playerFGM15 = parseInt($('[name=playerFGM15]').val());
+    var playerFGA15 = parseInt($('[name=playerFGA15]').val());
+    var player3PM15 = parseInt($('[name=player3PM15]').val());
+    var player3PA15 = parseInt($('[name=player3PA15]').val());
+    var player2PM15 = playerFGM15 - player3PM15;
+    var player2PA15 = playerFGA15 - player3PA15;
+    var playerFTM15 = parseInt($('[name=playerFTM15]').val());
+    var playerFTA15 = parseInt($('[name=playerFTA15]').val());
+    var playerORB15 = parseInt($('[name=playerORB15]').val());
+    var playerDRB15 = parseInt($('[name=playerDRB15]').val());
+    var playerREB15 = playerORB15 + playerDRB15;
+    var playerPoints15 = parseInt($('[name=playerPoints15]').val());
+    var playerAST15 = parseInt($('[name=playerAST15]').val());
+    var playerTO15 = parseInt($('[name=playerTO15]').val());
+    var playerBLK15 = parseInt($('[name=playerBLK15]').val());
+    var playerSTL15 = parseInt($('[name=playerSTL15]').val());
+    var playerPF15 = parseInt($('[name=playerPF15]').val());
+    var playerMIN15 = parseInt($('[name=playerMIN15]').val());
+
+    if($('.player15').val() != null && $('.player15').val() != ''){
+      Meteor.call('addPlayerStats', playerName15, date, season, opponent, playerStarter15, playerFGM15, playerFGA15, player3PM15, player3PA15, player2PM15, player2PA15, playerFTM15, playerFTA15, playerORB15, playerDRB15, playerREB15, playerPoints15, playerAST15, playerTO15, playerBLK15, playerSTL15, playerPF15, playerMIN15);
+    }
+
+    $('.player15').val('');
   }
 });
