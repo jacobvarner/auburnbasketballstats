@@ -110,6 +110,7 @@ Template.playerPage.helpers({
     var total = 0;
     var span = Session.get('span');
     if (span === 0) {
+      span = this.length;
       for (i = 0; i < this.length; i++) {
         total += this[i].playerPoints;
       }
@@ -122,7 +123,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var ppg = total / (this.length - span);
+    var ppg = total / span;
     var output = (Math.round(ppg * 10) / 10).toFixed(1);
     return output;
   },
@@ -144,6 +145,7 @@ Template.playerPage.helpers({
     var total = 0;
     var span = Session.get('span');
     if (span === 0) {
+      span = this.length;
       for (i = 0; i < this.length; i++) {
         total += this[i].playerREB;
       }
@@ -156,7 +158,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rpg = total / (this.length - span);
+    var rpg = total / span;
     var output = (Math.round(rpg * 10) / 10).toFixed(1);
     return output;
   },
@@ -178,6 +180,7 @@ Template.playerPage.helpers({
     var total = 0;
     var span = Session.get('span');
     if (span === 0) {
+      span = this.length;
       for (i = 0; i < this.length; i++) {
         total += this[i].playerAST;
       }
@@ -190,7 +193,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var apg = total / (this.length - span);
+    var apg = total / span;
     var output = (Math.round(apg * 10) / 10).toFixed(1);
     return output;
   },
@@ -412,6 +415,7 @@ Template.playerPage.helpers({
     var total = 0;
     var span = Session.get('span');
     if (span === 0) {
+      span = this.length;
       for (i = 0; i < this.length; i++) {
         total += this[i].playerBLK;
       }
@@ -424,7 +428,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length - span);
+    var rate = total / span;
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   },
@@ -446,6 +450,7 @@ Template.playerPage.helpers({
     var total = 0;
     var span = Session.get('span');
     if (span === 0) {
+      span = this.length;
       for (i = 0; i < this.length; i++) {
         total += this[i].playerSTL;
       }
@@ -458,7 +463,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length - span);
+    var rate = total / span;
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   },
@@ -480,6 +485,7 @@ Template.playerPage.helpers({
     var total = 0;
     var span = Session.get('span');
     if (span === 0) {
+      span = this.length;
       for (i = 0; i < this.length; i++) {
         total += this[i].playerTO;
       }
@@ -492,7 +498,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length - span);
+    var rate = total / span;
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   },
@@ -514,6 +520,7 @@ Template.playerPage.helpers({
     var total = 0;
     var span = Session.get('span');
     if (span === 0) {
+      span = this.length;
       for (i = 0; i < this.length; i++) {
         total += this[i].playerPF;
       }
@@ -526,7 +533,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length - span);
+    var rate = total / span;
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   },
@@ -548,6 +555,7 @@ Template.playerPage.helpers({
     var total = 0;
     var span = Session.get('span');
     if (span === 0) {
+      span = this.length;
       for (i = 0; i < this.length; i++) {
         total += this[i].playerMIN;
       }
@@ -560,7 +568,7 @@ Template.playerPage.helpers({
       var output = 0.0;
       return output;
     }
-    var rate = total / (this.length - span);
+    var rate = total / span;
     var output = (Math.round(rate * 10) / 10).toFixed(1);
     return output;
   }
