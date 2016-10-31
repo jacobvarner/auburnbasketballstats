@@ -14,6 +14,10 @@ Meteor.publish('player', function() {
   return PlayerStats.find();
 })
 
+Meteor.publish('games', function() {
+  return GameStats.find();
+})
+
 Meteor.methods({
   'addPlayer': function(season, name, number, position, height, weight, classYear, scholarship, transfer, hometown, lastSchool) {
     var currentUser = Meteor.userId();

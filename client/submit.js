@@ -32,6 +32,7 @@ Router.route('/submit/game', {
   template: 'statsInput',
   subscriptions: function() {
     Meteor.subscribe('player');
+    Meteor.subscribe('games');
   },
   onBeforeAction: function(){
     var currentUser = Meteor.userId();

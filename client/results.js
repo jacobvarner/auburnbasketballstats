@@ -28,6 +28,9 @@ Router.route('/results/:date/:opponent', {
       month = "0" + month;
     }
     var day = dateArray[1];
+    if (day.length === 1) {
+      day = "0" + day;
+    }
     var year = dateArray[2];
     var date = new Date(year + "-" + month + "-" + day);
     var opponent = this.params.opponent.replace("+", " ");
@@ -42,6 +45,9 @@ Router.route('/results/:date/:opponent', {
       month = "0" + month;
     }
     var day = dateArray[1];
+    if (day.length === 1) {
+      day = "0" + day;
+    }
     var year = dateArray[2];
     var date = new Date(year + "-" + month + "-" + day);
     var opponent = this.params.opponent.replace("+", " ");
@@ -200,12 +206,9 @@ Template.results.helpers({
     var month = (d.getUTCMonth() + 1).toString();
     var day = d.getUTCDate().toString();
     var year = d.getUTCFullYear().toString();
-    if (month.length === 1) {
-      month = "0" + month;
-    }
     var date = new Date(year + "-" + month + "-" + day);
     var opponent = this.opponent;
-    if (GameStats.find({date: date, opponent: opponent}).count() === 1) {
+    if (GameStats.find({date: this.date, opponent: opponent}).count() === 1) {
       return true;
     } else {
       return false;
@@ -216,7 +219,6 @@ Template.results.helpers({
     var month = parseInt(d.getUTCMonth() + 1);
     var day = parseInt(d.getUTCDate());
     var year = parseInt(d.getUTCFullYear());
-    var date = new Date(year + "-" + month + "-" + day);
     var opponent = this.opponent;
     var link = month + "-" + day + "-" + year + "/" + opponent.replace(" ", "+");
     return link;
@@ -941,7 +943,7 @@ Template.resultsGame.helpers({
   },
   'playerData': function() {
     var date = this[0].date
-    var output = PlayerStats.find({playerDate: date}, {sort: {playerMIN: 1}}).fetch();
+    var output = PlayerStats.find({playerDate: date}, {sort: {playerMIN: -1}}).fetch();
     return output;
   },
   'starter': function() {
