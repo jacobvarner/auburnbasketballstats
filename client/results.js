@@ -33,7 +33,7 @@ Router.route('/results/:date/:opponent', {
     }
     var year = dateArray[2];
     var date = new Date(year + "-" + month + "-" + day);
-    var opponent = this.params.opponent.replace("+", " ");
+    var opponent = this.params.opponent.replace("-", " ");
     Meteor.subscribe('resultsGame', date, opponent);
     Meteor.subscribe('resultsPlayer', date);
   },
@@ -50,7 +50,7 @@ Router.route('/results/:date/:opponent', {
     }
     var year = dateArray[2];
     var date = new Date(year + "-" + month + "-" + day);
-    var opponent = this.params.opponent.replace("+", " ");
+    var opponent = this.params.opponent.replace("-", " ");
     Session.set('opponent', opponent);
     Session.set('date', date);
     var gameResults = GameStats.find({date: date, opponent: opponent}).fetch();
@@ -63,13 +63,13 @@ Router.route('/results/:team', {
   template: "resultsTeam",
   title: "Auburn vs Opponents | Auburn Basketball Stats",
   subscriptions: function() {
-    var team = this.params.team.replace("+", " ");
+    var team = this.params.team.replace("-", " ");
     Meteor.subscribe('resultsTeam', team);
     Meteor.subscribe('seasonInfo');
   },
   data: function() {
     var teamLink = this.params.team;
-    var teamString = teamLink.replace("+", " ");
+    var teamString = teamLink.replace("-", " ");
     Session.set('team', teamString);
     var teamResults = SeasonInfo.find({opponent: teamString}).fetch();
     return teamResults;
@@ -203,12 +203,8 @@ Template.results.helpers({
   },
   'hasGameStats': function() {
     var d = this.date;
-    var month = (d.getUTCMonth() + 1).toString();
-    var day = d.getUTCDate().toString();
-    var year = d.getUTCFullYear().toString();
-    var date = new Date(year + "-" + month + "-" + day);
     var opponent = this.opponent;
-    if (GameStats.find({date: this.date, opponent: opponent}).count() === 1) {
+    if (GameStats.find({date: d, opponent: opponent}).fetch().length === 1) {
       return true;
     } else {
       return false;
@@ -220,7 +216,7 @@ Template.results.helpers({
     var day = parseInt(d.getUTCDate());
     var year = parseInt(d.getUTCFullYear());
     var opponent = this.opponent;
-    var link = month + "-" + day + "-" + year + "/" + opponent.replace(" ", "+");
+    var link = month + "-" + day + "-" + year + "/" + opponent.replace(" ", "-");
     return link;
   },
   'getRecord': function() {
