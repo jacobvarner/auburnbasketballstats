@@ -330,49 +330,49 @@ Template.resultsTeam.helpers({
     var output = month + "/" + day + "/" + year;
     return output;
   },
-  'home': function() {
-    if (this.location === "Away") {
-      var team = this.opponent;
-      if (this.oppRank > 0) {
-        var rank = "(" + this.oppRank + ")"
-      } else {
-        var rank = "";
-      }
-      var output = team + " " + rank;
+  'wl': function() {
+    if (this.result === "W") {
+      return 'win';
+    } else if (this.result === "L") {
+      return 'loss';
     } else {
-      var team = "Auburn";
-      if (this.auRank > 0) {
-        var rank = "(" + this.auRank + ")";
-      } else {
-        var rank = "";
-      }
-      var output = team + " " + rank;
+      return '';
     }
-    return output;
   },
-  'away': function() {
+  'getGame': function() {
     if (this.location === "Away") {
-      var team = "Auburn";
-      if (this.auRank > 0) {
-        var rank = "(" + this.auRank + ")"
-      } else {
-        var rank = "";
-      }
-      var output = team + " " + rank;
+      var location = "at ";
+      var neutral = "";
+    } else if (this.location == "Neutral") {
+      var location = "vs ";
+      var neutral = "(N)";
     } else {
-      var team = this.opponent;
-      if (this.oppRank > 0) {
-        var rank = "(" + this.oppRank + ")";
-      } else {
-        var rank = "";
-      }
-      var output = team + " " + rank;
+      var location = "vs ";
+      var neutral = "";
     }
-    return output;
+
+    if (this.oppRank > 0) {
+      var oppRank = "#" + this.oppRank + " ";
+    } else {
+      var oppRank = "";
+    }
+
+    if (this.auRank > 0) {
+      var auRank = "#" + this.auRank + " ";
+    } else {
+      var auRank = "";
+    }
+
+    return auRank + "Auburn " + location + oppRank + this.opponent + " " + neutral;
   },
   'overtime': function() {
     if (this.ot > 0) {
-      var output = "(" + this.ot + "OT)";
+      if (this.ot === 1) {
+        var ot = "";
+      } else {
+        var ot = this.ot;
+      }
+      var output = "(" + ot + "OT)";
     } else {
       var output = "";
     }
@@ -385,26 +385,36 @@ Template.resultsTeam.helpers({
       return false;
     }
   },
-  'confTourney': function() {
+  'postseason': function() {
     if (this.confTourney === true) {
+      var flag = "SECT";
+    } else if (this.nit === true) {
+      var flag = "NIT";
+    } else if (this.ncaa === true) {
+      var flag = "NCAA";
+    } else {
+      var flag = "";
+    }
+
+    return flag;
+  },
+  'hasGameStats': function() {
+    var d = this.date;
+    var opponent = this.opponent;
+    if (GameStats.find({date: d, opponent: opponent}).fetch().length === 1) {
       return true;
     } else {
       return false;
     }
   },
-  'nit': function() {
-    if (this.nit === true) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-  'ncaa': function() {
-    if (this.ncaa === true) {
-      return true;
-    } else {
-      return false;
-    }
+  'link': function() {
+    var d = this.date;
+    var month = parseInt(d.getUTCMonth() + 1);
+    var day = parseInt(d.getUTCDate());
+    var year = parseInt(d.getUTCFullYear());
+    var opponent = this.opponent;
+    var link = month + "-" + day + "-" + year + "/" + opponent.replace(" ", "-");
+    return link;
   },
   'conferenceTeam': function() {
     var team = Session.get('team');

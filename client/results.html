@@ -149,15 +149,12 @@
           <thead>
             <tr>
               <th class="date">Date</th>
-              <th class="opponent">Home (Rank)</th>
-              <th class="opponent">Away (Rank)</th>
-              <th>Result</th>
-              <th>AU</th>
-              <th>Opp</th>
-              <th>C</th>
-              <th>CT</th>
-              <th>NIT</th>
-              <th>NCAA</th>
+              <th class="game">Game</th>
+              <th class="result">Result</th>
+              <th class="au">AU</th>
+              <th class="opp">Opp</th>
+              <th class="sec">SEC</th>
+              <th class="flag"></th>
               <th>Stats</th>
             </tr>
           </thead>
@@ -165,9 +162,8 @@
             {{#each display}}
               <tr>
                 <td class="left">{{getDate}}</td>
-                <td class="left">{{home}}</td>
-                <td class="left">{{away}}</td>
-                <td>
+                <td class="left">{{getGame}}</td>
+                <td class="{{wl}}">
                   {{this.result}} {{overtime}}
                 </td>
                 <td>{{this.auScore}}</td>
@@ -178,19 +174,7 @@
                   {{/if}}
                 </td>
                 <td>
-                  {{#if confTourney}}
-                    &#10004;
-                  {{/if}}
-                </td>
-                <td>
-                  {{#if nit}}
-                    &#10004;
-                  {{/if}}
-                </td>
-                <td>
-                  {{#if ncaa}}
-                    &#10004;
-                  {{/if}}
+                  {{postseason}}
                 </td>
                 <td class="stats">
                   {{#if hasGameStats}}
