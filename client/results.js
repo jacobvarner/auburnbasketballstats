@@ -88,6 +88,26 @@ Template.results.events({
 });
 
 Template.results.helpers({
+  'getPPG': function() {
+    var season = Session.get('resultsSeason');
+    var ppg = SeasonInfo.find({season: season}, {fields: {auScore: 1}}).fetch();
+    var total = 0;
+    for (i=0; i < ppg.length; i++) {
+      total += ppg[i].auScore;
+    }
+    var output = (total / SeasonInfo.find({season: season}).count()).toFixed(1);
+    return output;
+  },
+  'getOPPG': function() {
+    var season = Session.get('resultsSeason');
+    var ppg = SeasonInfo.find({season: season}, {fields: {oppScore: 1}}).fetch();
+    var total = 0;
+    for (i=0; i < ppg.length; i++) {
+      total += ppg[i].oppScore;
+    }
+    var output = (total / SeasonInfo.find({season: season}).count()).toFixed(1);
+    return output;
+  },
   'seasonList': function() {
     var seasons = SeasonInfo.find({}, {sort: {season: -1}, fields: {season: 1}}).fetch();
     seasons = _.pluck(seasons, 'season');
@@ -116,58 +136,49 @@ Template.results.helpers({
     var output = month + "/" + day + "/" + year;
     return output;
   },
-  'resultRow': function() {
+  'wl': function() {
     if (this.result === "W") {
-      return 'class="win"';
+      return 'win';
     } else if (this.result === "L") {
-      return 'class="loss"';
+      return 'loss';
     } else {
       return '';
     }
   },
-  'home': function() {
+  'getGame': function() {
     if (this.location === "Away") {
-      var team = this.opponent;
-      if (this.oppRank > 0) {
-        var rank = "(" + this.oppRank + ")"
-      } else {
-        var rank = "";
-      }
-      var output = team + " " + rank;
+      var location = "at ";
+      var neutral = "";
+    } else if (this.location == "Neutral") {
+      var location = "vs ";
+      var neutral = "(N)";
     } else {
-      var team = "Auburn";
-      if (this.auRank > 0) {
-        var rank = "(" + this.auRank + ")";
-      } else {
-        var rank = "";
-      }
-      var output = team + " " + rank;
+      var location = "vs ";
+      var neutral = "";
     }
-    return output;
-  },
-  'away': function() {
-    if (this.location === "Away") {
-      var team = "Auburn";
-      if (this.auRank > 0) {
-        var rank = "(" + this.auRank + ")"
-      } else {
-        var rank = "";
-      }
-      var output = team + " " + rank;
+
+    if (this.oppRank > 0) {
+      var oppRank = "#" + this.oppRank + " ";
     } else {
-      var team = this.opponent;
-      if (this.oppRank > 0) {
-        var rank = "(" + this.oppRank + ")";
-      } else {
-        var rank = "";
-      }
-      var output = team + " " + rank;
+      var oppRank = "";
     }
-    return output;
+
+    if (this.auRank > 0) {
+      var auRank = "#" + this.auRank + " ";
+    } else {
+      var auRank = "";
+    }
+
+    return auRank + "Auburn " + location + oppRank + this.opponent + " " + neutral;
   },
   'overtime': function() {
     if (this.ot > 0) {
-      var output = "(" + this.ot + "OT)";
+      if (this.ot === 1) {
+        var ot = "";
+      } else {
+        var ot = this.ot;
+      }
+      var output = "(" + ot + "OT)";
     } else {
       var output = "";
     }
@@ -180,26 +191,18 @@ Template.results.helpers({
       return false;
     }
   },
-  'confTourney': function() {
+  'postseason': function() {
     if (this.confTourney === true) {
-      return true;
+      var flag = "SECT";
+    } else if (this.nit === true) {
+      var flag = "NIT";
+    } else if (this.ncaa === true) {
+      var flag = "NCAA";
     } else {
-      return false;
+      var flag = "";
     }
-  },
-  'nit': function() {
-    if (this.nit === true) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-  'ncaa': function() {
-    if (this.ncaa === true) {
-      return true;
-    } else {
-      return false;
-    }
+
+    return flag;
   },
   'hasGameStats': function() {
     var d = this.date;
